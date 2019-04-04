@@ -1,15 +1,15 @@
 var stoichTextBox = new TextBox(320,190,350,40,30);
 var stoichCheckButton = new Button(320,230,350,40,"Check",30);
-var stoichNewQuestionButton = new Button(320,270,350,40,"Generate a new question",30);
+var stoichNewQuestionButton = new Button(320,270,350,40,"New Question",30);
 var stoichGenerateQuestion = true;
 var stoichrandom = 0;
 var hrand = 0;
 var stoichAnswer = 0;
 var stoichFeedback="";
-var stoichExplaination = "";
+var stoichExplanation = "";
 var varchoice = 0
-var stoichExplaination="First, Balance carbon on each side \n Second, Balance Hydrogen on each side \n Third, Balance oxygen on each side \n (easily done with W + Z/2)\n Finally, Multiply by 2 if you have a fraction";
-var stoichShowExplaination = false;
+var stoichExplanation="First, Balance carbon on each side \n Second, Balance Hydrogen on each side \n Third, Balance oxygen on each side \n (easily done with W + Z/2)\n Finally, Multiply by 2 if you have a fraction";
+var stoichShowExplanation = false;
 
 function stoich(){
   stoichTextBox.update();
@@ -18,7 +18,7 @@ function stoich(){
 
   if(stoichGenerateQuestion==true){
     stoichrandom = Math.floor(Math.random() * 10) + 1;
-    stoichShowExplaination = false
+    stoichShowExplanation = false
     opchoice = Math.random();
     if(opchoice < .33){
       hrand = 2 *stoichrandom -2
@@ -52,7 +52,7 @@ function stoich(){
   }
 
   if(stoichCheckButton.clicked==true){
-    stoichShowExplaination = true
+    stoichShowExplanation = true
     if(parseInt(stoichTextBox.data)==stoichAnswer){
       stoichFeedback="Correct!";
 
@@ -60,8 +60,8 @@ function stoich(){
       stoichFeedback="Try again"
     }
 }
-  if(stoichShowExplaination){
-    text(stoichExplaination,780,220);
+  if(stoichShowExplanation){
+    text(stoichExplanation,780,220);
   }
 
   text("WC"+stoichrandom+"H"+hrand + " + XO2 = YCO2 + Z H20" ,320,120)
