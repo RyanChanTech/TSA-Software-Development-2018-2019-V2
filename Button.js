@@ -1,17 +1,19 @@
-function Button(x,y,w,h,t,ts){
+function Button(x,y,w,h,t,ts,xOffset=5){
   this.clicked =false;
   this.text=t;
 
   this.update = function(){
     if(this.clicked){
-      fill(150);
+      fill(165,230,250,120);
     }else{
-      fill(255);
+      fill(30,30,30,100);
     }
-    rect(x,y,w,h);
+    noStroke();
+    rect(x,y,w,h,10);
     fill(0);
     textSize(ts);
-    text(this.text,x+3,y+h-5);
+    stroke(0);
+    text(this.text,x+xOffset,y+h-10);
 
     if(mouseIsPressed && mouseX>x && mouseX<(x+w) && mouseY>y && mouseY<y+h){
       this.clicked = true;
