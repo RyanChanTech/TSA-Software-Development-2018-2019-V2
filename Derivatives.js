@@ -1,6 +1,6 @@
 var derivativesTextBox = new TextBox(320,230,350,40,30);
 var derivativesCheckButton = new Button(320,270,350,40,"Check",30);
-var derivativesNewQuestionButton = new Button(320,310,350,40,"Generate a new question",30);
+var derivativesNewQuestionButton = new Button(320,310,350,40,"New Question",30);
 var derivativesGenerateQuestion = true;
 var derivativesQuestion = "";
 var derivativesAnswer = "";
