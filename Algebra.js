@@ -11,7 +11,6 @@ var algebraRandomNumberTwo = 0;
 var algebraAnswer = 0;
 var algebraFeedback="";
 var algebraExplanation = "";
-
 function algebra(){
   algebraTextBox.update();
   algebraCheckButton.update();
