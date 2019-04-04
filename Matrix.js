@@ -72,6 +72,11 @@ function matrix(){
   }
 
   if (matrixRandomType == 0){
+    strokeWeight(3);
+    line(400,180,400,270);
+    line(535,180,535,270);
+    strokeWeight(1);//set to default
+
     text("Evaluate the determinant of\n the 2 X 2 Matrix: ",320,120);
     text(a1,410,215);
     text(a2,490,215);
@@ -84,6 +89,11 @@ function matrix(){
     }
   }
   if (matrixRandomType == 1){
+    strokeWeight(3);
+    line(390,170,390,285);
+    line(560,170,560,285);
+    strokeWeight(1);//set to default
+
     text("Evaluate the determinent of\n the 3 X 3 Matrix: ",320,120);
     text(a1,400,200);
     text(a2,460,200);
