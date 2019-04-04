@@ -1,12 +1,12 @@
 var nLButtons = [new Button(320,380,150,30,"hi",30),new Button(320,430,150,30,"there",30),new Button(320,480,150,30,"a",30)];
 var nLAnswerButton = 0;
 
-var nLNewQuestionButton = new Button(320,520,350,40,"Generate a new question",30);
+var nLNewQuestionButton = new Button(320,520,350,40,"New Question",30);
 var nLFeedback="";
-var nLExplaination="";
+var nLExplanation="";
 var nLCode=-1;
 var nLQuestion="";
-var nLTempExplaination="";
+var nLTempExplanation="";
 
 var nLGenerateQuestion = true;
 
@@ -30,15 +30,15 @@ function newtonsLaws(){
 
   if(nLNewQuestionButton.clicked){
     nLGenerateQuestion=true;
-    nLExplaination="";
+    nLExplanation="";
   }
 
   if(nLButtons[nLAnswerButton].clicked){
     nLFeedback="Correct!";
-    nLExplaination=nLTempExplaination;
+    nLExplanation=nLTempExplanation;
   }else if(nLButtons[0].clicked||nLButtons[1].clicked||nLButtons[2].clicked){
     nLFeedback="Try again";
-    nLExplaination=nLTempExplaination;
+    nLExplanation=nLTempExplanation;
   }
 
   if(nLCode==0||nLCode==1){
@@ -49,7 +49,7 @@ function newtonsLaws(){
 
   line(700,150,700,595);
   textSize(20);
-  text("Work/Explaination: "+nLExplaination,710,180);
+  text("Work/Explanation: "+nLExplanation,710,180);
   textSize(30);
   text("Feedback:" + nLFeedback,320,595);
 }
@@ -63,7 +63,7 @@ function nLGeneratePulleyAcceleration(){
   var acceleration = (nLMass2*9.8)/(nLMass1+nLMass2);
   acceleration=Math.round(acceleration*100)/100;
   nLQuestion="Mass 1 is " + nLMass1 + "kg and Mass 2 is " + nLMass2 + "kg. They are connected by a string and pulley. \nWhat is the acceleration of the two masses? Ignore friction.";
-  nLTempExplaination="\nStep 1- Use F=ma=sum of all forces\nStep 2- Forces on m2 are gravity and tension,so m2a=m2g-T\nStep 3- force on m1 is only tension, so m1a=T\nStep 4- Use substitution to get m2a=m2g-m1a\nStep 5-Solve for a to get: " + acceleration;
+  nLTempExplanation="\nStep 1- Use F=ma=sum of all forces\nStep 2- Forces on m2 are gravity and tension,so m2a=m2g-T\nStep 3- force on m1 is only tension, so m1a=T\nStep 4- Use substitution to get m2a=m2g-m1a\nStep 5-Solve for a to get: " + acceleration;
 
   nLAnswerButtonIndex = Math.floor(Math.random() * 3);
   for(var i=0;i<3;i++){
@@ -82,7 +82,7 @@ function nLGeneratePulleyTension(){
   var tension = 9.8*(nLMass1+nLMass2);
   tension=Math.round(tension*100)/100;
 
-  nLTempExplaination="\nStep 1- Use F=ma=sum of all forces\nStep 2- Forces on m2 are gravity and tension,so m2a=m2g-T\nStep 3- force on m1 is only tension, so m1a=T\nStep 4- Solve for a from Step 3 to get a=T/m1 \nStep 5- Use substitution to get m2(T/m1)=m2g-T\nStep 6- Solve for T to get: " + tension;
+  nLTempExplanation="\nStep 1- Use F=ma=sum of all forces\nStep 2- Forces on m2 are gravity and tension,so m2a=m2g-T\nStep 3- force on m1 is only tension, so m1a=T\nStep 4- Solve for a from Step 3 to get a=T/m1 \nStep 5- Use substitution to get m2(T/m1)=m2g-T\nStep 6- Solve for T to get: " + tension;
   nLAnswerButton = Math.floor(Math.random() * 3);
   for(var i=0;i<3;i++){
     if(i==nLAnswerButton){
