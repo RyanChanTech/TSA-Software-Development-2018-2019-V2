@@ -4,7 +4,7 @@
 //Button parameters: (x,y,width,height,text,text size)
 var algebraTextBox = new TextBox(320,150,350,40,30);
 var algebraCheckButton = new Button(320,190,350,40,"Check",30);
-var algebraNewQuestionButton = new Button(320,230,350,40,"Generate a new question",30);
+var algebraNewQuestionButton = new Button(320,230,350,40,"New Question",30);
 var algebraGenerateQuestion = true;
 var algebraRandomNumberOne = 0;
 var algebraRandomNumberTwo = 0;
