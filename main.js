@@ -1,6 +1,5 @@
 /*IMPORTANT: The x and y coordinate system looks like this:
-https://openclipart.org/detail/234445/computer-math-coordinate-system
-*/
+https://openclipart.org/detail/234445/computer-math-coordinate-system*/
 
 //Switch parameters: (x,y,width,height,text,text size, x offset (optional))
 var mathSwitch=new CategorySwitch(10,80,280,50,"Math",40,xOffset=95);
