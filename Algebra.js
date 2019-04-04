@@ -10,7 +10,7 @@ var algebraRandomNumberOne = 0;
 var algebraRandomNumberTwo = 0;
 var algebraAnswer = 0;
 var algebraFeedback="";
-var algebraExplaination = "";
+var algebraExplanation = "";
 
 function algebra(){
   algebraTextBox.update();
@@ -49,13 +49,13 @@ function algebra(){
       algebraFeedback="Try again"
     }
 
-    algebraExplaination="Step 1-Subtract: " + algebraRandomNumberTwo+" - "+algebraRandomNumberOne+" = "+algebraAnswer;
+    algebraExplanation="Step 1-Subtract: " + algebraRandomNumberTwo+" - "+algebraRandomNumberOne+" = "+algebraAnswer;
   }
 
   //Display the output, feedback, and work
   text(algebraRandomNumberOne + " + x = " + algebraRandomNumberTwo,320,120);
   text("Feedback: " + algebraFeedback,320,310);
 
-  text("Work/Explaination:",800,120);
-  text(algebraExplaination,800,170);
+  text("Work/Explanation:",800,120);
+  text(algebraExplanation,800,170);
 }
