@@ -37,7 +37,7 @@ function derivatives(){
     derivatiesShowExplanation=false;
   }
   if(derivativesCheckButton.clicked==true){
-    derivatiesShowExplaination=true;
+    derivatiesShowExplanation=true;
     if(derivativesTextBox.data==derivativesAnswer){
       derivativesFeedback="Correct!";
     }else{
@@ -50,7 +50,7 @@ function derivatives(){
   text("---",320,180);
   text("("+derivativesQuestion+") = ?",355,175);
   text("Feedback: " + derivativesFeedback,320,385);
-  text("Work/Explaination:",780,180);
+  text("Work/Explanation:",780,180);
   if(derivatiesShowExplanation){
     text(derivativesExplanation,780,220);
   }
@@ -71,7 +71,7 @@ function derivativesPowerRule(){
       answer+="+";
     }
   }
-  var explaination = "Step 1-Power & Addition Rules:\n"+answer;
+  var explanation = "Step 1-Power & Addition Rules:\n"+answer;
   return [question,answer,explanation];
 }
 
