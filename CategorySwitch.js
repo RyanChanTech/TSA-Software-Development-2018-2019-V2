@@ -1,16 +1,19 @@
-function CategorySwitch(x,y,w,h,t,ts){
+function CategorySwitch(x,y,w,h,t,ts,xOffset=5){
   this.switchedOn = false;
 
   this.update = function(){
     if(!this.switchedOn){
       fill(255);
     }else{
-      fill(0,128,128);
+      fill(165,230,250);
     }
-    rect(x,y,w,h);
+    noStroke();
+    rect(x,y,w,h,10);
+    stroke(0)
     textSize(ts);
     fill(0);
-    text(t,x+3,y+h-10);
+    text(t,x+xOffset,y+h-10);
+    strokeWeight(1);
     if(mouseIsPressed&&mouseX>x&&mouseX<x+w&&mouseY>y&&mouseY<y+h){
       this.switchedOn = true;
     }else if(mouseIsPressed&&mouseX<300&&mouseY<300&&(mouseX<x||mouseX>x+w||mouseY<y||mouseY>y+h)){
