@@ -5,8 +5,8 @@ var derivativesGenerateQuestion = true;
 var derivativesQuestion = "";
 var derivativesAnswer = "";
 var derivativesFeedback="";
-var derivativesExplaination="";
-var derivatiesShowExplaination = false;
+var derivativesExplanation="";
+var derivatiesShowExplanation = false;
 
 function derivatives(){
   derivativesTextBox.update();
@@ -19,13 +19,13 @@ function derivatives(){
       var temp1 = derivativesPowerRule();
       derivativesQuestion=temp1[0];
       derivativesAnswer=temp1[1];
-      derivativesExplaination=temp1[2];
+      derivativesExplanation=temp1[2];
     }else{
       var pr = derivativesPowerRule();
       var temp2 = derivativesChainRule(pr[0],pr[1]);
       derivativesQuestion=temp2[0];
       derivativesAnswer=temp2[1];
-      derivativesExplaination=temp2[2];
+      derivativesExplanation=temp2[2];
     }
     derivativesGenerateQuestion = false;
   }
@@ -34,7 +34,7 @@ function derivatives(){
     derivativesQuestion="";
     derivativesAnswer="";
     derivativesGenerateQuestion = true;
-    derivatiesShowExplaination=false;
+    derivatiesShowExplanation=false;
   }
   if(derivativesCheckButton.clicked==true){
     derivatiesShowExplaination=true;
@@ -51,8 +51,8 @@ function derivatives(){
   text("("+derivativesQuestion+") = ?",355,175);
   text("Feedback: " + derivativesFeedback,320,385);
   text("Work/Explaination:",780,180);
-  if(derivatiesShowExplaination){
-    text(derivativesExplaination,780,220);
+  if(derivatiesShowExplanation){
+    text(derivativesExplanation,780,220);
   }
 }
 
@@ -72,24 +72,24 @@ function derivativesPowerRule(){
     }
   }
   var explaination = "Step 1-Power & Addition Rules:\n"+answer;
-  return [question,answer,explaination];
+  return [question,answer,explanation];
 }
 
 function derivativesChainRule(insideQuestion,insideAnswer){
   var question = "";
   var answer = "";
-  var explaination = "";
+  var explanation = "";
   var rand = Math.floor(Math.random() * 100);
   if(rand<=33){
     question="sin("+insideQuestion+")";
     answer="cos("+insideQuestion+")("+insideAnswer+")"
-    explaination = "Step 1-Chain Rule:\ncos("+insideQuestion+")*d/dx("+insideQuestion+")"+
+    explanation = "Step 1-Chain Rule:\ncos("+insideQuestion+")*d/dx("+insideQuestion+")"+
                     "\nStep 2-Power & Addition Rules:\n"+answer;
   }else{
     question="ln("+insideQuestion+")";
     answer="("+insideAnswer+")"+"/("+insideQuestion+")";
-    explaination = "Step 1-Chain Rule:\n1/("+insideQuestion+")*d/dx("+insideQuestion+")"+
+    explanation = "Step 1-Chain Rule:\n1/("+insideQuestion+")*d/dx("+insideQuestion+")"+
                     "\nStep 2-Power & Addition Rules:\n"+answer;
   }
-  return [question,answer,explaination];
+  return [question,answer,explanation];
 }
