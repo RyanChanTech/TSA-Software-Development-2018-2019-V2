@@ -1,6 +1,6 @@
 var matrixTextBox = new TextBox(320,310,350,40,30);
 var matrixCheckButton = new Button(320,350,350,40,"Check",30);
-var matrixNewQuestionButton = new Button(320,390,350,40,"Generate a new question",30);
+var matrixNewQuestionButton = new Button(320,390,350,40,"New Question",30);
 var matrixGenerateQuestion = true;
 var matrixShowExplanation = false;
 var a1 = 0;
