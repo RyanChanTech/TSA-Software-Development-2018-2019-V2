@@ -1,7 +1,7 @@
-var nLButtons = [new Button(320,380,150,40,"",30),new Button(320,430,150,40,"",30),new Button(320,480,150,40,"",30)];
+var nLButtons = [new Button(410,380,120,40,"",30,xOffset=20),new Button(410,430,120,40,"",30,xOffset=20),new Button(410,480,120,40,"",30,xOffset=20)];
 var nLAnswerButton = 0;
 
-var nLNewQuestionButton = new Button(370,520,220,40,"New Question",30,xOffset=15);
+var nLNewQuestionButton = new Button(370,530,220,40,"New Question",30,xOffset=15);
 var nLFeedback="";
 var nLExplanation="";
 var nLCode=-1;
@@ -52,7 +52,7 @@ function newtonsLaws(){
   textSize(20)
   text(nLExplanation,750,200)
   textSize(30);
-  text("Feedback:" + nLFeedback,320,600);
+  text("Feedback:" + nLFeedback,320,610);
 }
 
 var nLMass1 = 0;
