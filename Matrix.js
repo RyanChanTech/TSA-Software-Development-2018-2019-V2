@@ -98,7 +98,7 @@ function matrix(){
     line(580,170,580,285);
     strokeWeight(1);//set to default
 
-    text("Evaluate the determinent of\n the 3 X 3 Matrix: ",320,120);
+    text("Evaluate the determinant of\n the 3 X 3 Matrix: ",320,120);
     text(a1,400,200);
     text(a2,465,200);
     text(a3,530,200);

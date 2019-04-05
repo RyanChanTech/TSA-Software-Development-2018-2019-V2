@@ -20,7 +20,7 @@ var logo;
 function setup() {
   //You can ignore these. It only sets the font and canvas size
   textFont("Trebuchet MS");
-  createCanvas(1800, 1500);
+  createCanvas(1550, 1200);
   logo = loadImage("images/logo2.png");
 }
 

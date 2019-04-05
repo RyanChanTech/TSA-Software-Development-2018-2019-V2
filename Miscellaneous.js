@@ -20,6 +20,6 @@ function displayDecorations(){
   }else{
     fill(100,100,100,100);
   }
-  rect(1350,0,200,1000);
+  rect(1350,0,200,1200);
   stroke(0);
 }
