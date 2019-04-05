@@ -56,6 +56,6 @@ function algebra(){
   text(algebraRandomNumberOne + " + x = " + algebraRandomNumberTwo,320,120);
   text("Feedback: " + algebraFeedback,320,330);
 
-  text("Work/Explanation:",800,120);
-  text(algebraExplanation,800,170);
+  text("Work/Explanation:",800,200);
+  text(algebraExplanation,800,250);
 }
