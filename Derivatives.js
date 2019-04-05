@@ -11,7 +11,7 @@ var derivatiesShowExplanation = false;
 function derivatives(){
   fill(255,238,153,100);
   noStroke();
-  rect(775,155,575,525,20,0,0,20);
+  rect(735,155,615,525,20,0,0,20);
   stroke(0);
   derivativesTextBox.update();
   derivativesCheckButton.update();
