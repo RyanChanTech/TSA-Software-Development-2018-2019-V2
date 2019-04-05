@@ -11,6 +11,10 @@ var nLTempExplanation="";
 var nLGenerateQuestion = true;
 
 function newtonsLaws(){
+  fill(255,238,153,100);
+  noStroke();
+  rect(775,155,575,525,20,0,0,20);
+  stroke(0);
   nLButtons[0].update();
   nLButtons[1].update();
   nLButtons[2].update();
