@@ -74,9 +74,9 @@ function series(){
     text(seriesRandomNumberOne + " + " + seriesRandomNumberTwo + "n",400,240);
     text("Feedback: " + seriesFeedback,320,490);
 
-    text("Work/Explanation:",800,120);
+    text("Work/Explanation:",800,200);
     if (seriesShowExplanation){
-      text(seriesExplanation,800,170);
+      text(seriesExplanation,800,250);
     }
   }
   if (seriesRandomType == 1){
@@ -88,9 +88,9 @@ function series(){
     text(seriesRandomNumberOne + " . " + seriesRandomNumberTwo + "^(n - 1)",400,240);
     text("Feedback: " + seriesFeedback,320,490);
 
-    text("Work/Explanation:",800,120);
+    text("Work/Explanation:",800,200);
     if (seriesShowExplanation){
-      text(seriesExplanation,800,170);
+      text(seriesExplanation,800,250);
     }
   }
 }
