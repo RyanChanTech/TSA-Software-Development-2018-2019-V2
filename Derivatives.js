@@ -1,6 +1,6 @@
 var derivativesTextBox = new TextBox(320,230,350,40,30);
-var derivativesCheckButton = new Button(320,270,350,40,"Check",30);
-var derivativesNewQuestionButton = new Button(320,310,350,40,"New Question",30);
+var derivativesCheckButton = new Button(380,280,180,40,"Check",30,xOffset=50);
+var derivativesNewQuestionButton = new Button(370,330,220,40,"New Question",30,xOffset=15);
 var derivativesGenerateQuestion = true;
 var derivativesQuestion = "";
 var derivativesAnswer = "";
@@ -47,12 +47,14 @@ function derivatives(){
 
   text("Find the derivative:",320,120);
   text(" d\n"+"dx",320,160);
-  text("---",320,180);
+  strokeWeight(2);
+  line(320,170,350,170)
+  strokeWeight(1); //reset to default value
   text("("+derivativesQuestion+") = ?",355,175);
-  text("Feedback: " + derivativesFeedback,320,385);
+  text("Feedback: " + derivativesFeedback,320,410);
   text("Work/Explanation:",780,180);
   if(derivatiesShowExplanation){
-    text(derivativesExplanation,780,220);
+    text(derivativesExplanation,780,230);
   }
 }
 
@@ -84,12 +86,12 @@ function derivativesChainRule(insideQuestion,insideAnswer){
     question="sin("+insideQuestion+")";
     answer="cos("+insideQuestion+")("+insideAnswer+")"
     explanation = "Step 1-Chain Rule:\ncos("+insideQuestion+")*d/dx("+insideQuestion+")"+
-                    "\nStep 2-Power & Addition Rules:\n"+answer;
+                    "\n\nStep 2-Power & Addition Rules:\n"+answer;
   }else{
     question="ln("+insideQuestion+")";
     answer="("+insideAnswer+")"+"/("+insideQuestion+")";
     explanation = "Step 1-Chain Rule:\n1/("+insideQuestion+")*d/dx("+insideQuestion+")"+
-                    "\nStep 2-Power & Addition Rules:\n"+answer;
+                    "\n\nStep 2-Power & Addition Rules:\n"+answer;
   }
   return [question,answer,explanation];
 }
