@@ -13,7 +13,8 @@ var algebraFeedback="";
 var algebraExplanation = "";
 
 function algebra(){
-  rect(780,180,1000,300)
+  rect(780,180,900,300);
+  fill(255,238,153);
   algebraTextBox.update();
   algebraCheckButton.update();
   algebraNewQuestionButton.update();
