@@ -52,7 +52,7 @@ function newtonsLaws(){
   textSize(20)
   text(nLExplanation,750,200)
   textSize(30);
-  text("Feedback:" + nLFeedback,320,595);
+  text("Feedback:" + nLFeedback,320,600);
 }
 
 var nLMass1 = 0;
