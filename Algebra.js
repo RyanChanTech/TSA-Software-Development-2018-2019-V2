@@ -15,7 +15,7 @@ var algebraExplanation = "";
 function algebra(){
   fill(255,238,153,100);
   noStroke();
-  rect(735,155,615,525,20,0,0,20);
+  rect(735,155,615,525,10,0,0,10);
   stroke(0);
   algebraTextBox.update();
   algebraCheckButton.update();

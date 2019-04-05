@@ -119,11 +119,25 @@ var TrigOpposite=0;
 function nLGenerateSlideAcceleration(){
   theta=Math.round(random(10,45));
   var friction=random(1).toFixed(2);
-  var mass=Math.round(3,20);
+  var mass=Math.round(random(3,20));
+  var acceleration=(9.8*Math.sin(radians(theta))-friction*9.8*Math.cos(radians(theta))).toFixed(2);
+  nLQuestion="The mass of the box is "+ mass+ "kg, the angle is " + theta +" degrees, and the friction coefficient is "+ friction+".\nWhat is the acceleration of the box sliding down the incline?";
+  nLTempExplanation="\n\nStep 1- Use F=ma=sum of all forces\n\nStep 2- Forces on m2 are gravity and tension,so m2a=m2g-T\n\nStep 3- force on m1 is only tension, so m1a=T\n\nStep 4- Solve for a from Step 3 to get a=T/m1 \n\nStep 5- Use substitution to get m2(T/m1)=m2g-T\n\nStep 6- Solve for T to get: " + acceleration;
 
+  nLAnswerButton = Math.floor(Math.random() * 3);
+  for(var i=0;i<3;i++){
+    if(i==nLAnswerButton){
+      nLButtons[i].text=acceleration;
+    }else{
+      nLButtons[i].text=random(0,5).toFixed(2);
+    }
+  }
 }
 
 function nLDisplaySlide(){
+  textSize(20);
+  text(nLQuestion,320,110);
+
   strokeWeight(2);
   TrigOpposite=Math.tan(radians(theta)) * 200;
   triangle(385,350,385,350-TrigOpposite,585,350);
