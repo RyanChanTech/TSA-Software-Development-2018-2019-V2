@@ -1,7 +1,7 @@
 var nLButtons = [new Button(320,380,150,40,"",30),new Button(320,430,150,40,"",30),new Button(320,480,150,40,"",30)];
 var nLAnswerButton = 0;
 
-var nLNewQuestionButton = new Button(320,520,350,40,"New Question",30);
+var nLNewQuestionButton = new Button(370,520,220,40,"New Question",30,xOffset=15);
 var nLFeedback="";
 var nLExplanation="";
 var nLCode=-1;
