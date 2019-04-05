@@ -118,6 +118,9 @@ var theta=0;
 var TrigOpposite=0;
 function nLGenerateSlideAcceleration(){
   theta=Math.round(random(10,45));
+  var friction=random(1).toFixed(2);
+  var mass=Math.round(3,20);
+
 }
 
 function nLDisplaySlide(){
