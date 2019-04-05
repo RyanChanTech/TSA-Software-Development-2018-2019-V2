@@ -18,6 +18,10 @@ var matrixFeedback="";
 var matrixExplanation = "";
 
 function matrix(){
+  fill(255,238,153,100);
+  noStroke();
+  rect(775,155,575,525,20,0,0,20);
+  stroke(0);
   matrixTextBox.update();
   matrixCheckButton.update();
   matrixNewQuestionButton.update();
