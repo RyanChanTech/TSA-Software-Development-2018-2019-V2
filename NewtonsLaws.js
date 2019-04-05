@@ -1,7 +1,7 @@
-var nLButtons = [new Button(410,380,120,40,"",30,xOffset=20),new Button(410,430,120,40,"",30,xOffset=20),new Button(410,480,120,40,"",30,xOffset=20)];
+var nLButtons = [new Button(320,380,120,40,"",30,xOffset=20),new Button(320,430,120,40,"",30,xOffset=20),new Button(320,480,120,40,"",30,xOffset=20)];
 var nLAnswerButton = 0;
 
-var nLNewQuestionButton = new Button(370,530,220,40,"New Question",30,xOffset=15);
+var nLNewQuestionButton = new Button(320,530,220,40,"New Question",30,xOffset=15);
 var nLFeedback="";
 var nLExplanation="";
 var nLCode=-1;
