@@ -115,6 +115,7 @@ function nLDisplayPulley(){
 }
 
 var theta=0;
+var TrigOpposite=0;
 function nLGenerateSlideAcceleration(){
   theta=Math.round(random(20,60));
 }
@@ -122,5 +123,10 @@ function nLGenerateSlideAcceleration(){
 function nLDisplaySlide(){
   strokeWeight(5);
   line(385,350,585,350);
+  TrigOpposite=Math.tan(theta) * 200;
+  line(385,350,385,350-TrigOpposite);
+  line();
+  strokeWeight(0);
+
 
 }
