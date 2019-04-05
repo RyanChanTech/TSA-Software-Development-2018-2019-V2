@@ -3,8 +3,8 @@
 //Textbox parameters: (x,y,width,height,text size)
 //Button parameters: (x,y,width,height,text,text size)
 var algebraTextBox = new TextBox(320,150,350,40,30);
-var algebraCheckButton = new Button(320,190,350,40,"Check",30);
-var algebraNewQuestionButton = new Button(320,230,350,40,"New Question",30);
+var algebraCheckButton = new Button(380,200,180,40,"Check",30,xOffset=50);
+var algebraNewQuestionButton = new Button(370,250,220,40,"New Question",30,xOffset=15);
 var algebraGenerateQuestion = true;
 var algebraRandomNumberOne = 0;
 var algebraRandomNumberTwo = 0;
@@ -54,7 +54,7 @@ function algebra(){
 
   //Display the output, feedback, and work
   text(algebraRandomNumberOne + " + x = " + algebraRandomNumberTwo,320,120);
-  text("Feedback: " + algebraFeedback,320,310);
+  text("Feedback: " + algebraFeedback,320,330);
 
   text("Work/Explanation:",800,120);
   text(algebraExplanation,800,170);
