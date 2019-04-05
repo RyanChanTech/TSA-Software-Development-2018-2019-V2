@@ -125,7 +125,7 @@ function nLDisplaySlide(){
   line(385,350,585,350);
   TrigOpposite=Math.tan(theta) * 200;
   line(385,350,385,350-TrigOpposite);
-  line();
+  line(385,350-TrigOpposite,585,350);
   strokeWeight(0);
 
 
