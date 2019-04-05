@@ -60,9 +60,9 @@ function stoich(){
       stoichFeedback="Try again"
     }
 }
-  text("Work/Explanation:",780,170);
+  text("Work/Explanation:",780,190);
   if(stoichShowExplanation){
-    text(stoichExplanation,780,220);
+    text(stoichExplanation,780,240);
   }
 
   text("WC"+stoichrandom+"H"+hrand + " + XO2 = YCO2 + Z H20" ,320,120)
