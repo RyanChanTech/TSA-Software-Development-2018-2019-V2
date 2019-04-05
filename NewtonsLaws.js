@@ -47,7 +47,6 @@ function newtonsLaws(){
     nLDisplaySlide();
   }
 
-  line(700,150,700,595);
   text("Work/Explanation: ",750,200);
   textSize(20)
   text(nLExplanation,750,200)
