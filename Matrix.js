@@ -83,13 +83,13 @@ function matrix(){
     text(a3,410,255);
     text(a4,490,255);
     text("Feedback: " + matrixFeedback,320,490);
-    text("Work/Explanation:",800,120);
+    text("Work/Explanation:",800,195);
     if (matrixShowExplanation){
       strokeWeight(3);
-      line(820,255,820,330);
-      line(940,255,940,330);
+      line(820,330,820,405);
+      line(940,330,940,405);
       strokeWeight(1);//set to default
-      text(matrixExplanation,800,170);
+      text(matrixExplanation,800,245);
     }
   }
   if (matrixRandomType == 1){
@@ -98,7 +98,7 @@ function matrix(){
     line(580,170,580,285);
     strokeWeight(1);//set to default
 
-    text("Evaluate the determinant of\n the 3 X 3 Matrix: ",320,120);
+    text("Evaluate the determinent of\n the 3 X 3 Matrix: ",320,120);
     text(a1,400,200);
     text(a2,465,200);
     text(a3,530,200);
@@ -109,13 +109,13 @@ function matrix(){
     text(a8,465,280);
     text(a9,530,280);
     text("Feedback: " + matrixFeedback,320,490);
-    text("Work/Explanation:",800,120);
+    text("Work/Explanation:",800,195);
     if (matrixShowExplanation){
       strokeWeight(3);
-      line(820,255,820,365);
-      line(995,255,995,365);
+      line(820,325,820,435);
+      line(995,325,995,435);
       strokeWeight(1);//set to default
-      text(matrixExplanation,800,170);
+      text(matrixExplanation,800,240);
     }
   }
 }
