@@ -117,13 +117,13 @@ function nLDisplayPulley(){
 var theta=0;
 var TrigOpposite=0;
 function nLGenerateSlideAcceleration(){
-  theta=Math.round(random(20,60));
+  theta=Math.round(random(10,45));
 }
 
 function nLDisplaySlide(){
   strokeWeight(5);
   line(385,350,585,350);
-  TrigOpposite=Math.tan(theta) * 200;
+  TrigOpposite=Math.tan(radians(theta)) * 200;
   line(385,350,385,350-TrigOpposite);
   line();
   strokeWeight(0);
