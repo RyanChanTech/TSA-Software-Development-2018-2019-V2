@@ -12,6 +12,10 @@ var stoichExplanation="First, Balance carbon on each side\n\nSecond, Balance Hyd
 var stoichShowExplanation = false;
 
 function stoich(){
+  fill(255,238,153,100);
+  noStroke();
+  rect(775,155,575,525,20,0,0,20);
+  stroke(0);
   stoichTextBox.update();
   stoichCheckButton.update();
   stoichNewQuestionButton.update();
