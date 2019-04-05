@@ -52,9 +52,9 @@ function derivatives(){
   strokeWeight(1); //reset to default value
   text("("+derivativesQuestion+") = ?",355,175);
   text("Feedback: " + derivativesFeedback,320,410);
-  text("Work/Explanation:",780,180);
+  text("Work/Explanation:",780,195);
   if(derivatiesShowExplanation){
-    text(derivativesExplanation,780,230);
+    text(derivativesExplanation,780,245);
   }
 }
 
