@@ -21,7 +21,7 @@ function newtonsLaws(){
   nLNewQuestionButton.update();
 
   if(nLGenerateQuestion){
-    var rand = Math.floor(Math.random() * 100);
+    nLCode=random(0,3);
     if(rand<50){
       nLGeneratePulleyAcceleration();
       nLCode=0;
@@ -97,10 +97,6 @@ function nLGeneratePulleyTension(){
   }
 }
 
-function nLGenerateSlideAcceleration(){
-  //In progress
-}
-
 function nLDisplayPulley(){
   fill(0);
   line(385,170,450,170);
@@ -118,6 +114,10 @@ function nLDisplayPulley(){
   fill(0);
 }
 
+var theta=0;
+function nLGenerateSlideAcceleration(){
+  theta=Math.round(random(20,60));
+}
 function nLDisplaySlide(){
   //In progress
 }
