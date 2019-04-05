@@ -4,7 +4,7 @@ var nLAnswerButton = 0;
 var nLNewQuestionButton = new Button(320,530,220,40,"New Question",30,xOffset=15);
 var nLFeedback="";
 var nLExplanation="";
-var nLRandom=-1;
+var nLCode=-1;
 var nLQuestion="";
 var nLTempExplanation="";
 
@@ -21,13 +21,13 @@ function newtonsLaws(){
   nLNewQuestionButton.update();
 
   if(nLGenerateQuestion){
-    nLRandom=random(0,3);
-    if(nLCode==0){
+    var rand = Math.floor(Math.random() * 100);
+    if(rand<50){
       nLGeneratePulleyAcceleration();
-    }else if(nLRandom==1){
+      nLCode=0;
+    }else{
       nLGeneratePulleyTension();
-    }else if(nLRandom==2){
-      nLGenerateSlideAcceleration();
+      nLCode=1;
     }
     nLGenerateQuestion=false;
   }
@@ -45,9 +45,9 @@ function newtonsLaws(){
     nLExplanation=nLTempExplanation;
   }
 
-  if(nLRandom==0||nLRandom==1){
+  if(nLCode==0||nLCode==1){
     nLDisplayPulley();
-  }else if(nLRandom==2){
+  }else if(nLCode==2){
     nLDisplaySlide();
   }
 
@@ -97,6 +97,10 @@ function nLGeneratePulleyTension(){
   }
 }
 
+function nLGenerateSlideAcceleration(){
+  //In progress
+}
+
 function nLDisplayPulley(){
   fill(0);
   line(385,170,450,170);
@@ -114,10 +118,9 @@ function nLDisplayPulley(){
   fill(0);
 }
 
-var theta=0;
-function nLGenerateSlideAcceleration(){
-  theta=Math.round(random(20,60));
-}
 function nLDisplaySlide(){
-  //In progress
+  strokeWeight(5);
+  line(385,350,585,350);
+  
+
 }
