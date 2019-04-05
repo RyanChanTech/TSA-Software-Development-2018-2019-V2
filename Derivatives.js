@@ -11,7 +11,7 @@ var derivatiesShowExplanation = false;
 function derivatives(){
   fill(255,238,153,100);
   noStroke();
-  rect(775,155,575,525,20,0,0,20);
+  rect(735,155,615,525,20,0,0,20);
   stroke(0);
   derivativesTextBox.update();
   derivativesCheckButton.update();
@@ -56,9 +56,9 @@ function derivatives(){
   strokeWeight(1); //reset to default value
   text("("+derivativesQuestion+") = ?",355,175);
   text("Feedback: " + derivativesFeedback,320,410);
-  text("Work/Explanation:",780,195);
+  text("Work/Explanation:",790,195);
   if(derivatiesShowExplanation){
-    text(derivativesExplanation,780,245);
+    text(derivativesExplanation,790,245);
   }
 }
 
