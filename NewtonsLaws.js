@@ -45,9 +45,9 @@ function newtonsLaws(){
     nLExplanation=nLTempExplanation;
   }
 
-  if(nLCode==0||nLCode==1){
+  if(nLRandom==0||nLRandom==1){
     nLDisplayPulley();
-  }else if(nLCode==2){
+  }else if(nLRandom==2){
     nLDisplaySlide();
   }
 
