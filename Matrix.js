@@ -42,11 +42,11 @@ function matrix(){
     // the matrix is 3X3
     if (matrixRandomType == 1){
       matrixAnswer = a1 * (a5 * a9 - a6 * a8) - a2 * (a4 * a9 - a6 * a7) + a3 * (a4 * a8 - a5 * a7);
-      matrixExplanation = "Apply the formula for evaluating\n the determinant of a 3 X 3 Matrix:\n\n    a1   b1   c1\n    a2   b2   c2\n    a3   b3   c3\n\n= "+
-      "a1 * ((b2*c3) - (b3*c2))\n - b1 * ((a2*c3) - (a3*c2))\n + c1 * ((a2*b3) - (a3*b2))\n\n= " +
-      a1 + " * ((" + a5 + "*" + a9 + ") - (" + a6 + "*" + a8 + "))\n " +
-      "- " + a2 + " * ((" + a4 + "*" + a9 + ") - (" + a6 + "*" + a7 + "))\n " +
-      "+ " + a3 + " * ((" + a4 + "*" + a8 + ") - (" + a5 + "*" + a7 + "))\n\n= " + matrixAnswer
+      matrixExplanation = "Apply the formula for evaluating\n the determinant of a 3 X 3 Matrix:\n    a1   b1   c1\n    a2   b2   c2\n    a3   b3   c3\n= "+
+      "a1 * ((b2*c3) - (b3*c2))\n   - b1 * ((a2*c3) - (a3*c2))\n   + c1 * ((a2*b3) - (a3*b2))\n= " +
+      a1 + " * ((" + a5 + "*" + a9 + ") - (" + a6 + "*" + a8 + "))\n   " +
+      "- " + a2 + " * ((" + a4 + "*" + a9 + ") - (" + a6 + "*" + a7 + "))\n   " +
+      "+ " + a3 + " * ((" + a4 + "*" + a8 + ") - (" + a5 + "*" + a7 + "))\n= " + matrixAnswer
       ;
     }
     matrixGenerateQuestion = false;
@@ -112,8 +112,8 @@ function matrix(){
     text("Work/Explanation:",800,195);
     if (matrixShowExplanation){
       strokeWeight(3);
-      line(820,325,820,435);
-      line(995,325,995,435);
+      line(820,285,820,395);
+      line(995,285,995,395);
       strokeWeight(1);//set to default
       text(matrixExplanation,800,240);
     }
