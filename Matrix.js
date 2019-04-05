@@ -1,6 +1,6 @@
 var matrixTextBox = new TextBox(320,310,350,40,30);
-var matrixCheckButton = new Button(320,350,350,40,"Check",30);
-var matrixNewQuestionButton = new Button(320,390,350,40,"New Question",30);
+var matrixCheckButton = new Button(380,360,180,40,"Check",30,xOffset=50);
+var matrixNewQuestionButton = new Button(370,410,220,40,"New Question",30,xOffset=15);
 var matrixGenerateQuestion = true;
 var matrixShowExplanation = false;
 var a1 = 0;
@@ -82,31 +82,39 @@ function matrix(){
     text(a2,490,215);
     text(a3,410,255);
     text(a4,490,255);
-    text("Feedback: " + matrixFeedback,320,470);
+    text("Feedback: " + matrixFeedback,320,490);
     text("Work/Explanation:",800,120);
     if (matrixShowExplanation){
+      strokeWeight(3);
+      line(820,255,820,330);
+      line(940,255,940,330);
+      strokeWeight(1);//set to default
       text(matrixExplanation,800,170);
     }
   }
   if (matrixRandomType == 1){
     strokeWeight(3);
     line(390,170,390,285);
-    line(560,170,560,285);
+    line(580,170,580,285);
     strokeWeight(1);//set to default
 
-    text("Evaluate the determinant of\n the 3 X 3 Matrix: ",320,120);
+    text("Evaluate the determinent of\n the 3 X 3 Matrix: ",320,120);
     text(a1,400,200);
-    text(a2,460,200);
-    text(a3,520,200);
+    text(a2,465,200);
+    text(a3,530,200);
     text(a4,400,240);
-    text(a5,460,240);
-    text(a6,520,240);
+    text(a5,465,240);
+    text(a6,530,240);
     text(a7,400,280);
-    text(a8,460,280);
-    text(a9,520,280);
-    text("Feedback: " + matrixFeedback,320,470);
+    text(a8,465,280);
+    text(a9,530,280);
+    text("Feedback: " + matrixFeedback,320,490);
     text("Work/Explanation:",800,120);
     if (matrixShowExplanation){
+      strokeWeight(3);
+      line(820,255,820,365);
+      line(995,255,995,365);
+      strokeWeight(1);//set to default
       text(matrixExplanation,800,170);
     }
   }
