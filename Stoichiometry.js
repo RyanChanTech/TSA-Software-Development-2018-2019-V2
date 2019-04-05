@@ -1,6 +1,6 @@
 var stoichTextBox = new TextBox(320,190,350,40,30);
-var stoichCheckButton = new Button(320,230,350,40,"Check",30);
-var stoichNewQuestionButton = new Button(320,270,350,40,"New Question",30);
+var stoichCheckButton = new Button(380,240,180,40,"Check",30,xOffset=50);
+var stoichNewQuestionButton = new Button(370,290,220,40,"New Question",30,xOffset=15);
 var stoichGenerateQuestion = true;
 var stoichrandom = 0;
 var hrand = 0;
@@ -8,7 +8,7 @@ var stoichAnswer = 0;
 var stoichFeedback="";
 var stoichExplanation = "";
 var varchoice = 0
-var stoichExplanation="First, Balance carbon on each side \n Second, Balance Hydrogen on each side \n Third, Balance oxygen on each side \n (easily done with W + Z/2)\n Finally, Multiply by 2 if you have a fraction";
+var stoichExplanation="First, Balance carbon on each side\n\nSecond, Balance Hydrogen on each side\n\nThird, Balance oxygen on each side\n          (easily done with W + Z/2)\n\nFinally, Multiply by 2 if you\n            have a fraction";
 var stoichShowExplanation = false;
 
 function stoich(){
@@ -60,13 +60,14 @@ function stoich(){
       stoichFeedback="Try again"
     }
 }
+  text("Work/Explanation:",780,170);
   if(stoichShowExplanation){
     text(stoichExplanation,780,220);
   }
 
   text("WC"+stoichrandom+"H"+hrand + " + XO2 = YCO2 + Z H20" ,320,120)
   text( "What does " + varchoice + " equal?", 320, 160)
-  text("Feedback: " + stoichFeedback,320,350);
+  text("Feedback: " + stoichFeedback,320,370);
 
 }
 
