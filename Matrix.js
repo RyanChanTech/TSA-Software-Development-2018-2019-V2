@@ -18,6 +18,10 @@ var matrixFeedback="";
 var matrixExplanation = "";
 
 function matrix(){
+  fill(255,238,153,100);
+  noStroke();
+  rect(775,155,575,525,20,0,0,20);
+  stroke(0);
   matrixTextBox.update();
   matrixCheckButton.update();
   matrixNewQuestionButton.update();
@@ -42,11 +46,11 @@ function matrix(){
     // the matrix is 3X3
     if (matrixRandomType == 1){
       matrixAnswer = a1 * (a5 * a9 - a6 * a8) - a2 * (a4 * a9 - a6 * a7) + a3 * (a4 * a8 - a5 * a7);
-      matrixExplanation = "Apply the formula for evaluating\n the determinant of a 3 X 3 Matrix:\n\n    a1   b1   c1\n    a2   b2   c2\n    a3   b3   c3\n\n= "+
-      "a1 * ((b2*c3) - (b3*c2))\n - b1 * ((a2*c3) - (a3*c2))\n + c1 * ((a2*b3) - (a3*b2))\n\n= " +
-      a1 + " * ((" + a5 + "*" + a9 + ") - (" + a6 + "*" + a8 + "))\n " +
-      "- " + a2 + " * ((" + a4 + "*" + a9 + ") - (" + a6 + "*" + a7 + "))\n " +
-      "+ " + a3 + " * ((" + a4 + "*" + a8 + ") - (" + a5 + "*" + a7 + "))\n\n= " + matrixAnswer
+      matrixExplanation = "Apply the formula for evaluating\n the determinant of a 3 X 3 Matrix:\n    a1   b1   c1\n    a2   b2   c2\n    a3   b3   c3\n= "+
+      "a1 * ((b2*c3) - (b3*c2))\n   - b1 * ((a2*c3) - (a3*c2))\n   + c1 * ((a2*b3) - (a3*b2))\n= " +
+      a1 + " * ((" + a5 + "*" + a9 + ") - (" + a6 + "*" + a8 + "))\n   " +
+      "- " + a2 + " * ((" + a4 + "*" + a9 + ") - (" + a6 + "*" + a7 + "))\n   " +
+      "+ " + a3 + " * ((" + a4 + "*" + a8 + ") - (" + a5 + "*" + a7 + "))\n= " + matrixAnswer
       ;
     }
     matrixGenerateQuestion = false;
@@ -83,13 +87,13 @@ function matrix(){
     text(a3,410,255);
     text(a4,490,255);
     text("Feedback: " + matrixFeedback,320,490);
-    text("Work/Explanation:",800,120);
+    text("Work/Explanation:",800,195);
     if (matrixShowExplanation){
       strokeWeight(3);
-      line(820,255,820,330);
-      line(940,255,940,330);
+      line(820,330,820,405);
+      line(940,330,940,405);
       strokeWeight(1);//set to default
-      text(matrixExplanation,800,170);
+      text(matrixExplanation,800,245);
     }
   }
   if (matrixRandomType == 1){
@@ -98,7 +102,7 @@ function matrix(){
     line(580,170,580,285);
     strokeWeight(1);//set to default
 
-    text("Evaluate the determinant of\n the 3 X 3 Matrix: ",320,120);
+    text("Evaluate the determinent of\n the 3 X 3 Matrix: ",320,120);
     text(a1,400,200);
     text(a2,465,200);
     text(a3,530,200);
@@ -109,13 +113,13 @@ function matrix(){
     text(a8,465,280);
     text(a9,530,280);
     text("Feedback: " + matrixFeedback,320,490);
-    text("Work/Explanation:",800,120);
+    text("Work/Explanation:",800,195);
     if (matrixShowExplanation){
       strokeWeight(3);
-      line(820,255,820,365);
-      line(995,255,995,365);
+      line(820,285,820,395);
+      line(995,285,995,395);
       strokeWeight(1);//set to default
-      text(matrixExplanation,800,170);
+      text(matrixExplanation,800,240);
     }
   }
 }

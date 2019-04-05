@@ -12,6 +12,10 @@ var stoichExplanation="First, Balance carbon on each side\n\nSecond, Balance Hyd
 var stoichShowExplanation = false;
 
 function stoich(){
+  fill(255,238,153,100);
+  noStroke();
+  rect(775,155,575,525,20,0,0,20);
+  stroke(0);
   stoichTextBox.update();
   stoichCheckButton.update();
   stoichNewQuestionButton.update();
@@ -60,9 +64,9 @@ function stoich(){
       stoichFeedback="Try again"
     }
 }
-  text("Work/Explanation:",780,170);
+  text("Work/Explanation:",780,190);
   if(stoichShowExplanation){
-    text(stoichExplanation,780,220);
+    text(stoichExplanation,780,240);
   }
 
   text("WC"+stoichrandom+"H"+hrand + " + XO2 = YCO2 + Z H20" ,320,120)

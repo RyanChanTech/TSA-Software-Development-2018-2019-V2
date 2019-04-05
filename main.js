@@ -1,6 +1,6 @@
 /*IMPORTANT: The x and y coordinate system looks like this:
 https://openclipart.org/detail/234445/computer-math-coordinate-system*/
-//test
+
 //Switch parameters: (x,y,width,height,text,text size, x offset (optional))
 var mathSwitch=new CategorySwitch(10,80,280,50,"Math",40,xOffset=95);
 var physicsSwitch=new CategorySwitch(10,150,280,50,"Physics",40,xOffset=75);
@@ -20,7 +20,7 @@ var logo;
 function setup() {
   //You can ignore these. It only sets the font and canvas size
   textFont("Trebuchet MS");
-  createCanvas(1550, 1200);
+  createCanvas(1800, 1080);
   logo = loadImage("images/logo2.png");
 }
 

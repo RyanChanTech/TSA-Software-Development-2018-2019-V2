@@ -1,7 +1,7 @@
-var nLButtons = [new Button(320,380,150,40,"",30),new Button(320,430,150,40,"",30),new Button(320,480,150,40,"",30)];
+var nLButtons = [new Button(320,380,120,40,"",30,xOffset=20),new Button(320,430,120,40,"",30,xOffset=20),new Button(320,480,120,40,"",30,xOffset=20)];
 var nLAnswerButton = 0;
 
-var nLNewQuestionButton = new Button(320,520,350,40,"New Question",30);
+var nLNewQuestionButton = new Button(320,530,220,40,"New Question",30,xOffset=15);
 var nLFeedback="";
 var nLExplanation="";
 var nLCode=-1;
@@ -11,6 +11,10 @@ var nLTempExplanation="";
 var nLGenerateQuestion = true;
 
 function newtonsLaws(){
+  fill(255,238,153,100);
+  noStroke();
+  rect(775,155,575,525,20,0,0,20);
+  stroke(0);
   nLButtons[0].update();
   nLButtons[1].update();
   nLButtons[2].update();
@@ -47,12 +51,11 @@ function newtonsLaws(){
     nLDisplaySlide();
   }
 
-  line(700,150,700,595);
   text("Work/Explanation: ",750,200);
   textSize(20)
   text(nLExplanation,750,200)
   textSize(30);
-  text("Feedback:" + nLFeedback,320,595);
+  text("Feedback:" + nLFeedback,320,610);
 }
 
 var nLMass1 = 0;

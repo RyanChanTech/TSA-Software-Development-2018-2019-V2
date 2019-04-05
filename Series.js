@@ -14,6 +14,10 @@ var seriesFeedback="";
 var seriesExplanation = "";
 
 function series(){
+  fill(255,238,153,100);
+  noStroke();
+  rect(775,155,575,525,20,0,0,20);
+  stroke(0);
   //image(sigmaSymbol,335,205);
   strokeWeight(8);
   line(340,210,370,210);
@@ -74,9 +78,9 @@ function series(){
     text(seriesRandomNumberOne + " + " + seriesRandomNumberTwo + "n",400,240);
     text("Feedback: " + seriesFeedback,320,490);
 
-    text("Work/Explanation:",800,120);
+    text("Work/Explanation:",800,200);
     if (seriesShowExplanation){
-      text(seriesExplanation,800,170);
+      text(seriesExplanation,800,250);
     }
   }
   if (seriesRandomType == 1){
@@ -88,9 +92,9 @@ function series(){
     text(seriesRandomNumberOne + " . " + seriesRandomNumberTwo + "^(n - 1)",400,240);
     text("Feedback: " + seriesFeedback,320,490);
 
-    text("Work/Explanation:",800,120);
+    text("Work/Explanation:",800,200);
     if (seriesShowExplanation){
-      text(seriesExplanation,800,170);
+      text(seriesExplanation,800,250);
     }
   }
 }
