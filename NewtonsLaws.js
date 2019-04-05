@@ -97,10 +97,6 @@ function nLGeneratePulleyTension(){
   }
 }
 
-function nLGenerateSlideAcceleration(){
-  //In progress
-}
-
 function nLDisplayPulley(){
   fill(0);
   line(385,170,450,170);
@@ -118,9 +114,14 @@ function nLDisplayPulley(){
   fill(0);
 }
 
+var theta=0;
+function nLGenerateSlideAcceleration(){
+  theta=Math.round(random(20,60));
+}
+
 function nLDisplaySlide(){
   strokeWeight(5);
   line(385,350,585,350);
-  
+
 
 }
