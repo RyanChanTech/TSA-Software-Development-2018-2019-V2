@@ -97,7 +97,7 @@ function nLGeneratePulleyTension(){
   }
 }
 
-function nLGenerateSlide(){
+function nLGenerateSlideAcceleration(){
   //In progress
 }
 
