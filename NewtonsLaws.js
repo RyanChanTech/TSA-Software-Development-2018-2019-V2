@@ -21,7 +21,7 @@ function newtonsLaws(){
   nLNewQuestionButton.update();
 
   if(nLGenerateQuestion){
-    nLRandom=Math.floor(random(0,3));
+    nLRandom=2;//Math.floor(random(0,3));
     if(nLRandom==0){
       nLGeneratePulleyAcceleration();
     }else if(nLRandom==1){
@@ -124,12 +124,13 @@ function nLGenerateSlideAcceleration(){
 }
 
 function nLDisplaySlide(){
-  strokeWeight(5);
-  line(385,350,585,350);
+  strokeWeight(2);
   TrigOpposite=Math.tan(radians(theta)) * 200;
-  line(385,350,385,350-TrigOpposite);
-  line();
-  strokeWeight(0);
+  triangle(385,350,385,350-TrigOpposite,585,350);
+  noFill();
+  rect(385,350-TrigOpposite,50,50);
+  fill(0);
+  strokeWeight(1);
 
 
 }
