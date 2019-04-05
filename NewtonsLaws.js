@@ -4,7 +4,7 @@ var nLAnswerButton = 0;
 var nLNewQuestionButton = new Button(320,530,220,40,"New Question",30,xOffset=15);
 var nLFeedback="";
 var nLExplanation="";
-var nLCode=-1;
+var nLRandom=-1;
 var nLQuestion="";
 var nLTempExplanation="";
 
@@ -21,13 +21,13 @@ function newtonsLaws(){
   nLNewQuestionButton.update();
 
   if(nLGenerateQuestion){
-    var rand = Math.floor(Math.random() * 100);
-    if(rand<50){
+    nLRandom=Math.floor(random(0,3));
+    if(nLRandom==0){
       nLGeneratePulleyAcceleration();
-      nLCode=0;
-    }else{
+    }else if(nLRandom==1){
       nLGeneratePulleyTension();
-      nLCode=1;
+    }else if(nLRandom==2){
+      nLGenerateSlideAcceleration();
     }
     nLGenerateQuestion=false;
   }
@@ -45,9 +45,9 @@ function newtonsLaws(){
     nLExplanation=nLTempExplanation;
   }
 
-  if(nLCode==0||nLCode==1){
+  if(nLRandom==0||nLRandom==1){
     nLDisplayPulley();
-  }else if(nLCode==2){
+  }else if(nLRandom==2){
     nLDisplaySlide();
   }
 
@@ -122,6 +122,5 @@ function nLGenerateSlideAcceleration(){
 function nLDisplaySlide(){
   strokeWeight(5);
   line(385,350,585,350);
-
 
 }
