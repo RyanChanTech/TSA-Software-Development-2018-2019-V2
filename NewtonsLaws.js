@@ -1,4 +1,4 @@
-var nLButtons = [new Button(320,380,120,40,"",30,xOffset=20),new Button(320,430,120,40,"",30,xOffset=20),new Button(320,480,120,40,"",30,xOffset=20)];
+var nLButtons = [new Button(320,380,160,40,"A) ",30,xOffset=20),new Button(320,430,160,40,"B) ",30,xOffset=20),new Button(320,480,160,40,"C) ",30,xOffset=20)];
 var nLAnswerButton = 0;
 
 var nLNewQuestionButton = new Button(320,530,220,40,"New Question",30,xOffset=15);
@@ -22,6 +22,9 @@ function newtonsLaws(){
 
   if(nLGenerateQuestion){
     nLRandom=Math.floor(random(0,3));
+    nLButtons[0].text= "A) ";
+    nLButtons[1].text= "B) ";
+    nLButtons[2].text= "C) ";
     if(nLRandom==0){
       nLGeneratePulleyAcceleration();
     }else if(nLRandom==1){
@@ -72,9 +75,9 @@ function nLGeneratePulleyAcceleration(){
   nLAnswerButtonIndex = Math.floor(Math.random() * 3);
   for(var i=0;i<3;i++){
     if(i==nLAnswerButtonIndex){
-      nLButtons[i].text=acceleration;
+      nLButtons[i].text+=acceleration;
     }else{
-      nLButtons[i].text=Math.round(((Math.random() * 25)+1)*100)/100;
+      nLButtons[i].text+=Math.round(((Math.random() * 25)+1)*100)/100;
     }
   }
 }
@@ -90,9 +93,9 @@ function nLGeneratePulleyTension(){
   nLAnswerButton = Math.floor(Math.random() * 3);
   for(var i=0;i<3;i++){
     if(i==nLAnswerButton){
-      nLButtons[i].text=tension;
+      nLButtons[i].text+=tension;
     }else{
-      nLButtons[i].text=Math.round(((Math.random() * 120)+1)*100)/100;
+      nLButtons[i].text+=Math.round(((Math.random() * 120)+1)*100)/100;
     }
   }
 }
@@ -130,9 +133,9 @@ function nLGenerateSlideAcceleration(){
   nLAnswerButton = Math.floor(Math.random() * 3);
   for(var i=0;i<3;i++){
     if(i==nLAnswerButton){
-      nLButtons[i].text=acceleration;
+      nLButtons[i].text+=acceleration;
     }else{
-      nLButtons[i].text=random(0,5).toFixed(2);
+      nLButtons[i].text+=random(0,5).toFixed(2);
     }
   }
 }
