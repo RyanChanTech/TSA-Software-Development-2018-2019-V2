@@ -10,6 +10,10 @@ var customExplanation="";
 var customFeedback="";
 
 function custom(){
+  fill(255,238,153,100);
+  noStroke();
+  rect(735,155,615,525,10,0,0,10);
+  stroke(0);
   customTextBox.update();
   customCheckButton.update();
   customNewQuestionButton.update();
@@ -32,12 +36,13 @@ function custom(){
       customFeedback="Try again"
     }
 
-    customExplanation=customQuestion[2]+"\nAnswer: "+customQuestion[1];
+    customExplanation=customQuestion[2]+
+    if custom"\nAnswer: "+customQuestion[1];
   }
 
   text(customQuestion[0],320,120);
   text("Feedback: " + customFeedback,320,325);
 
-  text("Work/Explanation:",800,120);
-  text(customExplanation,800,170);
+  text("Work/Explanation:",800,200);
+  text(customExplanation,800,250);
 }
