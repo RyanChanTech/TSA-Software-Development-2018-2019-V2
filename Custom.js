@@ -30,14 +30,16 @@ function custom(){
   }
 
   if(customCheckButton.clicked){
-    if(customTextBox.data==customQuestion[1]){
+    if(customTextBox.data.toLowerCase()==customQuestion[1].toLowerCase()){
       customFeedback="Correct!";
     }else{
       customFeedback="Try again"
     }
 
-    customExplanation=customQuestion[2]+
-    if custom"\nAnswer: "+customQuestion[1];
+    customExplanation="Answer: "+customQuestion[1];
+    if (customQuestion[2] != customQuestion[1]){
+      customExplanation = customQuestion[2] + "\n" + customExplanation;
+    }
   }
 
   text(customQuestion[0],320,120);
