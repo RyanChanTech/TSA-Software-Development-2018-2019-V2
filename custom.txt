@@ -1,1 +1,5 @@
 Question;Answer;Explanation
+Where is the PA TSA State Conference?;Seven Springs;Google it
+In what year was TSA founded?1978;Google it
+What does 1/x approach as x approaches infinity?;0;Take the limit of 1/x as x approaches infinity
+What is the powerhouse of the cell?;Mitocondria;Read chapter 3 in the biology book
