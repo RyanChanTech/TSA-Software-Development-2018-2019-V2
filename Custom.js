@@ -36,8 +36,7 @@ function custom(){
       customFeedback="Try again"
     }
 
-    customExplanation=customQuestion[2]+
-    if custom"\nAnswer: "+customQuestion[1];
+    customExplanation=customQuestion[2]+"\nAnswer: "+customQuestion[1];
   }
 
   text(customQuestion[0],320,120);
