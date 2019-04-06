@@ -21,7 +21,7 @@ function newtonsLaws(){
   nLNewQuestionButton.update();
 
   if(nLGenerateQuestion){
-    nLRandom=Math.floor(random(0,3));
+    nLRandom=Math.floor(random(0,4));
     nLButtons[0].text= "A) ";
     nLButtons[1].text= "B) ";
     nLButtons[2].text= "C) ";
@@ -29,7 +29,7 @@ function newtonsLaws(){
       nLGeneratePulleyAcceleration();
     }else if(nLRandom==1){
       nLGeneratePulleyTension();
-    }else if(nLRandom==2){
+    }else{
       nLGenerateSlideAcceleration();
     }
     nLGenerateQuestion=false;
@@ -50,7 +50,7 @@ function newtonsLaws(){
 
   if(nLRandom==0||nLRandom==1){
     nLDisplayPulley();
-  }else if(nLRandom==2){
+  }else if(nLRandom>=2){
     nLDisplaySlide();
   }
 

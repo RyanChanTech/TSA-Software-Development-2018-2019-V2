@@ -19,6 +19,7 @@ var logo;
 //The setup function only runs once
 function setup() {
   //You can ignore these. It only sets the font and canvas size
+  frameRate(25);
   textFont("Trebuchet MS");
   createCanvas(1800, 1080);
   logo = loadImage("images/logo2.png");
