@@ -5,7 +5,6 @@ Legally, are tomatoes fruits or vegetables?;Vegetables;Vegetables
 What can travel around the world while staying in a corner?;Stamp;Stamp
 I'm tall when I'm young and I'm short when I'm old. What am I?;Candle;Candle
 What has hands but cannot clap?;Clock;Clock
-Paul, an assistant at a butcher's shop, is six feet tall, and wears size 9 shoes. What does he weigh?;Meat;Meat
 Which word in the dictionary is spelled incorrectly?;Incorrectly;Incorrectly
 What gets broken without being held?;Promise;Promise
 How many of each species did Moses take on the ark with him?;None;Moses wasn't on the ark.Noah was.
