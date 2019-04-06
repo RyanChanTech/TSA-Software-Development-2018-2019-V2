@@ -16,7 +16,7 @@ function CategorySwitch(x,y,w,h,t,ts,xOffset=5){
     strokeWeight(1);
     if(mouseIsPressed&&mouseX>x&&mouseX<x+w&&mouseY>y&&mouseY<y+h){
       this.switchedOn = true;
-    }else if(mouseIsPressed&&mouseX<300&&mouseY<300&&(mouseX<x||mouseX>x+w||mouseY<y||mouseY>y+h)){
+    }else if(mouseIsPressed&&mouseX<300&&mouseY<350&&(mouseX<x||mouseX>x+w||mouseY<y||mouseY>y+h)){
       this.switchedOn = false;
     }
   }
