@@ -61,7 +61,6 @@ function matrix(){
   }
 
   if (matrixNewQuestionButton.clicked==true){
-    text("",800,170);
     matrixGenerateQuestion = true;
     matrixShowExplanation=false;
   }

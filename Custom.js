@@ -26,6 +26,7 @@ function custom(){
   }
 
   if(customNewQuestionButton.clicked){
+    customExplanation = "";
       customGenerateQuestion = true;
   }
 
@@ -45,6 +46,6 @@ function custom(){
   text(customQuestion[0],320,120);
   text("Feedback: " + customFeedback,320,325);
 
-  text("Work/Explanation:",800,200);
-  text(customExplanation,800,250);
+  text("Work/Explanation:",760,200);
+  text(customExplanation,760,250);
 }
