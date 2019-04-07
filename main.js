@@ -23,7 +23,7 @@ function setup() {
   frameRate(25);
   textFont("Trebuchet MS");
   createCanvas(1800, 1080);
-  logo = loadImage("images/logo2.png");
+  logo = loadImage("images/logo3.png");
   customQuestions=loadStrings("custom.txt");
 }
 
