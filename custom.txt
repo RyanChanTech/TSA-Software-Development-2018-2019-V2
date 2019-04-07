@@ -1,4 +1,4 @@
-What is the powerhouse of the cell?;Mitocondria;Read chapter 7
+What is the powerhouse of the cell?;Mitochondrion;Read chapter 7
 What year was TSA founded?;1978;Google it
 Why do coins make your hands smell funny?;Iron;Iron
 Legally, are tomatoes fruits or vegetables?;Vegetables;Vegetables
@@ -7,13 +7,66 @@ I'm tall when I'm young and I'm short when I'm old. What am I?;Candle;Candle
 What has hands but cannot clap?;Clock;Clock
 Which word in the dictionary is spelled incorrectly?;Incorrectly;Incorrectly
 What gets broken without being held?;Promise;Promise
-How many of each species did Moses take on the ark with him?;None;Moses wasn't on the ark.Noah was.
+How many of each species did Moses take on the ark with him?;None;Moses wasn't on the ark. Noah was.
 Feed me and I live, yet give me a drink and I die.;Fire;Fire
 Take off my skin, I won't cry, but you will. What am I?;Onion;Onion
 What is at the end of a rainbow?;W;W
-What is always coming but never arrives?;Tomorrow;When tomorrow "arrives", it's today, not tomorrow.
 Voiceless it cries, Wingless flutters, Toothless bites, Mouthless mutters.;Wind;"My Precious!"
 A box without hinges, key, or lid, yet golden treasure inside is hid.;Eggses;"Gollum, Gollum!"
-Is it legal for a man in California to marry his widow's sister?;No; It is not legal to get married if you are dead.
-What word describes a woman who doesn't have all her fingers on one hand?;Normal;She is lucky not to have all her fingers (10) on one hand.
+Is it legal for a man in California to marry his widow's sister?;No;It's not legal to get married if you are dead.
 What's the name of the space between your thumb and other fingers?;Purlicue;Purlicue
+23 X 11 = ? (Mental computation only!);253;2 + 3 = 5 => 23 X 11 = 2 5 3
+47 X 43 = ? (Mental computation only!);2021;4*(4+1)=20,7*3=21,=> 47*43=2021
+68 X 62 = ? (Mental computation only!);4216;6*(6+1)=42,8*2=16,=> 68*62=4216
+91 X 99 = ? (Mental computation only!);9009;9*(9+1)=90,1*9=9,=> 91*99=9009
+34 X 46 = ? (Mental computation only!);1564;34*46=(40-6)*(40+6)=40^2-6^2
+73 X 87 = ? (Mental computation only!);6351;73*87=(80-7)*(80+7)=80^2-7^2
+12 X 28 = ? (Mental computation only!);336;12*28=(20-8)*(20+8)=20^2-8^2
+What has neither nails or bones, but has four fingers and a thumb?;Glove;Glove
+Which is the only American state to begin with the letter 'p'?;Pennsylvania;Pennsylvania
+What is the world's longest river?;Amazon;Amazon
+Name the world's largest ocean.;Pacific;Pacific
+What is the diameter of Earth?;8,000 miles;8,000 miles
+What is the capital city of Spain?;Madrid;Madrid
+What is Mac, an Apple product, short for?;Macintosh;Macintosh
+What is another word for lexicon?;Dictionary;Dictionary
+Name the seventh planet from the sun.;Uranus;Uranus
+Who invented the rabies vaccination?;Louis Pasteur;Louis Pasteur
+In which film did Humphrey Bogart say, "We'll always have Paris?";Casablanca;Casablanca
+What is the oldest film ever made?;Roundhay Garden Scene;Roundhay Garden Scene was made in 1888.
+Which chess piece can only move diagonally?;Bishop;Bishop
+When did the Cold War end?;1989;1989
+What sign of the Zodiac is represented by a goat?;Capricon;Capricon
+The only one continent on the earth that doesn’t have any deserts;Europe;Europe
+What is the color of an emerald?;Green;Green
+In which city in the USA was President Kennedy assassinated?;Dallas;Dallas
+Roman soldiers were paid part of their salary in salt;True;True
+The ice in the Antarctic reaches a depth of:;16,000ft;16,000ft
+The color of polar bear’s skin is:;Black;Black
+What is the smallest state in land area in the US?;Rhode Island;Rhode Island;Rhode Island is 1,034 square miles large.
+What is the smallest state in population in the US?;Wyoming;Wyoming is populated by only 579,315 people.
+What is the height of the Mount Everest?;29028ft;29028ft
+The water bird stands on one leg:;Crane;Crane
+In which country would you be if you were travelling by a Bullet train?;Japan;Japan
+In which Italian City is the Bridge of Sighs?;Venice;Venice
+Which creatures are immune to snake poison?;Boar;Boar
+Which British king ascended the throne at the age of ten?;Edward VI;Edward VI
+Which explorer discovered the West Indies?;Christopher Columbus;Christopher Columbus
+In western music which is the queen of instruments?;Violin;Violin
+Which city is known as Big Apple?;New York;New York
+What is the science of colors?;Chromatics;Chromatics
+Which force done by the system will increase the potential energy of the system?;Conservative force;Conservative force
+The atmosphere is held to the earth by _?;Gravity;Gravity
+If the physical properties of a solid do not depend on the direction, the solid is known as?;Isotropic;Isotropic
+What is the name of the chemical with formula KCNS?;;Potassium thiocyanate;Potassium thiocyanate
+When sound waves travel from air to water which of these remains constant?;Frequency;Frequency
+Who was the first to study the solar system?;Isaac Newton;Isaac Newton
+HTML stands for?;Hypertext Markup Language;Hypertext Markup Language
+Which country was known previously as Indo China?;Vietnam;Vietnam
+What is the Roman symbol for number 50?;L;L
+Which animal is called the ‘old man of the sea’?;Otter;Otter
+Blue revolution refers to the production of what?;Fish;Fish
+Who abolished slavery in America?;Abraham Lincoln;Abraham Lincoln
+One planet in the night sky is easily identifiable because of its reddish hue.;Mars;Mars
+Name the ‘unsinkable ship’ sank on its maiden voyage.;Titanic;Titanic
+Write a word which connects cook, atmosphere and blood?;Pressure;Pressure

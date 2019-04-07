@@ -35,7 +35,6 @@ function derivatives(){
   }
 
   if(derivativesNewQuestionButton.clicked==true){
-    derivativesQuestion="";
     derivativesAnswer="";
     derivativesGenerateQuestion = true;
     derivatiesShowExplanation=false;
