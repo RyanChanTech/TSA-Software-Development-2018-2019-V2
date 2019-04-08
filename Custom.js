@@ -26,8 +26,9 @@ function custom(){
   }
 
   if(customNewQuestionButton.clicked){
+    customTextBox.data="";
     customExplanation = "";
-      customGenerateQuestion = true;
+    customGenerateQuestion = true;
   }
 
   if(customCheckButton.clicked){

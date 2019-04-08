@@ -37,6 +37,7 @@ function algebra(){
   to true, so it generates a new question in the next frame
   */
   if(algebraNewQuestionButton.clicked==true){
+    algebraTextBox.data="";
     algebraExplanation = ""
     algebraGenerateQuestion = true;
   }

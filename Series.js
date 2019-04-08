@@ -59,6 +59,7 @@ function series(){
   }
 
   if (seriesNewQuestionButton.clicked==true){
+    seriesTextBox.data="";
     text("",800,170);
     seriesGenerateQuestion = true;
     seriesShowExplanation=false;

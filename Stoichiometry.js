@@ -52,6 +52,7 @@ function stoich(){
   }
 
   if(stoichNewQuestionButton.clicked==true){
+    stoichTextBox.data = "";
     stoichGenerateQuestion = true;
   }
 
