@@ -17,6 +17,8 @@ function displayDecorations(){
     fill(100,200,100,100);
   }else if(chemistrySwitch.switchedOn){
     fill(200,100,200,100);
+  }else if(customSwitch.switchedOn){
+      fill(255,130,10,100);
   }else{
     fill(100,100,100,100);
   }
