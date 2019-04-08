@@ -55,11 +55,8 @@ Which explorer discovered the West Indies?;Christopher Columbus;Christopher Colu
 In western music which is the queen of instruments?;Violin;Violin
 Which city is known as Big Apple?;New York;New York
 What is the science of colors?;Chromatics;Chromatics
-Which force done by the system will increase the potential energy of the system?;Conservative force;Conservative force
 The atmosphere is held to the earth by _?;Gravity;Gravity
-If the physical properties of a solid do not depend on the direction, the solid is known as?;Isotropic;Isotropic
-What is the name of the chemical with formula KCNS?;;Potassium thiocyanate;Potassium thiocyanate
-When sound waves travel from air to water which of these remains constant?;Frequency;Frequency
+What is the name of the chemical with formula KCNS?;Potassium thiocyanate;Potassium thiocyanate
 Who was the first to study the solar system?;Isaac Newton;Isaac Newton
 HTML stands for?;Hypertext Markup Language;Hypertext Markup Language
 Which country was known previously as Indo China?;Vietnam;Vietnam
