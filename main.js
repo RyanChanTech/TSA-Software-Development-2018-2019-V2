@@ -22,7 +22,7 @@ function setup() {
   //You can ignore these. It only sets the font and canvas size
   frameRate(25);
   textFont("Trebuchet MS");
-  createCanvas(1800, 730);
+  createCanvas(1800, 735);
   logo = loadImage("images/logo3.png");
   customQuestions=loadStrings("custom.txt");
 }
