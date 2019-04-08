@@ -1,4 +1,4 @@
-What is the powerhouse of the cell?;Mitochondrion;Read chapter 7
+﻿What is the powerhouse of the cell?;Mitochondrion;Read chapter 7
 What year was TSA founded?;1978;Google it
 Why do coins make your hands smell funny?;Iron;Iron
 Legally, are tomatoes fruits or vegetables?;Vegetables;Vegetables
@@ -46,7 +46,6 @@ The color of polar bear’s skin is:;Black;Black
 What is the smallest state in land area in the US?;Rhode Island;Rhode Island;Rhode Island is 1,034 square miles large.
 What is the smallest state in population in the US?;Wyoming;Wyoming is populated by only 579,315 people.
 What is the height of the Mount Everest?;29028ft;29028ft
-The water bird stands on one leg:;Crane;Crane
 In which country would you be if you were travelling by a Bullet train?;Japan;Japan
 In which Italian City is the Bridge of Sighs?;Venice;Venice
 Which creatures are immune to snake poison?;Boar;Boar
