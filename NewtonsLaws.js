@@ -1,5 +1,5 @@
 var nLButtons = [new Button(320,380,160,40,"A) ",30,xOffset=20),new Button(320,430,160,40,"B) ",30,xOffset=20),new Button(320,480,160,40,"C) ",30,xOffset=20)];
-var nLAnswerButton = 0;
+var nLAnswerButtonIndex = 0;
 
 var nLNewQuestionButton = new Button(320,530,220,40,"New Question",30,xOffset=15);
 var nLFeedback="";
@@ -40,7 +40,7 @@ function newtonsLaws(){
     nLExplanation="";
   }
 
-  if(nLButtons[nLAnswerButton].clicked){
+  if(nLButtons[nLAnswerButtonIndex].clicked){
     nLFeedback="Correct!";
     nLExplanation=nLTempExplanation;
   }else if(nLButtons[0].clicked||nLButtons[1].clicked||nLButtons[2].clicked){
@@ -95,9 +95,9 @@ function nLGeneratePulleyTension(){
   nLTempExplanation="\n\nStep 1- Use F = ma = sum of all forces\n\nStep 2- Forces on m2 are gravity and tension,\n           so m2a = m2g - T"+
   "\n\nStep 3- Force on m1 is only tension, so m1a = T\n\nStep 4- Solve for a from Step 3 to get a = T / m1 "+
   "\n\nStep 5- Use substitution to get\n           m2(T  / m1) = m2g - T\n\nStep 6- Solve for T to get: " + tension;
-  nLAnswerButton = Math.floor(Math.random() * 3);
+  nLAnswerButtonIndex = Math.floor(Math.random() * 3);
   for(var i=0;i<3;i++){
-    if(i==nLAnswerButton){
+    if(i==nLAnswerButtonIndex){
       nLButtons[i].text+=tension;
     }else{
       nLButtons[i].text+=Math.round(((Math.random() * 120)+1)*100)/100;
@@ -126,7 +126,7 @@ var theta=0;
 var TrigOpposite=0;
 function nLGenerateSlideAcceleration(){
   theta=Math.round(random(10,40));
-  var friction=random(1).toFixed(2);
+  var friction=random(Math.tan(radians(theta))).toFixed(2);
   var mass=Math.round(random(3,20));
   var acceleration=(9.8*Math.sin(radians(theta))-friction*9.8*Math.cos(radians(theta))).toFixed(2);
   nLQuestion="The mass of the box is "+ mass+ "kg, the angle is " + theta +" degrees, and the friction coefficient is "+ friction+
@@ -135,9 +135,9 @@ function nLGenerateSlideAcceleration(){
   "\n\nCancel m on both sides of the equation:\n   a = gsinθ - μgcosθ\n\nSubtitute: g =9.8m/s ; θ = " + theta + " ; μ = " + friction +
   "\n   to get: Acceleration = a = " + acceleration;
 
-  nLAnswerButton = Math.floor(Math.random() * 3);
+  nLAnswerButtonIndex = Math.floor(Math.random() * 3);
   for(var i=0;i<3;i++){
-    if(i==nLAnswerButton){
+    if(i==nLAnswerButtonIndex){
       nLButtons[i].text+=acceleration;
     }else{
       nLButtons[i].text+=random(0,5).toFixed(2);
@@ -161,6 +161,4 @@ function nLDisplaySlide(){
   noFill();
   rect(0, 0, 35, 35);
   pop();
-
-
 }

@@ -12,18 +12,20 @@ var derivativesSwitch = new Switch(10,480,280,45,"Derivatives",35,xOffset=55);
 var seriesSwitch = new Switch(10,550,280,45,"Series",35,xOffset=95);
 var matrixSwitch = new Switch(10,620,280,45,"Matrixes",35,xOffset=75);
 
-var newtonsLawsSwitch = new Switch(10,450,280,50,"Newton's Laws",35,xOffset=28);
-var stoichSwitch = new Switch(10,450,280,50,"Stoichiometry",35,xOffset=31);
+var newtonsLawsSwitch = new Switch(10,410,280,50,"Newton's Laws",35,xOffset=28);
+var circuitSwitch = new Switch(10,480,280,50,"Circuits",35,xOffset=70);
+
+var stoichSwitch = new Switch(10,410,280,50,"Stoichiometry",35,xOffset=31);
 
 
 var logo;
 //The setup function only runs once
 function setup() {
-  //You can ignore these. It only sets the font and canvas size
   frameRate(25);
   textFont("Trebuchet MS");
   createCanvas(1800, 735);
   logo = loadImage("images/logo3.png");
+  loadCircuitImages();
   customQuestions=loadStrings("custom.txt");
 }
 
@@ -43,6 +45,7 @@ function draw() {
     matrixSwitch.update();
   }else if(physicsSwitch.switchedOn==true){
     newtonsLawsSwitch.update();
+    circuitSwitch.update();
   }else if(chemistrySwitch.switchedOn==true){
     stoichSwitch.update();
   }
@@ -62,6 +65,8 @@ function draw() {
     matrix();
   }else if(customSwitch.switchedOn==true){
     custom();
+  }else if(circuitSwitch.switchedOn==true){
+    circuit();
   }else{
     image(logo,300,80);
   }
