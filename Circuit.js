@@ -1,4 +1,4 @@
-var circuitButtons = [new Button(320,430,170,40,"A) ",30,xOffset=20),new Button(320,480,170,40,"B) ",30,xOffset=20),new Button(320,530,170,40,"C) ",30,xOffset=20)];
+var circuitButtons = [new Button(320,430,220,40,"A) ",30,xOffset=20),new Button(320,480,220,40,"B) ",30,xOffset=20),new Button(320,530,220,40,"C) ",30,xOffset=20)];
 var circuitAnswerButtonIndex = 0;
 
 var circuitNewQuestionButton = new Button(320,580,220,40,"New Question",30,xOffset=15);
@@ -60,39 +60,39 @@ function circuit(){
       if(resistorRandom==0){
         circuitTempExplanation+="Step 1- the total resistance is just R1";
       }else if(resistorRandom==1){
-        circuitTempExplanation+="Step 1- Use (R3(R1+R2))/(R3+R2+R1) to find the total resistance"
+        circuitTempExplanation+="Step 1- Use (R3(R1+R2))/(R3+R2+R1) to find the total resistance";
       }
       if(capacitorRandom==0){
-        circuitTempExplanation+="\n\nStep 2- the total capacitance is just C1"
+        circuitTempExplanation+="\n\nStep 2- the total capacitance is just C1";
       }else if(capacitorRandom==1){
-        circuitTempExplanation+="\n\nStep 2- Use C3+(C1*C2)/(C1+C2) to find the total capacitance"
+        circuitTempExplanation+="\n\nStep 2- Use C3+(C1*C2)/(C1+C2) to find the total capacitance";
       }
-      circuitTempExplanation+="\n\nStep 3- Multiply the total resistance and the total capacitance\n           to get "+answer.toFixed(1)
+      circuitTempExplanation+="\n\nStep 3- Multiply the total resistance and the total capacitance\n           to get "+answer.toFixed(2);
     }else if(questionType==1){
       circuitQuestion="Which is closest to the total resistance of the circuit?"
       answer=circuitR;
 
       if(resistorRandom==0){
-        circuitTempExplanation+="Step 1- the total resistance is just R1";
+        circuitTempExplanation+="Step 1- the total resistance is just R1, which is "+answer.toFixed(2);
       }else if(resistorRandom==1){
-        circuitTempExplanation+="Step 1- Use (R3(R1+R2))/(R3+R2+R1) to find the total resistance"
+        circuitTempExplanation+="Step 1- Use (R3(R1+R2))/(R3+R2+R1) to find the total resistance\n           which is "+answer.toFixed(2);
       }
     }else{
-      circuitQuestion="Which is closest to the total capacitance of the circuit?"
+      circuitQuestion="Which is closest to the total capacitance of the circuit?";
       answer=circuitC;
 
       if(capacitorRandom==0){
-        circuitTempExplanation+="Step 1- the total capacitance is just C1"
+        circuitTempExplanation+="Step 1- the total capacitance is just C1, which is "+answer.toFixed(2);
       }else if(capacitorRandom==1){
-        circuitTempExplanation+="Step 1- Use C3+(C1*C2)/(C1+C2) to find the total capacitance"
+        circuitTempExplanation+="Step 1- Use C3+(C1*C2)/(C1+C2) to find the total capacitance\n           which is"+answer.toFixed(2);
       }
     }
 
     circuitAnswerButtonIndex = Math.floor(Math.random() * 3);
-    circuitButtons[circuitAnswerButtonIndex].text+=answer.toFixed(1);
+    circuitButtons[circuitAnswerButtonIndex].text+=answer.toFixed(2);
     for(var i=0;i<3;i++){
       if(i!=circuitAnswerButtonIndex){
-        circuitButtons[i].text+=random(answer/1.5,answer*1.5).toFixed(1);
+        circuitButtons[i].text+=random(answer/1.5,answer*1.5).toFixed(2);
       }
     }
     circuitGenerateQuestion=false;

@@ -8,7 +8,7 @@ var stoichAnswer = 0;
 var stoichFeedback="";
 var stoichExplanation = "";
 var varchoice = 0
-var stoichExplanation="First, Balance carbon on each side\n\nSecond, Balance Hydrogen on each side\n\nThird, Balance oxygen on each side\n          (easily done with W + Z/2)\n\nFinally, Multiply by 2 if you\n            have a fraction";
+var stoichExplanation="";
 var stoichShowExplanation = false;
 
 function stoich(){
@@ -52,12 +52,14 @@ function stoich(){
   }
 
   if(stoichNewQuestionButton.clicked==true){
+    stoichExplanation="";
     stoichTextBox.data = "";
     stoichGenerateQuestion = true;
   }
 
   if(stoichCheckButton.clicked==true){
     stoichShowExplanation = true
+    stoichExplanation="First, Balance carbon on each side\n\nSecond, Balance Hydrogen on each side\n\nThird, Balance oxygen on each side\n          (easily done with W + Z/2)\n\nFinally, Multiply by 2 if you\n            have a fraction to get "+stoichAnswer;
     if(parseInt(stoichTextBox.data)==stoichAnswer){
       stoichFeedback="Correct!";
 
