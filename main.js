@@ -11,6 +11,7 @@ var algebraSwitch = new Switch(10,410,280,45,"Simple Algebra",35,xOffset=22);
 var derivativesSwitch = new Switch(10,480,280,45,"Derivatives",35,xOffset=55);
 var seriesSwitch = new Switch(10,550,280,45,"Series",35,xOffset=95);
 var matrixSwitch = new Switch(10,620,280,45,"Matrixes",35,xOffset=75);
+var volumeSwitch = new Switch(10,690,280,45,"Volume",35,xOffset=75);
 
 var newtonsLawsSwitch = new Switch(10,410,280,50,"Newton's Laws",35,xOffset=28);
 var harmonicsSwitch = new Switch(10,480,280,50,"Harmonics",35,xOffset=70);
@@ -44,6 +45,7 @@ function draw() {
     derivativesSwitch.update();
     seriesSwitch.update();
     matrixSwitch.update();
+    volumeSwitch.update();
   }else if(physicsSwitch.switchedOn==true){
     newtonsLawsSwitch.update();
     circuitSwitch.update();
@@ -71,6 +73,8 @@ function draw() {
     circuit();
   }else if(harmonicsSwitch.switchedOn==true){
     harmonics();
+  }else if(volumeSwitch.switchedOn==true){
+      volume();
   }else{
     image(logo,300,80);
   }
