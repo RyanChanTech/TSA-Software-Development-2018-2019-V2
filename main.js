@@ -13,7 +13,8 @@ var seriesSwitch = new Switch(10,550,280,45,"Series",35,xOffset=95);
 var matrixSwitch = new Switch(10,620,280,45,"Matrixes",35,xOffset=75);
 
 var newtonsLawsSwitch = new Switch(10,410,280,50,"Newton's Laws",35,xOffset=28);
-var circuitSwitch = new Switch(10,480,280,50,"Circuits",35,xOffset=70);
+var harmonicsSwitch = new Switch(10,480,280,50,"Harmonics",35,xOffset=70);
+var circuitSwitch = new Switch(10,550,280,50,"Circuits",35,xOffset=70);
 
 var stoichSwitch = new Switch(10,410,280,50,"Stoichiometry",35,xOffset=31);
 
@@ -46,6 +47,7 @@ function draw() {
   }else if(physicsSwitch.switchedOn==true){
     newtonsLawsSwitch.update();
     circuitSwitch.update();
+    harmonicsSwitch.update();
   }else if(chemistrySwitch.switchedOn==true){
     stoichSwitch.update();
   }
@@ -67,6 +69,8 @@ function draw() {
     custom();
   }else if(circuitSwitch.switchedOn==true){
     circuit();
+  }else if(harmonicsSwitch.switchedOn==true){
+    harmonics();
   }else{
     image(logo,300,80);
   }
