@@ -13,6 +13,7 @@ function harmonics(){
   noStroke();
   rect(735,155,615,525,10,0,0,10);
   stroke(0);
+
   harmonicsTextBox.update();
   harmonicsCheckButton.update();
   harmonicsNewQuestionButton.update();
