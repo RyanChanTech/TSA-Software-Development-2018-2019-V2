@@ -2,15 +2,19 @@
 
 //Textbox parameters: (x,y,width,height,text size)
 //Button parameters: (x,y,width,height,text,text size)
-var volumeTextBox = new TextBox(320,150,350,40,30);
-var volumeCheckButton = new Button(380,200,180,40,"Check",30,xOffset=50);
-var volumeNewQuestionButton = new Button(370,250,220,40,"New Question",30,xOffset=15);
+var volumeTextBox = new TextBox(320,180,350,40,30);
+var volumeCheckButton = new Button(380,240,180,40,"Check",30,xOffset=50);
+var volumeNewQuestionButton = new Button(370,300,220,40,"New Question",30,xOffset=15);
 var volumeGenerateQuestion = true;
 var volumeRandomNumberOne = 0;
 var volumeRandomNumberTwo = 0;
-var volumeAnswer = 0;
 var volumeFeedback="";
 var volumeExplanation = "";
+
+var height=0;
+var length=0;
+var width=0;
+var volumeAnswer=0;
 
 function volume(){
   fill(255,238,153,100);
@@ -27,10 +31,11 @@ function volume(){
   before the current one is answered
   */
   if(volumeGenerateQuestion == true){
-    volumeRandomNumberOne = Math.floor(Math.random() * 50);
-    volumeRandomNumberTwo = Math.floor(Math.random() * 50);
-    volumeAnswer=volumeRandomNumberTwo-volumeRandomNumberOne;
-    volumeGenerateQuestion = false;
+    height= int(random(1,50));
+    length= int(random(1,50));
+    width= int(random(1,50));
+    volumeAnswer= height*length*width;
+    volumeGenerateQuestion=false;
   }
 
   /*If the volumeNewQuestionButon is clicked, set volumeGenerateQuestion
@@ -55,12 +60,13 @@ function volume(){
       volumeFeedback="Try again"
     }
 
-    volumeExplanation="Step 1-Subtract: " + volumeRandomNumberTwo+" - "+volumeRandomNumberOne+" = "+volumeAnswer;
+    volumeExplanation="Step 1-Mutiply: "+height+"*"+length+"*"+width+ "\n Step 2-Solve: "+volumeAnswer;
   }
 
   //Display the output, feedback, and work
-  text(volumeRandomNumberOne + " + x = " + volumeRandomNumberTwo,320,120);
-  text("Feedback: " + volumeFeedback,320,330);
+  //box(width, height, length);
+  text("The question is: What is the volume of a rectangular prism with sides \n"+height+", "+length+", and "+width+"?",320,125);
+  text("Feedback: " + volumeFeedback,320,370);
 
   text("Work/Explanation:",800,200);
   text(volumeExplanation,800,250);

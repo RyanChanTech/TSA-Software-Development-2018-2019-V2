@@ -25,7 +25,7 @@ var logo;
 function setup() {
   frameRate(25);
   textFont("Trebuchet MS");
-  createCanvas(1800, 735);
+  createCanvas(1920, 1080);
   logo = loadImage("images/logo3.png");
   loadCircuitImages();
   customQuestions=loadStrings("custom.txt");
