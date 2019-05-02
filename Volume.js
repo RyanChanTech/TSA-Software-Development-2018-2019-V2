@@ -14,6 +14,7 @@ var volumeExplanation = "";
 var height=0;
 var length=0;
 var width=0;
+var radius= 0;
 var volumeAnswer=0;
 
 function volume(){
@@ -31,11 +32,21 @@ function volume(){
   before the current one is answered
   */
   if(volumeGenerateQuestion == true){
-    height= int(random(1,50));
-    length= int(random(1,50));
-    width= int(random(1,50));
-    volumeAnswer= height*length*width;
-    volumeGenerateQuestion=false;
+    var shapeChoice= 0
+    shapeChoice= int(random(0,1));
+    if shapeChoice= 0{
+      height= int(random(1,50));
+      length= int(random(1,50));
+      width= int(random(1,50));
+      radius= int(random(1,50));
+      volumeAnswer= height*length*width;
+      volumeGenerateQuestion=false;
+    }
+    if shapeChoice= 1{
+      radius= int(random(1,50));
+      volumeAnswer= 4*3.14*radius^2;
+      volumeGenerateQuestion=false;
+    }
   }
 
   /*If the volumeNewQuestionButon is clicked, set volumeGenerateQuestion
