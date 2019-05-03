@@ -23,9 +23,9 @@ var stoichSwitch = new Switch(10,410,280,50,"Stoichiometry",35,xOffset=31);
 var logo;
 //The setup function only runs once
 function setup() {
+  createCanvas(1920, 1080,WEBGL);
   frameRate(25);
   textFont("Trebuchet MS");
-  createCanvas(1920, 1080);
   logo = loadImage("images/logo3.png");
   loadCircuitImages();
   customQuestions=loadStrings("custom.txt");
