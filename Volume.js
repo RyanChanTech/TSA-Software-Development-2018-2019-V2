@@ -16,6 +16,7 @@ var length=0;
 var width=0;
 var radius= 0;
 var volumeAnswer=0;
+var shapeChoice= 0
 
 function volume(){
   fill(255,238,153,100);
@@ -32,19 +33,27 @@ function volume(){
   before the current one is answered
   */
   if(volumeGenerateQuestion == true){
-    var shapeChoice= 0
-    shapeChoice= int(random(0,1));
-    if shapeChoice= 0{
+    shapeChoice= int(random(0,3));
+    console.log(shapeChoice);
+    if (shapeChoice== 0){
+      /*Cube*/
       height= int(random(1,50));
       length= int(random(1,50));
       width= int(random(1,50));
-      radius= int(random(1,50));
       volumeAnswer= height*length*width;
       volumeGenerateQuestion=false;
     }
-    if shapeChoice= 1{
+    if (shapeChoice== 1){
+      /*Sphere*/
       radius= int(random(1,50));
-      volumeAnswer= 4*3.14*radius^2;
+      volumeAnswer= 4*3.14*radius*radius;
+      volumeGenerateQuestion=false;
+    }
+    if (shapeChoice== 2){
+      /*Cylinder*/
+      radius= int(random(1,50));
+      height= int(random(1,50));
+      volumeAnswer=3.14*radius*radius*height;
       volumeGenerateQuestion=false;
     }
   }
@@ -70,15 +79,29 @@ function volume(){
     }else{
       volumeFeedback="Try again"
     }
-
-    volumeExplanation="Step 1-Mutiply: "+height+"*"+length+"*"+width+ "\n Step 2-Solve: "+volumeAnswer;
+    if (shapeChoice==0){
+      volumeExplanation="Step 1-Mutiply: "+height+"*"+length+"*"+width+ "\n Step 2-Solve: "+volumeAnswer;
+    }
+    if (shapeChoice==1){
+      volumeExplanation="Step 1-Mutiply: 4*π*"+radius+"^2 \n Step 2-Solve: "+volumeAnswer;
+    }
+    if (shapeChoice==2){
+      volumeExplanation="Step 1-Mutiply: π*"+height+"*"+radius+"^2 \n Step 2-Solve: "+volumeAnswer;
+    }
   }
 
   //Display the output, feedback, and work
   //box(width, height, length);
+if (shapeChoice==0){
   text("The question is: What is the volume of a rectangular prism with sides \n"+height+", "+length+", and "+width+"?",320,125);
-  text("Feedback: " + volumeFeedback,320,370);
-
-  text("Work/Explanation:",800,200);
-  text(volumeExplanation,800,250);
+}
+if (shapeChoice==1){
+  text("The question is: What is the volume of a sphere with a radius of "+radius+"?",320,125);
+}
+if (shapeChoice==2){
+  text("The question is: What is the volume of a cylinder with a height of "+height+"\n and a radius of "+radius+ "?",320,125);
+}
+text("Feedback: " + volumeFeedback,320,370);
+text("Work/Explanation:",800,200);
+text(volumeExplanation,800,250);
 }

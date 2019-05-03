@@ -2,9 +2,11 @@ var harmonicsTextBox = new TextBox(320,150,350,40,30);
 var harmonicsCheckButton = new Button(380,200,180,40,"Check",30,xOffset=50);
 var harmonicsNewQuestionButton = new Button(370,250,220,40,"New Question",30,xOffset=15);
 var harmonicsGenerateQuestion = true;
-var harmonicsRandomNumberOne = 0;
-var harmonicsRandomNumberTwo = 0;
+var harmonicsTheta=0;
+var harmonicsMass=0;
+var harmonicsLength=0;
 var harmonicsAnswer = 0;
+var harmonicsTau = 0;
 var harmonicsFeedback="";
 var harmonicsExplanation = "";
 
@@ -19,9 +21,13 @@ function harmonics(){
   harmonicsNewQuestionButton.update();
 
   if(harmonicsGenerateQuestion == true){
-    harmonicsRandomNumberOne = Math.floor(Math.random() * 50);
-    harmonicsRandomNumberTwo = Math.floor(Math.random() * 50);
-    harmonicsAnswer=harmonicsRandomNumberTwo-harmonicsRandomNumberOne;
+    harmonicsTheta=int(random(235,325));
+    harmonicsLength=(random(0,10));
+    harmonicsMass=(random(0,45));
+    harmonicsTau= 2*3.14*sqrt(harmonicsLength/9.8)
+    console.log("length: "+harmonicsLength);
+    console.log("tau: "+harmonicsTau);
+
     harmonicsGenerateQuestion = false;
   }
 
@@ -38,10 +44,10 @@ function harmonics(){
       harmonicsFeedback="Try again"
     }
 
-    harmonicsExplanation="Step 1-Subtract: " + harmonicsRandomNumberTwo+" - "+harmonicsRandomNumberOne+" = "+harmonicsAnswer;
+    //harmonicsExplanation="Step 1-Subtract: " + harmonicsRandomNumberTwo+" - "+harmonicsRandomNumberOne+" = "+harmonicsAnswer;
   }
 
-  text(harmonicsRandomNumberOne + " + x = " + harmonicsRandomNumberTwo,320,120);
+  //text(harmonicsRandomNumberOne + " + x = " + harmonicsRandomNumberTwo,320,120);
   text("Feedback: " + harmonicsFeedback,320,330);
 
   text("Work/Explanation:",800,200);
