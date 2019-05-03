@@ -52,15 +52,15 @@ function harmonics(){
   var amplitudeMultiplier=30;
   var periodMultiplier=40;
   var trans=[350,120];
-  displace-=.1;
+  displace+=.1;
   for(var x=0;x<250;x++){
     var point1=[x+trans[0], 30*sin(radians(x*3)+displace)+trans[1]]
-    var point2=[x+1+trans[0], 30*sin(radians((x+1)*3)+displace)+trans[1]]
+    //var point2=[x+1+trans[0], 30*sin(radians((x+1)*3)+displace)+trans[1]]
     //push();
     //strokeWeight(2);
-    //point(point1[0],point1[1]);
+    point(point1[0],point1[1]);
     //pop();
-    line(point1[0],point1[1],point2[0],point2[1]);
+    //line(point1[0],point1[1],point2[0],point2[1]);
   }
   //text(harmonicsRandomNumberOne + " + x = " + harmonicsRandomNumberTwo,320,120);
   text("Feedback: " + harmonicsFeedback,320,330);
