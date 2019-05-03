@@ -11,6 +11,7 @@ var harmonicsFeedback="";
 var harmonicsExplanation = "";
 
 function harmonics(){
+  //These 4 lines just display the yellow block on the side
   fill(255,238,153,100);
   noStroke();
   rect(735,155,615,525,10,0,0,10);
@@ -44,12 +45,14 @@ function harmonics(){
       harmonicsFeedback="Try again"
     }
 
-    //harmonicsExplanation="Step 1-Subtract: " + harmonicsRandomNumberTwo+" - "+harmonicsRandomNumberOne+" = "+harmonicsAnswer;
+    harmonicsExplanation="Your explaination here (Tip: you should use string concatenation (http://2ality.com/2011/10/string-concatenation.html))";
   }
 
-  //text(harmonicsRandomNumberOne + " + x = " + harmonicsRandomNumberTwo,320,120);
+  //Use this to display your question (Tip: you should use string concatenation (http://2ality.com/2011/10/string-concatenation.html))
+  text("Your Question here",320,120);
+  
   text("Feedback: " + harmonicsFeedback,320,330);
 
-  text("Work/Explanation:",800,200);
+  text("Work/Explanation:"+,800,200);
   text(harmonicsExplanation,800,250);
 }
