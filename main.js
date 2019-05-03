@@ -23,7 +23,7 @@ var stoichSwitch = new Switch(10,410,280,50,"Stoichiometry",35,xOffset=31);
 var logo;
 //The setup function only runs once
 function setup() {
-  createCanvas(1920, 1080,WEBGL);
+  createCanvas(1920, 1080);
   frameRate(25);
   textFont("Trebuchet MS");
   logo = loadImage("images/logo3.png");
