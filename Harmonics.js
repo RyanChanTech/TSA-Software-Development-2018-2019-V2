@@ -45,10 +45,10 @@ function harmonics(){
       harmonicsFeedback="Try again"
     }
 
-    harmonicsExplanation="Your explaination here (Tip: you should use string concatenation (http://2ality.com/2011/10/string-concatenation.html))";
+    harmonicsExplanation="Your explaination here (Look at the Algebra.js code if you're confused)";
   }
 
-  //Use this to display your question (Tip: you should use string concatenation (http://2ality.com/2011/10/string-concatenation.html))
+  //Use this to display your question (Look at the Algebra.js code if you're confused)
   text("Your Question here",320,120);
   
   text("Feedback: " + harmonicsFeedback,320,330);
