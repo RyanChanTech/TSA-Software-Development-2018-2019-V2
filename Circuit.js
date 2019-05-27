@@ -131,12 +131,12 @@ function circuit(){
     text(circuitCapacitorVars[2]+"F",650,280);
   }
   textSize(30);
-  text("Work/Explanation:",750,200);
+  text("Work/Explanation:",800,200);
   textSize(20);
   text(circuitExplanation,750,235)
   text(circuitQuestion,320,110);
   textSize(30);
-  text("Feedback:" + circuitFeedback,320,670);
+  text("Feedback:" + circuitFeedback,320,660);
 }
 
 function loadCircuitImages(){

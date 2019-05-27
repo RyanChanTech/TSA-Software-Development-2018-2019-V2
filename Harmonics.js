@@ -14,7 +14,7 @@ function harmonics(){
   //These 4 lines just display the yellow block on the side
   fill(255,238,153,100);
   noStroke();
-  rect(735,155,615,525,10,0,0,10);
+  rect(735,155,615,525,20,0,0,20);
   stroke(0);
 
   harmonicsTextBox.update();
@@ -50,9 +50,9 @@ function harmonics(){
 
   //Use this to display your question (Look at the Algebra.js code if you're confused)
   text("Your Question here",320,120);
-  
+
   text("Feedback: " + harmonicsFeedback,320,330);
 
-  text("Work/Explanation:"+,800,200);
+  text("Work/Explanation:",800,200);
   text(harmonicsExplanation,800,250);
 }

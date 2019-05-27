@@ -56,7 +56,7 @@ function derivatives(){
   strokeWeight(1); //reset to default value
   text("("+derivativesQuestion+") = ?",355,175);
   text("Feedback: " + derivativesFeedback,320,410);
-  text("Work/Explanation:",790,195);
+  text("Work/Explanation:",800,200);
   if(derivatiesShowExplanation){
     text(derivativesExplanation,790,245);
   }

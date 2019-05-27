@@ -21,7 +21,7 @@ var shapeChoice= 0
 function volume(){
   fill(255,238,153,100);
   noStroke();
-  rect(735,155,615,525,10,0,0,10);
+  rect(735,155,615,525,20,0,0,20);
   stroke(0);
   volumeTextBox.update();
   volumeCheckButton.update();
@@ -101,7 +101,7 @@ if (shapeChoice==1){
 if (shapeChoice==2){
   text("The question is: What is the volume of a cylinder with a height of "+height+"\n and a radius of "+radius+ "?",320,125);
 }
-text("Feedback: " + volumeFeedback,320,370);
+text("Feedback: " + volumeFeedback,320,380);
 text("Work/Explanation:",800,200);
 text(volumeExplanation,800,250);
 }

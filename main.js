@@ -3,21 +3,19 @@ https://openclipart.org/detail/234445/computer-math-coordinate-system*/
 
 //Switch parameters: (x,y,width,height,text,text size, x offset (optional))
 var mathSwitch=new CategorySwitch(10,70,280,45,"Math",35,xOffset=100);
-var physicsSwitch=new CategorySwitch(10,140,280,45,"Physics",35,xOffset=80);
-var chemistrySwitch = new CategorySwitch(10,210,280,45,"Chemistry",35,xOffset=65);
-var customSwitch = new CategorySwitch(10,280,280,45,"Custom",35,xOffset=75);
+var scienceSwitch=new CategorySwitch(10,140,280,45,"Science",35,xOffset=80);
+var customSwitch = new CategorySwitch(10,210,280,45,"Custom",35,xOffset=80);
 
-var algebraSwitch = new Switch(10,410,280,45,"Simple Algebra",35,xOffset=22);
-var derivativesSwitch = new Switch(10,480,280,45,"Derivatives",35,xOffset=55);
-var seriesSwitch = new Switch(10,550,280,45,"Series",35,xOffset=95);
-var matrixSwitch = new Switch(10,620,280,45,"Matrixes",35,xOffset=75);
-var volumeSwitch = new Switch(10,690,280,45,"Volume",35,xOffset=75);
+var algebraSwitch = new Switch(10,340,280,45,"Simple Algebra",35,xOffset=22);
+var derivativesSwitch = new Switch(10,410,280,45,"Derivatives",35,xOffset=55);
+var seriesSwitch = new Switch(10,480,280,45,"Series",35,xOffset=95);
+var matrixSwitch = new Switch(10,550,280,45,"Matrixes",35,xOffset=75);
+var volumeSwitch = new Switch(10,620,280,45,"Volume",35,xOffset=75);
 
-var newtonsLawsSwitch = new Switch(10,410,280,50,"Newton's Laws",35,xOffset=28);
-var harmonicsSwitch = new Switch(10,480,280,50,"Harmonics",35,xOffset=70);
-var circuitSwitch = new Switch(10,550,280,50,"Circuits",35,xOffset=70);
-
-var stoichSwitch = new Switch(10,410,280,50,"Stoichiometry",35,xOffset=31);
+var newtonsLawsSwitch = new Switch(10,340,280,50,"Newton's Laws",35,xOffset=28);
+var harmonicsSwitch = new Switch(10,410,280,50,"Harmonics",35,xOffset=65);
+var circuitSwitch = new Switch(10,480,280,50,"Circuits",35,xOffset=80);
+var stoichSwitch = new Switch(10,550,280,50,"Stoichiometry",35,xOffset=31);
 
 
 var logo;
@@ -46,11 +44,10 @@ function draw() {
     seriesSwitch.update();
     matrixSwitch.update();
     volumeSwitch.update();
-  }else if(physicsSwitch.switchedOn==true){
+  }else if(scienceSwitch.switchedOn==true){
     newtonsLawsSwitch.update();
     circuitSwitch.update();
     harmonicsSwitch.update();
-  }else if(chemistrySwitch.switchedOn==true){
     stoichSwitch.update();
   }
 
@@ -74,14 +71,13 @@ function draw() {
   }else if(harmonicsSwitch.switchedOn==true){
     harmonics();
   }else if(volumeSwitch.switchedOn==true){
-      volume();
+    volume();
   }else{
     image(logo,300,80);
   }
 
   //update the category switches so they show up and functions.
   mathSwitch.update();
-  physicsSwitch.update();
-  chemistrySwitch.update();
+  scienceSwitch.update();
   customSwitch.update();
 }

@@ -67,7 +67,7 @@ function stoich(){
       stoichFeedback="Try again"
     }
 }
-  text("Work/Explanation:",780,190);
+  text("Work/Explanation:",800,200);
   if(stoichShowExplanation){
     text(stoichExplanation,780,240);
   }
