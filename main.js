@@ -6,11 +6,11 @@ var mathSwitch=new CategorySwitch(10,70,280,45,"Math",35,xOffset=100);
 var scienceSwitch=new CategorySwitch(10,140,280,45,"Science",35,xOffset=80);
 var customSwitch = new CategorySwitch(10,210,280,45,"Custom",35,xOffset=80);
 
-var algebraSwitch = new Switch(10,340,280,45,"Simple Algebra",35,xOffset=22);
-var derivativesSwitch = new Switch(10,410,280,45,"Derivatives",35,xOffset=55);
-var seriesSwitch = new Switch(10,480,280,45,"Series",35,xOffset=95);
-var matrixSwitch = new Switch(10,550,280,45,"Matrixes",35,xOffset=75);
-var volumeSwitch = new Switch(10,620,280,45,"Volume",35,xOffset=75);
+var algebraSwitch = new Switch(10,340,280,50,"Simple Algebra",35,xOffset=22);
+var derivativesSwitch = new Switch(10,410,280,50,"Derivatives",35,xOffset=55);
+var seriesSwitch = new Switch(10,480,280,50,"Series",35,xOffset=95);
+var matrixSwitch = new Switch(10,550,280,50,"Matrixes",35,xOffset=75);
+var volumeSwitch = new Switch(10,620,280,50,"Volume",35,xOffset=75);
 
 var newtonsLawsSwitch = new Switch(10,340,280,50,"Newton's Laws",35,xOffset=28);
 var harmonicsSwitch = new Switch(10,410,280,50,"Harmonics",35,xOffset=65);
