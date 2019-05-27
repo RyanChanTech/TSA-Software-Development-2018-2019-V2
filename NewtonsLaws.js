@@ -56,7 +56,7 @@ function newtonsLaws(){
 
   text("Work/Explanation: ",800,200);
   textSize(25)
-  text(nLExplanation,750,200)
+  text(nLExplanation,775,200)
   textSize(30);
   text("Feedback:" + nLFeedback,320,610);
 }

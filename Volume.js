@@ -34,26 +34,25 @@ function volume(){
   */
   if(volumeGenerateQuestion == true){
     shapeChoice= int(random(0,3));
-    console.log(shapeChoice);
     if (shapeChoice== 0){
       /*Cube*/
       height= int(random(1,50));
       length= int(random(1,50));
       width= int(random(1,50));
-      volumeAnswer= height*length*width;
+      volumeAnswer=(height*length*width).toFixed(2);
       volumeGenerateQuestion=false;
     }
     if (shapeChoice== 1){
       /*Sphere*/
       radius= int(random(1,50));
-      volumeAnswer= 4*3.14*radius*radius;
+      volumeAnswer=(4*3.14*radius*radius).toFixed(2);
       volumeGenerateQuestion=false;
     }
     if (shapeChoice== 2){
       /*Cylinder*/
       radius= int(random(1,50));
       height= int(random(1,50));
-      volumeAnswer=3.14*radius*radius*height;
+      volumeAnswer=(3.14*radius*radius*height).toFixed(2);
       volumeGenerateQuestion=false;
     }
   }
@@ -80,13 +79,13 @@ function volume(){
       volumeFeedback="Try again"
     }
     if (shapeChoice==0){
-      volumeExplanation="Step 1-Mutiply: "+height+"*"+length+"*"+width+ "\n Step 2-Solve: "+volumeAnswer;
+      volumeExplanation="Step 1- Mutiply: "+height+"*"+length+"*"+width+ "\nStep 2- Solve: "+volumeAnswer;
     }
     if (shapeChoice==1){
-      volumeExplanation="Step 1-Mutiply: 4*π*"+radius+"^2 \n Step 2-Solve: "+volumeAnswer;
+      volumeExplanation="Step 1- Mutiply: 4*π*"+radius+"^2 \nStep 2- Solve: "+volumeAnswer;
     }
     if (shapeChoice==2){
-      volumeExplanation="Step 1-Mutiply: π*"+height+"*"+radius+"^2 \n Step 2-Solve: "+volumeAnswer;
+      volumeExplanation="Step 1- Mutiply: π*"+height+"*"+radius+"^2 \nStep 2- Solve: "+volumeAnswer;
     }
   }
 

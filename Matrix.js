@@ -87,7 +87,7 @@ function matrix(){
     text(a3,410,255);
     text(a4,490,255);
     text("Feedback: " + matrixFeedback,320,490);
-    text("Work/Explanation:",800,195);
+    text("Work/Explanation:",800,200);
     if (matrixShowExplanation){
       strokeWeight(3);
       line(820,330,820,405);

@@ -55,7 +55,7 @@ function algebra(){
       algebraFeedback="Try again"
     }
 
-    algebraExplanation="Step 1-Subtract: " + algebraRandomNumberTwo+" - "+algebraRandomNumberOne+" = "+algebraAnswer;
+    algebraExplanation="Subtract: " + algebraRandomNumberTwo+" - "+algebraRandomNumberOne+" = "+algebraAnswer;
   }
 
   //Display the output, feedback, and work

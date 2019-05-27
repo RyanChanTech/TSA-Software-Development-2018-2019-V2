@@ -58,7 +58,7 @@ function derivatives(){
   text("Feedback: " + derivativesFeedback,320,410);
   text("Work/Explanation:",800,200);
   if(derivatiesShowExplanation){
-    text(derivativesExplanation,790,245);
+    text(derivativesExplanation,800,245);
   }
 }
 
@@ -77,7 +77,7 @@ function derivativesPowerRule(){
       answer+="+";
     }
   }
-  var explanation = "Step 1-Power & Addition Rules:\n"+answer;
+  var explanation = "Power & Addition Rules:\n"+answer;
   return [question,answer,explanation];
 }
 
@@ -89,13 +89,13 @@ function derivativesChainRule(insideQuestion,insideAnswer){
   if(rand<=33){
     question="sin("+insideQuestion+")";
     answer="cos("+insideQuestion+")("+insideAnswer+")"
-    explanation = "Step 1-Chain Rule:\ncos("+insideQuestion+")*d/dx("+insideQuestion+")"+
-                    "\n\nStep 2-Power & Addition Rules:\n"+answer;
+    explanation = "Step 1- Chain Rule:\ncos("+insideQuestion+")*d/dx("+insideQuestion+")"+
+                    "\n\nStep 2- Power & Addition Rules:\n"+answer;
   }else{
     question="ln("+insideQuestion+")";
     answer="("+insideAnswer+")"+"/("+insideQuestion+")";
-    explanation = "Step 1-Chain Rule:\n1/("+insideQuestion+")*d/dx("+insideQuestion+")"+
-                    "\n\nStep 2-Power & Addition Rules:\n"+answer;
+    explanation = "Step 1- Chain Rule:\n1/("+insideQuestion+")*d/dx("+insideQuestion+")"+
+                    "\n\nStep 2- Power & Addition Rules:\n"+answer;
   }
   return [question,answer,explanation];
 }
