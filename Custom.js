@@ -20,7 +20,7 @@ function custom(){
 
   if(customGenerateQuestion){
     var temp=customQuestions[Math.floor(random(customQuestions.length))];
-    console.log(temp);
+    //console.log(temp);
     customQuestion=temp.split(";");
     customGenerateQuestion = false;
   }
