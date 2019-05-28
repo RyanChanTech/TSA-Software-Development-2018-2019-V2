@@ -19,13 +19,6 @@ function series(){
   rect(735,155,615,525,20,0,0,20);
   stroke(0);
   fill(0);
-  //image(sigmaSymbol,335,205);
-  /*strokeWeight(8);
-  line(340,210,370,210);
-  line(340,210,355,233);
-  line(355,233,340,255);
-  line(340,255,370,255);
-  strokeWeight(1);*/
   textSize(65);
   text("Σ",340,255);
   textSize(30);
