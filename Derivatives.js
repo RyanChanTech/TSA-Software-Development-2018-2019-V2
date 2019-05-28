@@ -7,6 +7,9 @@ var derivativesAnswer = "";
 var derivativesFeedback="";
 var derivativesExplanation="";
 var derivatiesShowExplanation = false;
+var powers = [2,3,4,5,6,7,8,9,10];
+var rand = 0;
+var powerSelection = 0;
 
 function derivatives(){
   fill(255,238,153,100);
@@ -69,7 +72,13 @@ function derivativesPowerRule(){
   var n = Math.floor(Math.random() * 3+1)
 
   for(var i = 0;i<n;i++){
-    var rand = Math.floor(Math.random() * 8+3)
+
+    /*this mess picks a random number from the powers list, then remove that number from the list,
+    so it won't be picked again.*/
+    powerSelection = Math.floor(random(0,powers.length));
+    rand = powers[powerSelection];
+    powers.splice(powerSelection,1);
+
     question+="x^" + rand;
     answer += ""+rand + "x^" + (rand-1);
     if(i != (n-1)){
@@ -77,6 +86,7 @@ function derivativesPowerRule(){
       answer+="+";
     }
   }
+  powers = [2,3,4,5,6,7,8,9,10];
   var explanation = "Power & Addition Rules:\n"+answer;
   return [question,answer,explanation];
 }
@@ -85,7 +95,7 @@ function derivativesChainRule(insideQuestion,insideAnswer){
   var question = "";
   var answer = "";
   var explanation = "";
-  var rand = Math.floor(Math.random() * 100);
+  rand = Math.floor(Math.random() * 100);
   if(rand<=33){
     question="sin("+insideQuestion+")";
     answer="cos("+insideQuestion+")("+insideAnswer+")"
