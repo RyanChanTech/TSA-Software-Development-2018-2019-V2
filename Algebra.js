@@ -38,7 +38,8 @@ function algebra(){
   */
   if(algebraNewQuestionButton.clicked==true){
     algebraTextBox.data="";
-    algebraExplanation = ""
+    algebraExplanation = "";
+    algebraFeedback = "";
     algebraGenerateQuestion = true;
   }
 

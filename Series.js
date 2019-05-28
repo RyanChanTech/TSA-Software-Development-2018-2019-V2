@@ -74,11 +74,11 @@ function series(){
     text("n=1",345,275);
     textSize(30);//reset to old text size
     text(seriesRandomNumberOne + " + " + seriesRandomNumberTwo + "n",400,240);
-    text("Feedback: " + seriesFeedback,320,490);
-
+    text("Feedback: ",320,490);
     text("Work/Explanation:",800,200);
     if (seriesShowExplanation){
       text(seriesExplanation,800,250);
+      text(seriesFeedback,470,490);
     }
   }
   if (seriesRandomType == 1){
@@ -88,11 +88,11 @@ function series(){
     text("n=1",345,275);
     textSize(30);//reset to old text size
     text(seriesRandomNumberOne + " . " + seriesRandomNumberTwo + "^(n - 1)",400,240);
-    text("Feedback: " + seriesFeedback,320,490);
-
+    text("Feedback: ",320,490);
     text("Work/Explanation:",800,200);
     if (seriesShowExplanation){
       text(seriesExplanation,800,250);
+      text(seriesFeedback,470,490);
     }
   }
 }

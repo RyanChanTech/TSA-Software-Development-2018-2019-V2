@@ -57,10 +57,6 @@ function matrix(){
   }
 
   if (matrixNewQuestionButton.clicked==true){
-    matrixGenerateQuestion = true;
-  }
-
-  if (matrixNewQuestionButton.clicked==true){
     matrixTextBox.data="";
     matrixGenerateQuestion = true;
     matrixShowExplanation=false;
@@ -75,34 +71,35 @@ function matrix(){
     }
   }
 
+  text("Feedback: ",320,490);
+  text("Work/Explanation:",800,200);
+
   if (matrixRandomType == 0){
+    text("Evaluate the determinant of\n the 2 X 2 Matrix: ",320,120);
     strokeWeight(3);
     line(400,180,400,270);
     line(535,180,535,270);
     strokeWeight(1);//set to default
-
-    text("Evaluate the determinant of\n the 2 X 2 Matrix: ",320,120);
     text(a1,410,215);
     text(a2,490,215);
     text(a3,410,255);
     text(a4,490,255);
-    text("Feedback: " + matrixFeedback,320,490);
-    text("Work/Explanation:",800,200);
+
     if (matrixShowExplanation){
       strokeWeight(3);
       line(820,330,820,405);
       line(940,330,940,405);
       strokeWeight(1);//set to default
       text(matrixExplanation,800,245);
+      text(matrixFeedback,470,490);
     }
   }
   if (matrixRandomType == 1){
+    text("Evaluate the determinent of\n the 3 X 3 Matrix: ",320,120);
     strokeWeight(3);
     line(390,170,390,285);
     line(580,170,580,285);
     strokeWeight(1);//set to default
-
-    text("Evaluate the determinent of\n the 3 X 3 Matrix: ",320,120);
     text(a1,400,200);
     text(a2,465,200);
     text(a3,530,200);
@@ -112,14 +109,14 @@ function matrix(){
     text(a7,400,280);
     text(a8,465,280);
     text(a9,530,280);
-    text("Feedback: " + matrixFeedback,320,490);
-    text("Work/Explanation:",800,200);
+
     if (matrixShowExplanation){
       strokeWeight(3);
       line(820,285,820,395);
       line(995,285,995,395);
       strokeWeight(1);//set to default
       text(matrixExplanation,800,240);
+      text(matrixFeedback,470,490);
     }
   }
 }

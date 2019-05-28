@@ -62,7 +62,8 @@ function volume(){
   */
   if(volumeNewQuestionButton.clicked==true){
     volumeTextBox.data="";
-    volumeExplanation = ""
+    volumeExplanation = "";
+    volumeFeedback = "";
     volumeGenerateQuestion = true;
   }
 

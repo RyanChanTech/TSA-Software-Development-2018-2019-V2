@@ -101,6 +101,7 @@ function circuit(){
   if(circuitNewQuestionButton.clicked){
     circuitGenerateQuestion=true;
     circuitExplanation="";
+    circuitFeedback = "";
     circuitTempExplanation="";
   }
 

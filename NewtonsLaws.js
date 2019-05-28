@@ -38,6 +38,7 @@ function newtonsLaws(){
   if(nLNewQuestionButton.clicked){
     nLGenerateQuestion=true;
     nLExplanation="";
+    nLFeedback="";
   }
 
   if(nLButtons[nLAnswerButtonIndex].clicked){

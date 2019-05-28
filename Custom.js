@@ -28,6 +28,7 @@ function custom(){
   if(customNewQuestionButton.clicked){
     customTextBox.data="";
     customExplanation = "";
+    customFeedback = "";
     customGenerateQuestion = true;
   }
 

@@ -34,7 +34,8 @@ function harmonics(){
 
   if(harmonicsNewQuestionButton.clicked==true){
     harmonicsTextBox.data="";
-    harmonicsExplanation = ""
+    harmonicsExplanation = "";
+    harmonicsFeedback = "";
     harmonicsGenerateQuestion = true;
   }
 

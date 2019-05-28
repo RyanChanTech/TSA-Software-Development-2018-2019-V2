@@ -70,11 +70,12 @@ function stoich(){
   text("Work/Explanation:",800,200);
   if(stoichShowExplanation){
     text(stoichExplanation,780,240);
+    text(stoichFeedback,470,370);
   }
 
   text("WC"+stoichrandom+"H"+hrand + " + XO2 = YCO2 + Z H20" ,320,120)
   text( "What does " + varchoice + " equal?", 320, 160)
-  text("Feedback: " + stoichFeedback,320,370);
+  text("Feedback: ",320,370);
 
 }
 
