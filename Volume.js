@@ -71,10 +71,10 @@ function volume(){
   volumeCheckButton is clicked
   */
   if(volumeCheckButton.clicked==true){
-    /*The parseInt() function turns volumeTextBox.data, which is a string (or text)
-    data type into an int datatype so they can be compared
+    /*The parseFloat() function turns volumeTextBox.data, which is a string (or text)
+    data type into an float datatype so they can be compared
     */
-    if(parseInt(volumeTextBox.data)==volumeAnswer){
+    if(parseFloat(volumeTextBox.data)==volumeAnswer){
       volumeFeedback="Correct!";
     }else{
       volumeFeedback="Try again"
