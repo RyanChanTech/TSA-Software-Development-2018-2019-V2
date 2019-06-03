@@ -1,15 +1,22 @@
 //Textbox parameters: (x,y,width,height,text size)
 //Button parameters: (x,y,width,height,text,text size)
-var integralsTextBox = new TextBox(320,150,350,40,30);
-var integralsCheckButton = new Button(380,200,180,40,"Check",30,xOffset=50);
-var integralsNewQuestionButton = new Button(370,250,220,40,"New Question",30,xOffset=15);
+var integralsTextBox = new TextBox(320,260,350,40,30);
+var integralsCheckButton = new Button(380,350,180,40,"Check",30,xOffset=50);
+var integralsNewQuestionButton = new Button(370,400,220,40,"New Question",30,xOffset=15);
 var integralsGenerateQuestion = true;
-var integralsTopic = "";
 var integralsQuestion = "";
 var integralsAnswer = "";
 var integralsFeedback="";
 var integralsExplanation = "";
 var integralsShowExplanation = false;
+var integralsDisplayPosition = 340;
+var randomQuestionType = 0;
+var randomIntegralsType = 0;
+var randomIntegralsSubType = 0;
+var randomIntegralsCoefficient = 0;
+var randomIntegralsNumeric =0;
+var randomLowerBound = 0;
+var randomUpperBound = 0;
 
 function integrals(){
   fill(255,238,153,100);
@@ -20,22 +27,20 @@ function integrals(){
   integralsCheckButton.update();
   integralsNewQuestionButton.update();
 
-  /* Type =
-
-    SubSubType = coefficient or not*/
   if(integralsGenerateQuestion == true){
     //application or not
-    var randomQuestionType = Math.floor(random(0,1));
+    randomQuestionType = Math.floor(random(0,1));
     //single or double or triple
-    var randomIntegralsType = Math.floor(random(0,1));
+    randomIntegralsType = Math.floor(random(0,1));
+    //randomIntegralsType = 0;
     //polynomial or e or sin or cos or const
-    var randomIntegralsSubType = Math.floor(random(0,5));
+    randomIntegralsSubType = Math.floor(random(0,5));
 
-    var randomIntegralsCoefficient = Math.floor(random(2,9));
+    randomIntegralsCoefficient = Math.floor(random(2,9));
     //definite or indef
-    var randomIntegralsNumeric = Math.floor(random(0,1));
-    var randomLowerBound = Math.floor(random(0,5));
-    var randomUpperBound = Math.floor(random(5,10));
+    randomIntegralsNumeric = Math.floor(random(0,1));
+    randomLowerBound = Math.floor(random(0,5));
+    randomUpperBound = Math.floor(random(5,10));
 
     // it's a single integral
     if (randomQuestionType == 0){
@@ -57,11 +62,8 @@ function integrals(){
           integralsAnswer = randomIntegralsCoefficient + "x";
         }
       }
-      integralsTopic = "Calculate the following integral:";
-    integralsGenerateQuestion = false;
     }
-    console.log(integralsQuestion);
-    console.log(integralsAnswer);
+    integralsGenerateQuestion = false;
   }
 
   /*If the integralsNewQuestionButon is clicked, set integralsGenerateQuestion
@@ -86,12 +88,25 @@ function integrals(){
   }
 
   //Display the output, feedback, and work
-  text("Feedback: ",320,330);
+  text("Feedback: ",320,480);
   text("Work/Explanation:",800,200);
   if (integralsShowExplanation){
       text(integralsExplanation,800,250);
       text(integralsFeedback,470,330);
   }
+  text("Calculate the following integral:",320,120);
+  textSize(60);
+  if (randomIntegralsType==0){
+    text("∫",integralsDisplayPosition,210);
+  }
+  if (randomIntegralsType==1){
+    text("∫",integralsDisplayPosition+30,210);
+  }
+  if (randomIntegralsType==2){
+    text("∫",integralsDisplayPosition+60,210);
+  }
+  textSize(30);
+
 }
 
 
