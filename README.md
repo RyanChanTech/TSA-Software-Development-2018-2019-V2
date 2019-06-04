@@ -1,4 +1,4 @@
-# TSA-Software-Development-2018-2019-V2
+# TSA-Software-Development-2018-2019-V2 (Question Generator)
 ## How to setup and run/edit project: 
 1. Click on "Clone or download" (the green button on the upper right hand corner), then "Download ZIP" 
 2. Extract it to somewhere where you can find it.
