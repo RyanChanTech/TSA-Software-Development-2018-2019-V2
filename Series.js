@@ -19,13 +19,6 @@ function series(){
   rect(735,155,615,525,20,0,0,20);
   stroke(0);
   fill(0);
-  //image(sigmaSymbol,335,205);
-  /*strokeWeight(8);
-  line(340,210,370,210);
-  line(340,210,355,233);
-  line(355,233,340,255);
-  line(340,255,370,255);
-  strokeWeight(1);*/
   textSize(65);
   text("Σ",340,255);
   textSize(30);
@@ -81,11 +74,11 @@ function series(){
     text("n=1",345,275);
     textSize(30);//reset to old text size
     text(seriesRandomNumberOne + " + " + seriesRandomNumberTwo + "n",400,240);
-    text("Feedback: " + seriesFeedback,320,490);
-
+    text("Feedback: ",320,490);
     text("Work/Explanation:",800,200);
     if (seriesShowExplanation){
       text(seriesExplanation,800,250);
+      text(seriesFeedback,470,490);
     }
   }
   if (seriesRandomType == 1){
@@ -95,11 +88,11 @@ function series(){
     text("n=1",345,275);
     textSize(30);//reset to old text size
     text(seriesRandomNumberOne + " . " + seriesRandomNumberTwo + "^(n - 1)",400,240);
-    text("Feedback: " + seriesFeedback,320,490);
-
+    text("Feedback: ",320,490);
     text("Work/Explanation:",800,200);
     if (seriesShowExplanation){
       text(seriesExplanation,800,250);
+      text(seriesFeedback,470,490);
     }
   }
 }

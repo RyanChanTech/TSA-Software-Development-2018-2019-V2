@@ -38,6 +38,7 @@ function newtonsLaws(){
   if(nLNewQuestionButton.clicked){
     nLGenerateQuestion=true;
     nLExplanation="";
+    nLFeedback="";
   }
 
   if(nLButtons[nLAnswerButtonIndex].clicked){
@@ -54,9 +55,9 @@ function newtonsLaws(){
     nLDisplaySlide();
   }
 
-  text("Work/Explanation: ",750,200);
+  text("Work/Explanation: ",800,200);
   textSize(25)
-  text(nLExplanation,750,200)
+  text(nLExplanation,775,200)
   textSize(30);
   text("Feedback:" + nLFeedback,320,610);
 }

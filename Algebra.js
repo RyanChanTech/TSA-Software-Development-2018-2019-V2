@@ -15,7 +15,7 @@ var algebraExplanation = "";
 function algebra(){
   fill(255,238,153,100);
   noStroke();
-  rect(735,155,615,525,10,0,0,10);
+  rect(735,155,615,525,20,0,0,20);
   stroke(0);
   algebraTextBox.update();
   algebraCheckButton.update();
@@ -38,7 +38,8 @@ function algebra(){
   */
   if(algebraNewQuestionButton.clicked==true){
     algebraTextBox.data="";
-    algebraExplanation = ""
+    algebraExplanation = "";
+    algebraFeedback = "";
     algebraGenerateQuestion = true;
   }
 
@@ -55,7 +56,7 @@ function algebra(){
       algebraFeedback="Try again"
     }
 
-    algebraExplanation="Step 1-Subtract: " + algebraRandomNumberTwo+" - "+algebraRandomNumberOne+" = "+algebraAnswer;
+    algebraExplanation="Subtract: " + algebraRandomNumberTwo+" - "+algebraRandomNumberOne+" = "+algebraAnswer;
   }
 
   //Display the output, feedback, and work

@@ -12,7 +12,7 @@ var customFeedback="";
 function custom(){
   fill(255,238,153,100);
   noStroke();
-  rect(735,155,615,525,10,0,0,10);
+  rect(735,155,615,525,20,0,0,20);
   stroke(0);
   customTextBox.update();
   customCheckButton.update();
@@ -20,7 +20,7 @@ function custom(){
 
   if(customGenerateQuestion){
     var temp=customQuestions[Math.floor(random(customQuestions.length))];
-    console.log(temp);
+    //console.log(temp);
     customQuestion=temp.split(";");
     customGenerateQuestion = false;
   }
@@ -28,6 +28,7 @@ function custom(){
   if(customNewQuestionButton.clicked){
     customTextBox.data="";
     customExplanation = "";
+    customFeedback = "";
     customGenerateQuestion = true;
   }
 
@@ -45,8 +46,8 @@ function custom(){
   }
 
   text(customQuestion[0],320,120);
-  text("Feedback: " + customFeedback,320,325);
+  text("Feedback: " + customFeedback,320,330);
 
-  text("Work/Explanation:",760,200);
+  text("Work/Explanation:",800,200);
   text(customExplanation,760,250);
 }
