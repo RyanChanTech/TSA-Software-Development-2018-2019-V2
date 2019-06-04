@@ -79,9 +79,9 @@ function harmonics(){
     //pop();
     //line(point1[0],point1[1],point2[0],point2[1]);
   }
-  //text(harmonicsRandomNumberOne + " + x = " + harmonicsRandomNumberTwo,320,120);
-  text("Feedback: " + harmonicsFeedback,320,330);
   text("Your Question here",320,120);
+
+  text("Feedback: " + harmonicsFeedback,320,330);
 
   text("Work/Explanation:",800,200);
   text(harmonicsExplanation,800,250);
