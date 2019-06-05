@@ -39,20 +39,20 @@ function volume(){
       height= int(random(1,50));
       length= int(random(1,50));
       width= int(random(1,50));
-      volumeAnswer=(height*length*width).toFixed(2);
+      volumeAnswer=+(height*length*width).toFixed(2);
       volumeGenerateQuestion=false;
     }
     if (shapeChoice== 1){
       /*Sphere*/
       radius= int(random(1,50));
-      volumeAnswer=(4*3.14*radius*radius).toFixed(2);
+      volumeAnswer=+(4*3.14*radius*radius).toFixed(2);
       volumeGenerateQuestion=false;
     }
     if (shapeChoice== 2){
       /*Cylinder*/
       radius= int(random(1,50));
       height= int(random(1,50));
-      volumeAnswer=(3.14*radius*radius*height).toFixed(2);
+      volumeAnswer=+(3.14*radius*radius*height).toFixed(2);
       volumeGenerateQuestion=false;
     }
   }
