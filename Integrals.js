@@ -3,132 +3,108 @@
 var integralsTextBox = new TextBox(320,260,350,40,30);
 var integralsCheckButton = new Button(380,310,180,40,"Check",30,xOffset=50);
 var integralsNewQuestionButton = new Button(370,360,220,40,"New Question",30,xOffset=15);
-var integralsGenerateQuestion = true;
+var integralsGenerateQuestion = true; integralsShowExplanation = false;
 var integralsQuestion = ""; integralsXQuestion = ""; integralsYQuestion = ""; integralsZQuestion = "";
 var integralsAnswer = ""; integralsXAnswer = ""; integralsYAnswer = ""; integralsZAnswer = "";
+var integralsExplanation = ""; integralsTempExplanation = ""; integralsFeedback="";
 var integalsXNumericAnswer = 0; integalsYNumericAnswer = 0; integalsZNumericAnswer = 0;
 var integralsXAnswerCoefficient = 0; integralsYAnswerCoefficient = 0; integralsZAnswerCoefficient = 0;
 var integralsXQuestionCoefficient = 0; integralsYQuestionCoefficient = 0; integralsZQuestionCoefficient = 0;
-var integralsFeedback="";
-var integralsExplanation = "";
-var integralsShowExplanation = false;
-var integralsDisplayPosition = 340;
-var randomIntegralsType = 0;
-var randomIntegralsXSubType = 0; randomIntegralsYSubType = 0; randomIntegralsZSubType = 0;
-var randomIntegralsXCoefficient = 0; randomIntegralsYCoefficient = 0; randomIntegralsZCoefficient = 0;
-var randomIntegralsNumeric =0;
-var randomLowerBound1 = 0;
-var randomUpperBound1 = 0;
-var randomLowerBound2 = 0;
-var randomUpperBound2 = 0;
-var randomLowerBound3 = 0;
-var randomUpperBound3 = 0;
+var integralsType = 0; integralsNumeric = 0; temp1 = 0; temp2 = 0;
+var integralsXSubType = 0; integralsYSubType = 0; integralsZSubType = 0;
+var integralsXCoefficient = 0; integralsYCoefficient = 0; integralsZCoefficient = 0;
+var lowerBound1 = 0; upperBound1 = 0; lowerBound2 = 0; upperBound2 = 0; lowerBound3 = 0; upperBound3 = 0;
 
 function integrals(){
-  fill(255,238,153,100);
-  noStroke();
-  rect(735,155,615,525,20,0,0,20);
-  stroke(0);
+  fill(255,238,153,100); noStroke();
+  rect(765,155,585,600,20,0,0,20); stroke(0);
   integralsTextBox.update();
   integralsCheckButton.update();
   integralsNewQuestionButton.update();
 
   if(integralsGenerateQuestion == true){
     //single or double or triple
-    randomIntegralsType = Math.floor(random(0,3));
+    integralsType = Math.floor(random(0,3));
     //polynomial or e or sin or cos or const
-    randomIntegralsXSubType = Math.floor(random(0,5));
-    randomIntegralsYSubType = Math.floor(random(0,3));
-    randomIntegralsZSubType = Math.floor(random(0,3));
+    integralsXSubType = Math.floor(random(0,5));
+    integralsYSubType = Math.floor(random(0,3));
+    integralsZSubType = Math.floor(random(0,3));
 
-    randomIntegralsXCoefficient = Math.floor(random(4,10));
-    randomIntegralsYCoefficient = Math.floor(random(4,10));
-    randomIntegralsZCoefficient = Math.floor(random(4,10));
-
+    integralsXCoefficient = Math.floor(random(4,10));
+    integralsYCoefficient = Math.floor(random(4,10));
+    integralsZCoefficient = Math.floor(random(4,10));
     //definite or indef
-    randomIntegralsNumeric = Math.floor(random(0,2));
-    randomLowerBound1 = Math.floor(random(-5,0));
-    randomUpperBound1 = Math.floor(random(0,5));
-    randomLowerBound2 = Math.floor(random(-5,0));
-    randomUpperBound2 = Math.floor(random(0,5));
-    randomLowerBound3 = Math.floor(random(-5,0));
-    randomUpperBound3 = Math.floor(random(0,5));
+    integralsNumeric = Math.floor(random(0,2));
+    lowerBound1 = Math.floor(random(-5,0));
+    upperBound1 = Math.floor(random(0,5));
+    lowerBound2 = Math.floor(random(-5,0));
+    upperBound2 = Math.floor(random(0,5));
+    lowerBound3 = Math.floor(random(-5,0));
+    upperBound3 = Math.floor(random(0,5));
 
-    if (randomIntegralsXSubType == 0){
-      integralsXQuestion = /*randomIntegralsXCoefficient*/ "x^" + (randomIntegralsXCoefficient-1);
-      integralsXAnswer = "x^" + (randomIntegralsXCoefficient);
-      integralsXQuestionCoefficient = randomIntegralsXCoefficient;
-      integralsXAnswerCoefficient = 1;
-      integralsXNumericAnswer = +(pow(randomUpperBound1,randomIntegralsXCoefficient) - pow(randomLowerBound1,randomIntegralsXCoefficient)).toFixed(2);
-    } else if (randomIntegralsXSubType == 1){
-      integralsXQuestion = /*randomIntegralsXCoefficient*/ "e^x";
-      integralsXAnswer = /*randomIntegralsXCoefficient +*/ "e^x";
-      integralsXQuestionCoefficient = randomIntegralsXCoefficient;
-      integralsXAnswerCoefficient = randomIntegralsXCoefficient;
-      integralsXNumericAnswer = +(exp(randomUpperBound1) - exp(randomLowerBound1)).toFixed(2);
-    } else if (randomIntegralsXSubType == 2){
-      integralsXQuestion = /*randomIntegralsXCoefficient*/ "sin(x)";
-      integralsXAnswer = /*"-" + randomIntegralsXCoefficient +*/ "cos(x)";
-      integralsXQuestionCoefficient = randomIntegralsXCoefficient;
-      integralsXAnswerCoefficient = randomIntegralsXCoefficient;
-      integralsXNumericAnswer = +(-cos(randomUpperBound1)+cos(randomLowerBound1)).toFixed(2);
-    } else if (randomIntegralsXSubType == 3){
-      integralsXQuestion = /*randomIntegralsXCoefficient*/ "cos(x)";
-      integralsXAnswer = /*randomIntegralsXCoefficient +*/ "sin(x)";
-      integralsXQuestionCoefficient = randomIntegralsXCoefficient;
-      integralsXAnswerCoefficient = randomIntegralsXCoefficient;
-      integralsXNumericAnswer = +(sin(randomUpperBound1)-sin(randomLowerBound1)).toFixed(2);
-    } else if (randomIntegralsXSubType == 4){
-      integralsXQuestion = /*randomIntegralsXCoefficient*/"";
-      integralsXAnswer = /*randomIntegralsXCoefficient +*/ "x";
-      integralsXQuestionCoefficient = randomIntegralsXCoefficient;
-      integralsXAnswerCoefficient = randomIntegralsXCoefficient;
-      integralsXNumericAnswer = +(randomUpperBound1-randomLowerBound1).toFixed(2);
+    integralsExplanation="Find the antiderivative F of the integrand with respect\n   to x applying the constant rule:\n       ";
+
+    integralsXQuestionCoefficient = integralsXCoefficient;
+    if (integralsXSubType == 0){integralsXAnswerCoefficient = 1;}
+    else {integralsXAnswerCoefficient = integralsXCoefficient;}
+    if (integralsXSubType == 0){
+      integralsXQuestion =/*integralsXCoefficient*/"(x^"+(integralsXCoefficient-1)+")";
+      integralsXAnswer = "(x^" + (integralsXCoefficient) + ")";
+      integralsXNumericAnswer= +(pow(upperBound1,integralsXCoefficient)-pow(lowerBound1,integralsXCoefficient)).toFixed(2);
+    } else if (integralsXSubType == 1){
+      integralsXQuestion = /*integralsXCoefficient*/ "(e^x)";
+      integralsXAnswer = /*integralsXCoefficient +*/ "(e^x)";
+      integralsXNumericAnswer = +(exp(upperBound1)-exp(lowerBound1)).toFixed(2);
+    } else if (integralsXSubType == 2){
+      integralsXQuestion = /*integralsXCoefficient*/ "sin(x)";
+      integralsXAnswer = /*"-" + integralsXCoefficient +*/ "cos(x)";
+      integralsXNumericAnswer= +(-cos(upperBound1)+cos(lowerBound1)).toFixed(2);
+    } else if (integralsXSubType == 3){
+      integralsXQuestion = /*integralsXCoefficient*/ "cos(x)";
+      integralsXAnswer = /*integralsXCoefficient +*/ "sin(x)";
+      integralsXNumericAnswer = +(sin(upperBound1)-sin(lowerBound1)).toFixed(2);
+    } else if (integralsXSubType == 4){
+      integralsXQuestion = /*integralsXCoefficient*/"";
+      integralsXAnswer = /*integralsXCoefficient +*/ "x";
+      integralsXNumericAnswer = +(upperBound1-lowerBound1).toFixed(2);
     }
 
-    if (randomIntegralsYSubType == 0){
-      integralsYQuestion = /*randomIntegralsYCoefficient*/ "y^" + (randomIntegralsYCoefficient-1);
-      integralsYAnswer = "y^" + randomIntegralsYCoefficient;
-      integralsYQuestionCoefficient = randomIntegralsYCoefficient;
-      integralsYAnswerCoefficient = 1;
-      integralsYNumericAnswer = +(pow(randomUpperBound2,randomIntegralsYCoefficient)-pow(randomLowerBound2,randomIntegralsYCoefficient)).toFixed(2);
-    } else if (randomIntegralsYSubType == 1){
-      integralsYQuestion = /*randomIntegralsYCoefficient + */"e^y";
-      integralsYAnswer = /*randomIntegralsYCoefficient +*/ "e^y";
-      integralsYQuestionCoefficient = randomIntegralsYCoefficient;
-      integralsYAnswerCoefficient = randomIntegralsYCoefficient;
-      integralsYNumericAnswer = +(exp(randomUpperBound2)-exp(randomLowerBound2)).toFixed(2);
-    } else if (randomIntegralsYSubType == 2){
-      integralsYQuestion = /*randomIntegralsYCoefficient*/"";
-      integralsYAnswer = /*randomIntegralsYCoefficient +*/ "y";
-      integralsYQuestionCoefficient = randomIntegralsYCoefficient;
-      integralsYAnswerCoefficient = randomIntegralsYCoefficient;
-      integralsYNumericAnswer = +(randomUpperBound2-randomLowerBound2).toFixed(2);
+    integralsYQuestionCoefficient = integralsYCoefficient;
+    if (integralsYSubType == 0){integralsYAnswerCoefficient = 1;}
+    else {integralsYAnswerCoefficient = integralsYCoefficient;}
+    if (integralsYSubType == 0){
+      integralsYQuestion=/*integralsYCoefficient*/"(y^"+(integralsYCoefficient-1)+")";
+      integralsYAnswer = "(y^" + integralsYCoefficient + ")";
+      integralsYNumericAnswer= +(pow(upperBound2,integralsYCoefficient)-pow(lowerBound2,integralsYCoefficient)).toFixed(2);
+    } else if (integralsYSubType == 1){
+      integralsYQuestion = /*integralsYCoefficient + */"(e^y)";
+      integralsYAnswer = /*integralsYCoefficient +*/ "(e^y)";
+      integralsYNumericAnswer = +(exp(upperBound2)-exp(lowerBound2)).toFixed(2);
+    } else if (integralsYSubType == 2){
+      integralsYQuestion = /*integralsYCoefficient*/"";
+      integralsYAnswer = /*integralsYCoefficient +*/ "y";
+      integralsYNumericAnswer = +(upperBound2-lowerBound2).toFixed(2);
     }
 
-    if (randomIntegralsZSubType == 0){
-      integralsZQuestion = /*randomIntegralsZCoefficient +*/ "z^" + (randomIntegralsZCoefficient-1);
-      integralsZAnswer = "z^" + randomIntegralsZCoefficient;
-      integralsZQuestionCoefficient = randomIntegralsZCoefficient;
-      integralsZAnswerCoefficient = 1;
-      integralsZNumericAnswer = +(pow(randomUpperBound3,randomIntegralsZCoefficient)-pow(randomLowerBound3,randomIntegralsZCoefficient)).toFixed(2);
-    } else if (randomIntegralsZSubType == 1){
-      integralsZQuestion = /*randomIntegralsZCoefficient +*/ "e^z";
-      integralsZAnswer = /*randomIntegralsZCoefficient +*/ "e^z";
-      integralsZQuestionCoefficient = randomIntegralsZCoefficient;
-      integralsZAnswerCoefficient = randomIntegralsZCoefficient;
-      integralsZNumericAnswer = +(exp(randomUpperBound3)-exp(randomLowerBound3)).toFixed(2);
-    } else if (randomIntegralsZSubType == 2){
-      integralsZQuestion = /*randomIntegralsZCoefficient*/"";
-      integralsZAnswer = /*randomIntegralsZCoefficient +*/ "z";
-      integralsZQuestionCoefficient = randomIntegralsZCoefficient;
-      integralsZAnswerCoefficient = randomIntegralsZCoefficient;
-      integralsZNumericAnswer = +(randomUpperBound3-randomLowerBound3).toFixed(2);
+    integralsZQuestionCoefficient = integralsZCoefficient;
+    if (integralsZSubType == 0){integralsZAnswerCoefficient = 1;}
+    else {integralsZAnswerCoefficient = integralsZCoefficient;}
+    if (integralsZSubType == 0){
+      integralsZQuestion=/*integralsZCoefficient +*/"(z^"+(integralsZCoefficient-1)+")";
+      integralsZAnswer = "(z^" + integralsZCoefficient + ")";
+      integralsZNumericAnswer= +(pow(upperBound3,integralsZCoefficient)-pow(lowerBound3,integralsZCoefficient)).toFixed(2);
+    } else if (integralsZSubType == 1){
+      integralsZQuestion = /*integralsZCoefficient +*/ "(e^z)";
+      integralsZAnswer = /*integralsZCoefficient +*/ "(e^z)";
+      integralsZNumericAnswer = +(exp(upperBound3)-exp(lowerBound3)).toFixed(2);
+    } else if (integralsZSubType == 2){
+      integralsZQuestion = /*integralsZCoefficient*/"";
+      integralsZAnswer = /*integralsZCoefficient +*/ "z";
+      integralsZNumericAnswer = +(upperBound3-lowerBound3).toFixed(2);
     }
-
-    /*console.log("integralsXQuestionCoefficient " + integralsXQuestionCoefficient);
-    console.log("integralsYQuestionCoefficient " + integralsYQuestionCoefficient);
-    console.log("integralsZQuestionCoefficient " + integralsZQuestionCoefficient);
+    /*console.log("integralsXQuestionCoefficient "+integralsXQuestionCoefficient);
+    console.log("integralsYQuestionCoefficient "+integralsYQuestionCoefficient);
+    console.log("integralsZQuestionCoefficient "+integralsZQuestionCoefficient);
     console.log("integralsXAnswerCoefficient " + integralsXAnswerCoefficient);
     console.log("integralsYAnswerCoefficient " + integralsYAnswerCoefficient);
     console.log("integralsZAnswerCoefficient " + integralsZAnswerCoefficient);
@@ -139,94 +115,138 @@ function integrals(){
     console.log("integralsYNumericAnswer " + integralsYNumericAnswer);
     console.log("integralsZNumericAnswer " + integralsZNumericAnswer);
     console.log(" ");*/
-
     //if the integral is double or triple, it's always definite
-    if (randomIntegralsType == 0){
+    if (integralsType == 0){
       integralsQuestion = (integralsXQuestionCoefficient) + integralsXQuestion;
-      if (randomIntegralsNumeric==0){
-        integralsAnswer = integralsXAnswerCoefficient + integralsXAnswer;
+      if (integralsNumeric==0){
+        if (integralsXSubType == 0){
+          integralsAnswer = integralsXAnswer + " + C";
+        } else {
+          integralsAnswer=integralsXAnswerCoefficient+integralsXAnswer + " + C";
+          integralsXAnswer = integralsXAnswerCoefficient + integralsXAnswer; }
+        //add the - minus sign for the case when the integral is indefinite, single and sin
+        if(integralsXSubType==2){integralsAnswer="-"+integralsAnswer;integralsXAnswer="-"+integralsXAnswer;}
+        integralsExplanation+=integralsXAnswer+"\nThen add the constant:\n      "+integralsAnswer;
       } else {
-        integralsAnswer = +(integralsXAnswerCoefficient * integralsXNumericAnswer).toFixed(2);
+        integralsAnswer= +(integralsXAnswerCoefficient*integralsXNumericAnswer).toFixed(2);
+        if (integralsXSubType == 0){
+          integralsExplanation+=integralsXAnswer+
+          "\nThen use the Fundamental Theorem of Calculus with\n   respect to x:\n       F(b) - F(a) = "+
+          "F("+upperBound1+") - F("+lowerBound1+")\n    = "+integralsAnswer;
+        } else {
+          integralsExplanation+=integralsXAnswerCoefficient+integralsXAnswer+
+          "\nThen use the Fundamental Theorem of Calculus with\n   respect to x:\n       F(b) - F(a) = "+
+          "F("+upperBound1+") - F("+lowerBound1+")\n    = "+integralsAnswer;
+        }
       }
     }
-    if (randomIntegralsType == 1){
-      integralsQuestion = (integralsXQuestionCoefficient*integralsYQuestionCoefficient) + integralsXQuestion + integralsYQuestion;
-      integralsAnswer = +(integralsXAnswerCoefficient*integralsYAnswerCoefficient*integralsXNumericAnswer*integralsYNumericAnswer).toFixed(2);
+    if (integralsType == 1){
+      integralsQuestion=(integralsXQuestionCoefficient*integralsYQuestionCoefficient)+integralsXQuestion+integralsYQuestion;
+      integralsAnswer= +(integralsXAnswerCoefficient*integralsYAnswerCoefficient*integralsXNumericAnswer*integralsYNumericAnswer).toFixed(2);
+      if (integralsXSubType == 0){
+        temp1 = +(integralsYQuestionCoefficient).toFixed(2);
+        temp2 = +(integralsXNumericAnswer*integralsYQuestionCoefficient).toFixed(2);
+      } else {
+        temp1 = +(integralsXAnswerCoefficient*integralsYQuestionCoefficient).toFixed(2);
+        temp2 = +(integralsXNumericAnswer*integralsXAnswerCoefficient*integralsYQuestionCoefficient).toFixed(2);
+      }
+      integralsTempExplanation=temp1+integralsXAnswer+integralsYQuestion+
+      "\nThen use the Fundamental Theorem of Calculus with\n   respect to x:\n       "+
+      temp1+integralsYQuestion+"(F(b) - F(a)) = "+temp1+integralsYQuestion+
+      "(F("+upperBound1+") - F("+lowerBound1+"))\n    = "+temp2+integralsYQuestion+"\n";
+      if (integralsYSubType == 0){
+        temp1 = +(integralsXAnswerCoefficient*integralsXNumericAnswer).toFixed(2);
+      } else {
+        temp1 = +(integralsXAnswerCoefficient*integralsXNumericAnswer*integralsYAnswerCoefficient).toFixed(2);
+      }
+      integralsTempExplanation+=
+      "Find the antiderivative F of the new integrand with\n   respect to y applying the constant rule:\n      "+
+      temp1+integralsYAnswer+"\nThen use the Fundamental Theorem of Calculus with\n   respect to y:\n      "+
+      temp1+"(F(b) - F(a)) = "+temp1+"(F("+upperBound2+") - F("+lowerBound2+
+      "))\n    = "+integralsAnswer;
+      console.log(integralsTempExplanation);
+      if (integralsXSubType == 2){
+        integralsExplanation += "-" + integralsTempExplanation;
+      } else { integralsExplanation += integralsTempExplanation; }
     }
-    if (randomIntegralsType == 2){
-      integralsQuestion = (integralsXQuestionCoefficient*integralsYQuestionCoefficient*integralsZQuestionCoefficient) + integralsXQuestion + integralsYQuestion + integralsZQuestion;
-      integralsAnswer = +(integralsXAnswerCoefficient*integralsYAnswerCoefficient*integralsZAnswerCoefficient*integralsXNumericAnswer*integralsYNumericAnswer*integralsZNumericAnswer).toFixed(2);
+
+    if (integralsType == 2){
+      integralsQuestion=(integralsXQuestionCoefficient*integralsYQuestionCoefficient*integralsZQuestionCoefficient)+integralsXQuestion+integralsYQuestion+integralsZQuestion;
+      integralsAnswer= +(integralsXAnswerCoefficient*integralsYAnswerCoefficient*integralsZAnswerCoefficient*integralsXNumericAnswer*integralsYNumericAnswer*integralsZNumericAnswer).toFixed(2);
+      if (integralsXSubType == 0){
+        temp1 = +(integralsYQuestionCoefficient*integralsZQuestionCoefficient).toFixed(2);
+        temp2 = +(integralsXNumericAnswer*integralsYQuestionCoefficient*integralsZQuestionCoefficient).toFixed(2);
+      } else {
+        temp1 = +(integralsXAnswerCoefficient*integralsYQuestionCoefficient*integralsZQuestionCoefficient).toFixed(2);
+        temp2 = +(integralsXNumericAnswer*integralsXAnswerCoefficient*integralsYQuestionCoefficient*integralsZQuestionCoefficient).toFixed(2);
+      }
+        integralsTempExplanation=temp1+integralsXAnswer+integralsYQuestion+integralsZQuestion+
+        "\nThen use the Fundamental Theorem of Calculus with\n   respect to x:\n       "+
+        temp1+integralsYQuestion+integralsZQuestion+"(F(b) - F(a)) = "+temp1+
+        integralsYQuestion+integralsZQuestion+"(F("+upperBound1+") - F("+lowerBound1+
+        "))\n    = "+temp2+integralsYQuestion+integralsZQuestion+"\n";
+      if (integralsYSubType == 0){
+        temp1 = +(integralsXAnswerCoefficient*integralsXNumericAnswer*integralsZQuestionCoefficient).toFixed(2);
+        temp2 = +(integralsXAnswerCoefficient*integralsXNumericAnswer*integralsYNumericAnswer*integralsZQuestionCoefficient).toFixed(2);
+      } else {
+        temp1 = +(integralsXAnswerCoefficient*integralsXNumericAnswer*integralsYAnswerCoefficient*integralsZQuestionCoefficient).toFixed(2);
+        temp2 = +(integralsXAnswerCoefficient*integralsXNumericAnswer*integralsYAnswerCoefficient*integralsYNumericAnswer*integralsZQuestionCoefficient).toFixed(2);
+      }
+      integralsTempExplanation+=
+      "Find the antiderivative F of the new integrand with\n   respect to y applying the constant rule:\n       "+
+      temp1+integralsYAnswer+integralsZQuestion+"\nThen use the Fundamental Theorem of Calculus with\n   respect to y:\n       "+
+      temp1+integralsZQuestion+"(F(b) - F(a)) = "+temp1+integralsZQuestion+"(F("+
+      upperBound2+") - F("+lowerBound2+"))\n    = "+temp2+integralsZQuestion+"\n";
+      if (integralsZSubType == 0){
+        temp1 = +(integralsXAnswerCoefficient*integralsYAnswerCoefficient*integralsXNumericAnswer*integralsYNumericAnswer).toFixed(2);
+      } else {
+        temp1 = +(integralsXAnswerCoefficient*integralsYAnswerCoefficient*integralsXNumericAnswer*integralsYNumericAnswer*integralsZAnswerCoefficient).toFixed(2);
+      }
+      integralsTempExplanation+="Find the antiderivative F of the new integrand with\n   respect to z applying the constant rule:\n       "+
+      temp1+integralsZAnswer+"\nThen use the Fundamental Theorem of Calculus with\n   respect to z:\n       "+
+      temp1+"(F(b) - F(a)) = "+temp1+"(F("+upperBound3+") - F("+lowerBound3+"))\n    = "+integralsAnswer;
+      console.log(integralsTempExplanation);
+      if (integralsXSubType == 2){
+        integralsExplanation += "-" + integralsTempExplanation;
+      } else { integralsExplanation += integralsTempExplanation; }
     }
-    //add the - minus sign for the case when the integral is indefinite, single and sin
-    if (randomIntegralsXSubType == 2 && randomIntegralsNumeric == 0 && randomIntegralsType == 0){ integralsAnswer = "-" + integralsAnswer; }
-    if (randomIntegralsNumeric == 0 && randomIntegralsType == 0){ integralsAnswer += " + C" }
 
-    if (randomIntegralsType>=0){integralsQuestion += "dx"};
-    if (randomIntegralsType>=1){integralsQuestion += "dy"};
-    if (randomIntegralsType==2){integralsQuestion += "dz"};
+    if (integralsType>=0){integralsQuestion += "dx"};
+    if (integralsType>=1){integralsQuestion += "dy"};
+    if (integralsType==2){integralsQuestion += "dz"};
 
-    integralsExplanation = integralsAnswer;
     integralsGenerateQuestion = false;
   }
-
   /*If the integralsNewQuestionButon is clicked, set integralsGenerateQuestion
   to true, so it generates a new question in the next frame*/
   if(integralsNewQuestionButton.clicked==true){
     integralsTextBox.data="";
     integralsGenerateQuestion = true;
-    integralsShowExplanation = false;
-  }
-
-  /*check if the user's answer is right or not when the
-  integralsCheckButton is clicked*/
+    integralsShowExplanation = false; }
+  /*check if the user's answer is right or not when the integralsCheckButton is clicked*/
   if(integralsCheckButton.clicked==true){
     integralsShowExplanation = true;
-    /*The parseFloat() function turns integralsTextBox.data, which is a string (or text)
-    data type into a float datatype so they can be compared*/
-    if((integralsTextBox.data)==integralsAnswer){
-      integralsFeedback="Correct!";
-    }else{
-      integralsFeedback="Try again"
-    }
+    if((integralsTextBox.data)==integralsAnswer){integralsFeedback="Correct!";}
+    else {integralsFeedback="Try again"}
   }
-
-  //Display the output, feedback, and work
-  text("Feedback: ",320,440);
-  text("Work/Explanation:",800,200);
+  //Display the output, feedback, and explanation
+  text("Feedback: ",320,440); text("Work/Explanation:",800,200);
   if (integralsShowExplanation){
-      text(integralsExplanation,800,250);
-      text(integralsFeedback,470,440);
-  }
-  text("Calculate the following integral (round up to two decimals):",320,120);
-
+    textSize(20); text(integralsExplanation,800,230); textSize(30);
+    text(integralsFeedback,470,440); }
+  text("Evaluate the following integral:",320,120);
   //print integral signs and bounds
-  if (randomIntegralsType>=0){
-    textSize(60);
-    text("∫",385,210);
-    if (randomIntegralsNumeric==1 || randomIntegralsType >=1){
-      textSize(18);
-      text(randomLowerBound1,400,235);
-      text(randomUpperBound1,418,170);
-    }
+  if (integralsType>=0){
+    textSize(60); text("∫",385,210);
+    if (integralsNumeric==1 || integralsType >=1){
+      textSize(18); text(lowerBound1,400,235); text(upperBound1,418,170); }
     textSize(30);
   }
-  if (randomIntegralsType>=1){
-    textSize(60);
-    text("∫",355,210);
-    textSize(18);
-    text(randomLowerBound2,370,235);
-    text(randomUpperBound2,388,170);
-    textSize(30);
-  }
-  if (randomIntegralsType==2){
-    textSize(60);
-    text("∫",325,210);
-    textSize(18);
-    text(randomLowerBound3,340,235);
-    text(randomUpperBound3,358,170);
-    textSize(30);
-  }
-  text(integralsQuestion,415,210);
+  if (integralsType>=1){
+    textSize(60); text("∫",355,210); textSize(18);
+    text(lowerBound2,370,235); text(upperBound2,388,170); textSize(30);  }
+  if (integralsType==2){
+    textSize(60); text("∫",325,210); textSize(18);
+    text(lowerBound3,340,235); text(upperBound3,358,170); textSize(30); }
+  textSize(28); text(integralsQuestion,415,210); textSize(30);
 }
-//∫
-//]
