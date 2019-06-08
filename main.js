@@ -8,11 +8,10 @@ var customSwitch = new CategorySwitch(10,210,280,45,[0,0,300,280],"Custom",35,xO
 
 //Math:
 var algebraSwitch = new CategorySwitch(10,340,280,50,[0,280,300,1080],"Simple Algebra",35,xOffset=22);
-var derivativesSwitch = new CategorySwitch(10,410,280,50,[0,280,300,1080],"Derivatives",35,xOffset=55);
-var integralsSwitch = new CategorySwitch(10,480,280,50,[0,280,300,1080],"Integrals",35,xOffset=75);
-var seriesSwitch = new CategorySwitch(10,550,280,50,[0,280,300,1080],"Series",35,xOffset=95);
-var matrixSwitch = new CategorySwitch(10,620,280,50,[0,280,300,1080],"Matrixes",35,xOffset=75);
-var volumeSwitch = new CategorySwitch(10,690,280,50,[0,280,300,1080],"Volume",35,xOffset=80);
+var calculusSwitch = new CategorySwitch(10,410,280,50,[0,280,300,1080],"Calculus",35,xOffset=80);
+var seriesSwitch = new CategorySwitch(10,480,280,50,[0,280,300,1080],"Series",35,xOffset=95);
+var matrixSwitch = new CategorySwitch(10,550,280,50,[0,280,300,1080],"Matrixes",35,xOffset=75);
+var volumeSwitch = new CategorySwitch(10,620,280,50,[0,280,300,1080],"Volume",35,xOffset=80);
 //Science:
 var newtonsLawsSwitch = new CategorySwitch(10,340,280,50,[0,280,300,1080],"Newton's Laws",35,xOffset=28);
 var harmonicsSwitch = new CategorySwitch(10,410,280,50,[0,280,300,1080],"Harmonics",35,xOffset=65);
