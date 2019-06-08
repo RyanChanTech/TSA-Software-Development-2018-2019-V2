@@ -2,9 +2,9 @@
 
 //Textbox parameters: (x,y,width,height,text size)
 //Button parameters: (x,y,width,height,text,text size)
-var volumeTextBox = new TextBox(320,180,350,40,30);
-var volumeCheckButton = new Button(380,240,180,40,"Check",30,xOffset=50);
-var volumeNewQuestionButton = new Button(370,300,220,40,"New Question",30,xOffset=15);
+var volumeTextBox = new TextBox(320,185,350,40,30);
+var volumeCheckButton = new Button(380,235,180,40,"Check",30,xOffset=50);
+var volumeNewQuestionButton = new Button(370,285,220,40,"New Question",30,xOffset=15);
 var volumeGenerateQuestion = true;
 var volumeRandomNumberOne = 0;
 var volumeRandomNumberTwo = 0;
@@ -93,15 +93,15 @@ function volume(){
   //Display the output, feedback, and work
   //box(width, height, length);
 if (shapeChoice==0){
-  text("The question is: What is the volume of a rectangular prism with sides \n"+height+", "+length+", and "+width+"?",320,125);
+  text("What is the volume of a rectangular prism with\nsides "+height+", "+length+", and "+width+"?",320,125);
 }
 if (shapeChoice==1){
-  text("The question is: What is the volume of a sphere with a radius of "+radius+"?",320,125);
+  text("What is the volume of a sphere with a radius of "+radius+"?",320,125);
 }
 if (shapeChoice==2){
-  text("The question is: What is the volume of a cylinder with a height of "+height+"\n and a radius of "+radius+ "?",320,125);
+  text("What is the volume of a cylinder with a height of\n"+height+" and a radius of "+radius+ "?",320,125);
 }
-text("Feedback: " + volumeFeedback,320,380);
+text("Feedback: " + volumeFeedback,320,365);
 text("Work/Explanation:",800,200);
 text(volumeExplanation,800,250);
 }

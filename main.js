@@ -41,8 +41,7 @@ function draw() {
   //update each tool based on their category
   if(mathSwitch.switchedOn==true){
     algebraSwitch.update();
-    derivativesSwitch.update();
-    integralsSwitch.update();
+    calculusSwitch.update();
     seriesSwitch.update();
     matrixSwitch.update();
     volumeSwitch.update();
@@ -56,10 +55,8 @@ function draw() {
   //If each switch is switchedOn, run the function
   if(algebraSwitch.switchedOn==true){
     algebra();
-  }else if(derivativesSwitch.switchedOn==true){
-    derivatives();
-  }else if(integralsSwitch.switchedOn==true){
-    integrals();
+  }else if(calculusSwitch.switchedOn==true){
+    calculus();
   }else if(newtonsLawsSwitch.switchedOn==true){
     newtonsLaws();
   }else if(stoichSwitch.switchedOn==true){

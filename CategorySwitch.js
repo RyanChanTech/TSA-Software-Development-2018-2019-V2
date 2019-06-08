@@ -11,7 +11,7 @@ function CategorySwitch(x,y,w,h,categoryBoundary,t,ts,textOffset=5){
     }
     noStroke();
     rect(x,y,w,h,10);
-    stroke(0)
+    stroke(0);
     textSize(ts);
     fill(0);
     text(t,x+textOffset,y+h-10);
