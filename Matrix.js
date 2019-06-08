@@ -66,7 +66,7 @@ function matrix(){
     }
   }
   if (matrixRandomType == 1){
-    text("Evaluate the determinent of\n the 3 X 3 Matrix: ",320,120);
+    text("Evaluate the determinant of\n the 3 X 3 Matrix: ",320,120);
     strokeWeight(3); line(390,170,390,285); line(580,170,580,285);
     strokeWeight(1);//set to default
     text(a1,400,200); text(a2,465,200); text(a3,530,200); text(a4,400,240);
