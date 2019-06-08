@@ -1,23 +1,23 @@
 /*IMPORTANT: The x and y coordinate system looks like this:
 https://openclipart.org/detail/234445/computer-math-coordinate-system*/
 
-//Switch parameters: (x,y,width,height,text,text size, x offset (optional))
-var mathSwitch=new CategorySwitch(10,70,280,45,"Math",35,xOffset=100);
-var scienceSwitch=new CategorySwitch(10,140,280,45,"Science",35,xOffset=80);
-var customSwitch = new CategorySwitch(10,210,280,45,"Custom",35,xOffset=80);
+//Switch parameters: (x,y,width,height,categoryBoudary=[x1,y1,x2,y2],text,text size, x offset (OPTIONAL))
+var mathSwitch=new CategorySwitch(10,70,280,45,[0,0,300,280],"Math",35,xOffset=100);
+var scienceSwitch=new CategorySwitch(10,140,280,45,[0,0,300,280],"Science",35,xOffset=80);
+var customSwitch = new CategorySwitch(10,210,280,45,[0,0,300,280],"Custom",35,xOffset=80);
 
-var algebraSwitch = new Switch(10,340,280,50,"Simple Algebra",35,xOffset=22);
-var derivativesSwitch = new Switch(10,410,280,50,"Derivatives",35,xOffset=55);
-var integralsSwitch = new Switch(10,480,280,50,"Integrals",35,xOffset=75);
-var seriesSwitch = new Switch(10,550,280,50,"Series",35,xOffset=95);
-var matrixSwitch = new Switch(10,620,280,50,"Matrixes",35,xOffset=75);
-var volumeSwitch = new Switch(10,690,280,50,"Volume",35,xOffset=80);
-
-var newtonsLawsSwitch = new Switch(10,340,280,50,"Newton's Laws",35,xOffset=28);
-var harmonicsSwitch = new Switch(10,410,280,50,"Harmonics",35,xOffset=65);
-var circuitSwitch = new Switch(10,480,280,50,"Circuits",35,xOffset=80);
-var stoichSwitch = new Switch(10,550,280,50,"Stoichiometry",35,xOffset=31);
-
+//Math:
+var algebraSwitch = new CategorySwitch(10,340,280,50,[0,280,300,1080],"Simple Algebra",35,xOffset=22);
+var derivativesSwitch = new CategorySwitch(10,410,280,50,[0,280,300,1080],"Derivatives",35,xOffset=55);
+var integralsSwitch = new CategorySwitch(10,480,280,50,[0,280,300,1080],"Integrals",35,xOffset=75);
+var seriesSwitch = new CategorySwitch(10,550,280,50,[0,280,300,1080],"Series",35,xOffset=95);
+var matrixSwitch = new CategorySwitch(10,620,280,50,[0,280,300,1080],"Matrixes",35,xOffset=75);
+var volumeSwitch = new CategorySwitch(10,690,280,50,[0,280,300,1080],"Volume",35,xOffset=80);
+//Science:
+var newtonsLawsSwitch = new CategorySwitch(10,340,280,50,[0,280,300,1080],"Newton's Laws",35,xOffset=28);
+var harmonicsSwitch = new CategorySwitch(10,410,280,50,[0,280,300,1080],"Harmonics",35,xOffset=65);
+var circuitSwitch = new CategorySwitch(10,480,280,50,[0,280,300,1080],"Circuits",35,xOffset=80);
+var stoichSwitch = new CategorySwitch(10,550,280,50,[0,280,300,1080],"Stoichiometry",35,xOffset=31);
 
 var logo;
 //The setup function only runs once
