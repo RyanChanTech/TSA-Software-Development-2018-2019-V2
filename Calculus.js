@@ -1,33 +1,10 @@
-function DifficultySwitch(x,y,w,h,t,ts,xOffset=5){
-  this.switchedOn = false;
-
-  this.update = function(){
-    if(!this.switchedOn){
-      fill(255);
-    }else{
-      fill(239, 143, 143);
-    }
-    noStroke();
-    rect(x,y,w,h,10);
-    stroke(0);
-    textSize(ts);
-    fill(0);
-    text(t,x+xOffset,y+h-15);
-    if(mouseIsPressed&&mouseX>x&&mouseX<x+w&&mouseY>y&&mouseY<y+h){
-      this.switchedOn = true;
-    }else if(mouseIsPressed&&mouseX>320&&mouseX<740&&mouseY>500&&mouseY<755&&
-      (mouseX<x||mouseX>x+w||mouseY<y||mouseY>y+h)){
-      this.switchedOn = false;
-    }
-  }
-}
 //Textbox parameters: (x,y,width,height,text size)
 //Button parameters: (x,y,width,height,text,text size)
 var calculusTextBox = new TextBox(320,260,350,40,30);
 var calculusCheckButton = new Button(380,310,180,40,"Check",30,xOffset=50);
 var calculusNewQuestionButton = new Button(370,360,220,40,"New Question",30,xOffset=15);
-var singleCalculus = new DifficultySwitch(355,550,350,50,"Single Variable Calculus",30,xOffset=15);
-var multiCalculus = new DifficultySwitch(355,620,350,50,"Multivariable Calculus",30,xOffset=28);
+var singleCalculus = new CategorySwitch(355,550,350,50,[320,500,740,755],"Single Variable Calculus",30,xOffset=15,onColor=[239, 143, 143]);
+var multiCalculus = new CategorySwitch(355,620,350,50,[320,500,740,755],"Multivariable Calculus",30,xOffset=28,onColor=[239, 143, 143]);
 var calculusGenerateQuestion = true; calculusShowExplanation = false;
 var integralsQuestion = ""; integralsXQuestion = ""; integralsYQuestion = ""; integralsZQuestion = "";
 var integralsAnswer = ""; integralsXAnswer = ""; integralsYAnswer = ""; integralsZAnswer = "";

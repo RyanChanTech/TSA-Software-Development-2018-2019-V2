@@ -3,7 +3,7 @@ function keyPressed(){
   pressed=true;
 }
 
-function TextBox(x,y,w,h,ts){
+function TextBox(x,y,w,h,ts,onColor=[165,230,250]){
   this.switchedOn = false;
   this.keyOff = false;
   this.data = "";
@@ -12,7 +12,7 @@ function TextBox(x,y,w,h,ts){
   this.update = function(){
     stroke(0);
     if(this.switchedOn){
-      fill(165,230,250,120);
+      fill(onColor[0],onColor[1],onColor[2]);
     }else{
       fill(255);
     }

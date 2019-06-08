@@ -1,11 +1,11 @@
-function Switch(x,y,w,h,t,ts,xOffset=5){
+function Switch(x,y,w,h,t,ts,xOffset=5,onColor=[165,230,250]){
   this.switchedOn = false;
 
   this.update = function(){
     if(!this.switchedOn){
       fill(255);
     }else{
-      fill(165,230,250);
+      fill(onColor[0],onColor[1],onColor[2]);
     }
     noStroke();
     rect(x,y,w,h,10);

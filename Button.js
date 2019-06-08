@@ -3,13 +3,13 @@ function mouseReleased(){
   mouseRel=true;
 }
 
-function Button(x,y,w,h,t,ts,xOffset=5){
+function Button(x,y,w,h,t,ts,xOffset=5,onColor=[165,230,250]){
   this.clicked =false;
   this.text=t;
 
   this.update = function(){
     if(this.clicked){
-      fill(165,230,250,120);
+      fill(onColor[0],onColor[1],onColor[2],120);
     }else{
       fill(30,30,30,100);
     }
