@@ -9,7 +9,7 @@ function CategorySwitch(x,y,w,h,t,ts,xOffset=5){
     }
     noStroke();
     rect(x,y,w,h,10);
-    stroke(0)
+    stroke(0);
     textSize(ts);
     fill(0);
     text(t,x+xOffset,y+h-10);
