@@ -67,7 +67,8 @@ function harmonics(){
   }
 
   //Uncomment this below to generate a wave (translateX,translateY,amplitude,period)
-  //generateWave(300,200,30,2);
+  //generateSineWave(300,200,30,2);
+  //generateCosWave(300,500,30,2);
 
   text("Your Question here",320,120);
 
@@ -78,12 +79,22 @@ function harmonics(){
 }
 
 var displace=0;
-function generateWave(translateX, translateY, amplitude, period){
+function generateSineWave(translateX, translateY, amplitude, period){
   displace+=.1;
 
   for(var x=0;x<250;x++){
     var xPoint = x+translateX;
     var yPoint = amplitude*sin(radians(x*period)+displace)+translateY;
+    point(xPoint,yPoint);
+  }
+}
+
+function generateCosWave(translateX, translateY, amplitude, period){
+  displace+=.1;
+
+  for(var x=0;x<250;x++){
+    var xPoint = x+translateX;
+    var yPoint = amplitude*cos(radians(x*period)+displace)+translateY;
     point(xPoint,yPoint);
   }
 }
