@@ -66,7 +66,8 @@ function harmonics(){
     harmonicsExplanation="Your explaination here (Look at the Algebra.js code if you're confused)";
   }
 
-  //generateWave(300,200,30); Uncomment this to generate a wave
+  //Uncomment this below to generate a wave (translateX,translateY,amplitude,period)
+  //generateWave(300,200,30,2);
 
   text("Your Question here",320,120);
 
@@ -77,12 +78,12 @@ function harmonics(){
 }
 
 var displace=0;
-function generateWave(translateX, translateY, amplitude){
+function generateWave(translateX, translateY, amplitude, period){
   displace+=.1;
 
   for(var x=0;x<250;x++){
     var xPoint = x+translateX;
-    var yPoint = amplitude*sin(radians(x*3)+displace)+translateY;
+    var yPoint = amplitude*sin(radians(x*period)+displace)+translateY;
     point(xPoint,yPoint);
   }
 }
