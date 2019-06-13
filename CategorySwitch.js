@@ -14,7 +14,7 @@ function CategorySwitch(x,y,w,h,categoryBoundary,t,ts,textOffset=5,onColor=[165,
     stroke(0);
     textSize(ts);
     fill(0);
-    text(t,x+textOffset,y+h-10);
+    text(t,x+textOffset,y+h-12);
     strokeWeight(1);
     if(mouseIsPressed&&mouseX>x&&mouseX<x+w&&mouseY>y&&mouseY<y+h){
       this.switchedOn = true;
