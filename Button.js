@@ -1,6 +1,6 @@
-var mouseRel=true;
+var mouseIsReleased=true;
 function mouseReleased(){
-  mouseRel=true;
+  mouseIsReleased=true;
 }
 
 function Button(x,y,w,h,t,ts,xOffset=5,onColor=[165,230,250]){
@@ -20,9 +20,9 @@ function Button(x,y,w,h,t,ts,xOffset=5,onColor=[165,230,250]){
     stroke(0);
     text(this.text,x+xOffset,y+h-10);
 
-    if(mouseIsPressed && mouseX>x && mouseX<(x+w) && mouseY>y && mouseY<y+h && mouseRel){
+    if(mouseIsPressed && mouseX>x && mouseX<(x+w) && mouseY>y && mouseY<y+h && mouseIsReleased){
       this.clicked = true;
-      mouseRel = false;
+      mouseIsReleased = false;
     }else{
       this.clicked = false;
     }
