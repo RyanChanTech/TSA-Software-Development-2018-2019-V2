@@ -17,7 +17,9 @@ var newtonsLawsSwitch = new CategorySwitch(10,340,280,50,[0,0,300,1080],"Newton'
 var harmonicsSwitch = new CategorySwitch(10,410,280,50,[0,0,300,1080],"Harmonics",35,xOffset=65);
 var circuitSwitch = new CategorySwitch(10,480,280,50,[0,0,300,1080],"Circuits",35,xOffset=80);
 var stoichSwitch = new CategorySwitch(10,550,280,50,[0,0,300,1080],"Stoichiometry",35,xOffset=31);
-var testM=new Movable(100,340,280,50,"test",20);
+
+var testM1=new Movable(100,340,280,50,"test 1",20);
+var testM2=new Movable(150,340,280,50,"test 2",20);
 
 var logo;
 //The setup function only runs once
@@ -37,7 +39,10 @@ loops 30 times a second*/
 function draw() {
   background(255);
   displayDecorations(); //This is in the Miscellaneous.js file
-  testM.update();
+
+  //testM1.update();
+  //testM2.update();
+  //console.log(testM1.touching(testM2));
 
   //update each tool based on their category
   if(mathSwitch.switchedOn==true){
