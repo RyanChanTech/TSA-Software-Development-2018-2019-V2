@@ -8,6 +8,8 @@ function Movable(startX,startY,w,h,t,ts,xOffset=5,onColor=[165,230,250]){
 
   this.update = function(){
     if(this.clicked){
+      this.x=mouseX-this.width/2;
+      this.y=mouseY-this.height/2;
       fill(onColor[0],onColor[1],onColor[2],120);
     }else{
       fill(30,30,30,100);
@@ -20,10 +22,9 @@ function Movable(startX,startY,w,h,t,ts,xOffset=5,onColor=[165,230,250]){
     text(this.text,this.x+xOffset,this.y+h-10);
 
     if(mouseIsPressed && mouseX>this.x && mouseX<(this.x+w) && mouseY>this.y && mouseY<this.y+h){
-      this.x=mouseX-this.width/2;
-      this.y=mouseY-this.height/2;
       this.clicked = true;
-    }else{
+    }
+    if(!mouseIsPressed){
       this.clicked = false;
     }
   }
