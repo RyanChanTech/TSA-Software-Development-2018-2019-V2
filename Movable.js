@@ -1,3 +1,5 @@
+var alreadySelected=false;
+
 function Movable(startX,startY,w,h,t,ts,xOffset=5,onColor=[165,230,250]){
   this.x=startX;
   this.y=startY;
@@ -21,11 +23,13 @@ function Movable(startX,startY,w,h,t,ts,xOffset=5,onColor=[165,230,250]){
     stroke(0);
     text(this.text,this.x+xOffset,this.y+h-10);
 
-    if(mouseIsPressed && mouseX>this.x && mouseX<(this.x+w) && mouseY>this.y && mouseY<this.y+h){
+    if(mouseIsPressed && mouseX>this.x && mouseX<(this.x+w) && mouseY>this.y && mouseY<this.y+h && !alreadySelected){
       this.clicked = true;
+      alreadySelected = true;
     }
     if(!mouseIsPressed){
       this.clicked = false;
+      alreadySelected = false;
     }
   }
 

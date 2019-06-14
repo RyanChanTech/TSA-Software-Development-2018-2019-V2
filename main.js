@@ -6,6 +6,8 @@ var mathSwitch=new CategorySwitch(10,70,280,45,[0,0,300,280],"Math",35,xOffset=1
 var scienceSwitch=new CategorySwitch(10,140,280,45,[0,0,300,280],"Science",35,xOffset=80);
 var customSwitch = new CategorySwitch(10,210,280,45,[0,0,300,280],"Custom",35,xOffset=80);
 
+var customQuestions; //Used in Custom Generators
+
 //Math:
 var algebraSwitch = new CategorySwitch(10,340,280,50,[0,0,300,1080],"Simple Algebra",35,xOffset=22);
 var volumeSwitch = new CategorySwitch(10,410,280,50,[0,0,300,1080],"Volume",35,xOffset=80);
@@ -17,6 +19,9 @@ var newtonsLawsSwitch = new CategorySwitch(10,340,280,50,[0,0,300,1080],"Newton'
 var harmonicsSwitch = new CategorySwitch(10,410,280,50,[0,0,300,1080],"Harmonics",35,xOffset=65);
 var circuitSwitch = new CategorySwitch(10,480,280,50,[0,0,300,1080],"Circuits",35,xOffset=80);
 var stoichSwitch = new CategorySwitch(10,550,280,50,[0,0,300,1080],"Stoichiometry",35,xOffset=31);
+//Custom
+var typingSwitch = new CategorySwitch(10,340,280,50,[0,0,300,1080],"Typing",35,xOffset=85);
+var matchingSwitch = new CategorySwitch(10,410,280,50,[0,0,300,1080],"Matching",35,xOffset=65);
 
 var testM1=new Movable(100,340,280,50,"test 1",20);
 var testM2=new Movable(150,340,280,50,"test 2",20);
@@ -56,6 +61,9 @@ function draw() {
     circuitSwitch.update();
     harmonicsSwitch.update();
     stoichSwitch.update();
+  }else if(customSwitch.switchedOn==true){
+    typingSwitch.update();
+    matchingSwitch.update();
   }
 
   //If each switch is switchedOn, run the function
@@ -71,14 +79,16 @@ function draw() {
     series();
   }else if(matrixSwitch.switchedOn==true){
     matrix();
-  }else if(customSwitch.switchedOn==true){
-    custom();
+  }else if(typingSwitch.switchedOn==true){
+    customTyping();
   }else if(circuitSwitch.switchedOn==true){
     circuit();
   }else if(harmonicsSwitch.switchedOn==true){
     harmonics();
   }else if(volumeSwitch.switchedOn==true){
     volume();
+  }else if(matchingSwitch.switchedOn==true){
+    customMatching();
   }else{
     image(logo,300,80);
   }
