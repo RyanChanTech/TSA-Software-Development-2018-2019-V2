@@ -15,8 +15,8 @@ function customMatching(){
     for(var i=0;i<5;i++){
       //matchingQuestions.push(customQuestions[Math.floor(random(customQuestions.length))].split(";"));
       var question=customQuestions[Math.floor(random(customQuestions.length))].split(";");
-      matchingQuestionMovables.push(new Movable(random(370,1000),random(150,700),300,50,question[0],20));
-      matchingAnswerMovables.push(new Movable(random(370,1000),random(150,700),100,50,question[1],20));
+      matchingQuestionMovables.push(new Movable(random(370,1000),random(150,700),question[0].length*10+10,50,question[0],20));
+      matchingAnswerMovables.push(new Movable(random(370,1000),random(150,700),question[1].length*10+10,50,question[1],20));
     }
     //console.log(temp);
     matchingGenerateQuestions = false;
@@ -25,6 +25,11 @@ function customMatching(){
   for(var i=0;i<matchingQuestionMovables.length;i++){
     matchingQuestionMovables[i].update();
     matchingAnswerMovables[i].update();
+
+    if(matchingQuestionMovables[i].touching(matchingAnswerMovables[i])){
+      matchingQuestionMovables.splice(i,1);
+      matchingAnswerMovables.splice(i,1);
+    }
   }
 
   if(matchingNewQuestionsButton.clicked){
