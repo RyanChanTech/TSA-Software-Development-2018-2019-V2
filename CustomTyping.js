@@ -8,6 +8,10 @@ var customQuestion;//customQuestion[0]=Question,customQuestion[1]=Answer,customQ
 var customExplanation="";
 var customFeedback="";
 
+var temp;
+var customTest = [];
+var repeat = true;
+
 function customTyping(){
   fill(255,238,153,100);
   noStroke();
@@ -18,10 +22,17 @@ function customTyping(){
   customNewQuestionButton.update();
 
   if(customGenerateQuestion){
-    var temp=customQuestions[Math.floor(random(customQuestions.length))];
-    //console.log(temp);
-    customQuestion=temp.split(";");
     customGenerateQuestion = false;
+    while (repeat == true){
+      repeat = false;
+      temp=customQuestions[Math.floor(random(customQuestions.length))];
+      customQuestion=temp.split(";");
+      //test if the question already appeared
+      for (var i = 0;i<customTest.length;i++){
+        if (temp == customTest[i]){repeat = true;}
+      }
+    }
+    customTest.push(temp); repeat = true;//console.log(customTest);
   }
 
   if(customNewQuestionButton.clicked){
