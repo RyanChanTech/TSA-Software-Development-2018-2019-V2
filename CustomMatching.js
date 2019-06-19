@@ -14,6 +14,7 @@ function customMatching(){
   matchingNewQuestionsButton.update();
 
   if(matchingGenerateQuestions){
+    var possiblePositions=[[320,160],[320,290],[320,420],[320,550],[320,680],[670,100],[670,230],[670,360],[670,490],[670,620]];
     matchingQuestionMovables=[];
     matchingAnswerMovables=[];
 
@@ -28,8 +29,13 @@ function customMatching(){
         }
       }
       customTest.push(temp); repeat = true;console.log(customTest);
-      matchingQuestionMovables.push(new Movable(random(320,800),random(150,700),question[0].length*9+60,50,question[0],20));
-      matchingAnswerMovables.push(new Movable(random(320,800),random(150,700),question[1].length*9+60,50,question[1],20));
+
+      var positionIndex=Math.floor(random(0,possiblePositions.length));
+      matchingQuestionMovables.push(new Movable(possiblePositions[positionIndex][0],possiblePositions[positionIndex][1],question[0].length*9+60,50,question[0],20));
+      possiblePositions.splice(positionIndex,1);
+      positionIndex=Math.floor(random(0,possiblePositions.length));
+      matchingAnswerMovables.push(new Movable(possiblePositions[positionIndex][0],possiblePositions[positionIndex][1],question[1].length*9+60,50,question[1],20));
+      possiblePositions.splice(positionIndex,1);
     }
     //console.log(temp);
     matchingGenerateQuestions = false;
