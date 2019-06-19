@@ -5,6 +5,11 @@ var matchingGenerateQuestions = true;
 var matchingQuestionMovables=[];
 var matchingAnswerMovables=[];
 
+var question;
+var temp;
+var customTest = [];
+var repeat = true;
+
 function customMatching(){
   matchingNewQuestionsButton.update();
 
@@ -13,8 +18,16 @@ function customMatching(){
     matchingAnswerMovables=[];
 
     for(var i=0;i<5;i++){
-      //matchingQuestions.push(customQuestions[Math.floor(random(customQuestions.length))].split(";"));
-      var question=customQuestions[Math.floor(random(customQuestions.length))].split(";");
+      while (repeat == true){
+        repeat = false;
+        temp=customQuestions[Math.floor(random(customQuestions.length))];
+        question=temp.split(";");
+        //test if the question already appeared
+        for (var j = 0;j<customTest.length;j++){
+          if (temp == customTest[j]){repeat = true;}
+        }
+      }
+      customTest.push(temp); repeat = true;console.log(customTest);
       matchingQuestionMovables.push(new Movable(random(320,800),random(150,700),question[0].length*9+60,50,question[0],20));
       matchingAnswerMovables.push(new Movable(random(320,800),random(150,700),question[1].length*9+60,50,question[1],20));
     }

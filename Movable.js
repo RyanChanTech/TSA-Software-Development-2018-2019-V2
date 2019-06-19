@@ -14,7 +14,7 @@ function Movable(startX,startY,w,h,t,ts,xOffset=20,onColor=[165,230,250]){
       this.y=mouseY-this.height/2;
       fill(onColor[0],onColor[1],onColor[2],120);
     }else{
-      fill(255,206,206);
+      fill(255,206,206,120);
     }
     //noStroke();
     rect(this.x,this.y,w,h,10);
