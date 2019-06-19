@@ -14,7 +14,7 @@ function customMatching(){
   matchingNewQuestionsButton.update();
 
   if(matchingGenerateQuestions){
-    var possiblePositions=[[320,160],[320,290],[320,420],[320,550],[320,680],[670,100],[670,230],[670,360],[670,490],[670,620]];
+    var xQuestionPos = [180,280,380,480,580]; xAnswerPos = [180,280,380,480,580];
     matchingQuestionMovables=[];
     matchingAnswerMovables=[];
 
@@ -28,16 +28,18 @@ function customMatching(){
           if (temp == customTest[j]){repeat = true;}
         }
       }
-      customTest.push(temp); repeat = true;console.log(customTest);
-
-      var positionIndex=Math.floor(random(0,possiblePositions.length));
-      matchingQuestionMovables.push(new Movable(possiblePositions[positionIndex][0],possiblePositions[positionIndex][1],question[0].length*9+60,50,question[0],20));
-      possiblePositions.splice(positionIndex,1);
-      positionIndex=Math.floor(random(0,possiblePositions.length));
-      matchingAnswerMovables.push(new Movable(possiblePositions[positionIndex][0],possiblePositions[positionIndex][1],question[1].length*9+60,50,question[1],20));
-      possiblePositions.splice(positionIndex,1);
+      customTest.push(temp); repeat = true;//console.log(customTest);
+      var xQuestionPosIndex = Math.floor(random(xQuestionPos.length));
+      if (question[0].length>75){
+        matchingQuestionMovables.push(new Movable(620,xQuestionPos[xQuestionPosIndex],question[0].length*9,50,question[0],20,xOffset=20,onColor=[16,163,209],offColor=[255,206,206]));
+      } else {
+        matchingQuestionMovables.push(new Movable(620,xQuestionPos[xQuestionPosIndex],question[0].length*9+60,50,question[0],20,xOffset=20,onColor=[16,163,209],offColor=[255,206,206]));
+      }
+      xQuestionPos.splice(xQuestionPosIndex,1);
+      var xAnswerPosIndex = Math.floor(random(xAnswerPos.length));
+      matchingAnswerMovables.push(new Movable(320,xAnswerPos[xAnswerPosIndex],question[1].length*9+60,50,question[1],20,xOffset=20,onColor=[16,163,209],offColor=[239,143,143]));
+      xAnswerPos.splice(xAnswerPosIndex,1);
     }
-    //console.log(temp);
     matchingGenerateQuestions = false;
   }
 
