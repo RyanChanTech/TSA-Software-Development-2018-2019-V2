@@ -1,6 +1,6 @@
 var alreadySelected=false;
 
-function Movable(startX,startY,w,h,t,ts,xOffset=20,onColor=[165,230,250]){
+function Movable(startX,startY,w,h,t,ts,xOffset=20,onColor=[16, 163, 209],offColor=[255,206,206]){
   this.x=startX;
   this.y=startY;
   this.width=w;
@@ -12,9 +12,9 @@ function Movable(startX,startY,w,h,t,ts,xOffset=20,onColor=[165,230,250]){
     if(this.clicked){
       this.x=mouseX-this.width/2;
       this.y=mouseY-this.height/2;
-      fill(onColor[0],onColor[1],onColor[2],120);
+      fill(onColor[0],onColor[1],onColor[2],200);
     }else{
-      fill(255,206,206,120);
+      fill(offColor[0],offColor[1],offColor[2],200);
     }
     //noStroke();
     rect(this.x,this.y,w,h,10);
