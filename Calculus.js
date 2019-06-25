@@ -3,8 +3,9 @@
 var calculusTextBox = new TextBox(320,260,350,40,30);
 var calculusCheckButton = new Button(380,310,180,40,"Check",30,xOffset=50);
 var calculusNewQuestionButton = new Button(370,360,220,40,"New Question",30,xOffset=15);
-var singleCalculus = new CategorySwitch(355,550,350,50,[320,500,740,755],"Single Variable Calculus",30,xOffset=15,onColor=[239, 143, 143]);
-var multiCalculus = new CategorySwitch(355,620,350,50,[320,500,740,755],"Multivariable Calculus",30,xOffset=28,onColor=[239, 143, 143]);
+var singleDer = new CategorySwitch(335,550,390,50,[320,500,740,755],"Single Variable Derivatives",30,xOffset=17,onColor=[239, 143, 143]);
+var singleInt = new CategorySwitch(335,620,390,50,[320,500,740,755],"Single Variable Integrals",30,xOffset=33,onColor=[239, 143, 143]);
+var multiInt = new CategorySwitch(335,690,390,50,[320,500,740,755],"Multivariable Integrals",30,xOffset=45,onColor=[239, 143, 143]);
 var calculusGenerateQuestion = true; calculusShowExplanation = false;
 var integralsQuestion = ""; integralsXQuestion = ""; integralsYQuestion = ""; integralsZQuestion = "";
 var integralsAnswer = ""; integralsXAnswer = ""; integralsYAnswer = ""; integralsZAnswer = "";
@@ -16,31 +17,33 @@ var integralsType = 0; integralsNumeric = 0; temp1 = 0; temp2 = 0;
 var integralsXSubType = 0; integralsYSubType = 0; integralsZSubType = 0;
 var integralsXCoefficient = 0; integralsYCoefficient = 0; integralsZCoefficient = 0;
 var lowerBound1 = 0; upperBound1 = 0; lowerBound2 = 0; upperBound2 = 0; lowerBound3 = 0; upperBound3 = 0;
-var derivativesPowers = [2,3,4,5,6,7,8,9,10]; calculusType = 0;
+var derivativesPowers = [2,3,4,5,6,7,8,9,10];
+var calculusType = 0; //differentiation or integration
 var derivativesQuestion = ""; derivativesAnswer = "";
 var derivativesFeedback=""; derivativesExplanation="";
 
 function calculus(){
   fill(255,238,153,100); noStroke(); rect(765,155,585,600,20,0,0,20);
-  fill(255,206,206); rect(320,495,420,205,20,20,20,20); stroke(0);
+  fill(255,206,206); rect(320,495,420,260,20,20,20,20); stroke(0);
   calculusTextBox.update();
   calculusCheckButton.update();
   calculusNewQuestionButton.update();
   textSize(20);
-  text("Choose your difficulty: (SVC by default)",355,530); textSize(30);
+  text("Choose your difficulty: (SVD by default)",355,530); textSize(30);
 
   if (calculusSwitch.switchedOn==true){
-    singleCalculus.update();
-    multiCalculus.update();
+    singleDer.update();
+    singleInt.update();
+    multiInt.update();
   }
 
   if(calculusGenerateQuestion == true){
     //single or double or triple
-    if (multiCalculus.switchedOn==true){
-      integralsType = Math.floor(random(0,3));
-    } else {integralsType = Math.floor(random(0,1));}
-    //differentiation or integration
-    calculusType = Math.floor(random(0,2));
+    if (singleInt.switchedOn==true){
+      calculusType=0;integralsType = 0;}
+    else if (multiInt.switchedOn==true){
+      calculusType=0;integralsType = Math.floor(random(1,3));}
+    else {calculusType=1;}
 
     if (calculusType == 0){
       //polynomial or e or sin or cos or const

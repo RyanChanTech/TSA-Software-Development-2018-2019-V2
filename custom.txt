@@ -7,7 +7,6 @@ I'm tall when I'm young and I'm short when I'm old. What am I?;Candle;Candle
 What has hands but cannot clap?;Clock;Clock
 Which word in the dictionary is spelled incorrectly?;Incorrectly;Incorrectly
 What gets broken without being held?;Promise;Promise
-How many of each species did Moses take on the ark with him?;None;Moses wasn't on the ark. Noah was.
 Feed me and I live, yet give me a drink and I die.;Fire;Fire
 What is at the end of a rainbow?;W;W
 Voiceless it cries, Wingless flutters, Toothless bites, Mouthless mutters.;Wind;Gollum's riddle
@@ -35,7 +34,7 @@ What is the oldest film ever made?;Roundhay Garden Scene;Roundhay Garden Scene w
 Which chess piece can only move diagonally?;Bishop;Bishop
 When did the Cold War end?;1989;1989
 What sign of the Zodiac is represented by a goat?;Capricon;Capricon
-The only one continent on the earth that doesn’t have any deserts;Europe;Europe
+The only one continent on the Earth that doesn’t have any deserts;Europe;Europe
 What is the color of an emerald?;Green;Green
 In which city in the USA was President Kennedy assassinated?;Dallas;Dallas
 Roman soldiers were paid part of their salary in salt;True;True
@@ -52,7 +51,7 @@ Which explorer discovered the West Indies?;Christopher Columbus;Christopher Colu
 In western music which is the queen of instruments?;Violin;Violin
 Which city is known as Big Apple?;New York;New York
 What is the science of colors?;Chromatics;Chromatics
-The atmosphere is held to the earth by _?;Gravity;Gravity
+The atmosphere is held to the Earth by _?;Gravity;Gravity
 What is the name of the chemical with formula KCNS?;Potassium thiocyanate;Potassium thiocyanate
 Who was the first to study the solar system?;Isaac Newton;Isaac Newton
 HTML stands for?;Hypertext Markup Language;Hypertext Markup Language
@@ -64,3 +63,38 @@ Who abolished slavery in America?;Abraham Lincoln;Abraham Lincoln
 One planet in the night sky is easily identifiable because of its reddish hue.;Mars;Mars
 Name the ‘unsinkable ship’ sank on its maiden voyage.;Titanic;Titanic
 Write a word which connects cook, atmosphere, and blood?;Pressure;Pressure
+What is the biggest planet in our solar system?;Jupiter;43,441 miles in radius, 11 times Earth's size
+True or false? Dogs are herbivores.;False;They are omnivores.
+What is the chemical symbol for the element oxygen?;O;It was named by Antoine Lavoisier in 1777
+What is the 7th element on the periodic table of elements?;Nitrogen;Nitrogen;Nitrogen
+What is the shortened form of the term ‘Deoxyribonucleic acid’?;DNA;The "blueprint" for organisms' development
+The highest mountain on earth is?;Mount Everest; It is 29029ft tall.
+What is the name of the closest star to the Earth?;The sun;The sun
+What is the name of the element with the chemical symbol ‘He’?;Helium;Helium
+The fear of what animal is known as ‘arachnophobia’?;Spider;Spider
+Pure water has a pH level of a around?;7;7
+Is the compound ‘HCl’ an acid or base?;Acid;Hydrochloric acid
+How many bones do sharks have in their bodies?;0;0
+What scientist was awarded the 1921 Nobel Prize on theoretical physics?;Albert Einstein;Albert Einstein
+What is the heaviest internal organ of the human body?;Liver;It weighs about 3.5 pounds on average.
+How long does it take for the Earth to spin once on its axis?;One day;One day
+The olfactory nerves affect what sense in the brain?;Smell;Smell
+What natural phenomena are measured by the Richter scale?;Earthquakes;Earthquakes
+How many hearts does an octopus have?;3;3
+What is the medical term for bad breath?;Halitosis;Halitosis
+The study of weather is called what?;Meteorology;Meteorology
+What is the first element on the periodic table?;Hydrogen;Hydrogen
+What planet in our solar system has the longest day?;Venus;One day on Venus = 116 days on Earth
+Is 45 a prime number?;No;It has more than 2 factors (1,3,5,9,15,45)
+What is the sum of the angles of a triangle?;180 degrees;180 degrees
+What planet in the solar system is farthest from the sun?;Neptune;Neptune
+How many time zones are there in the world?;24;24
+The outermost layer of the Earth is called the what?;Crust;Crust
+What is the fastest fish in the ocean?;Sailfish;It can swim at 68 MPH
+Natural pearls are found in what sea creature?;Oysters;Oysters
+At what temperature are Celsius and Fahrenheit equal?;-40 degrees;-40 degrees
+What percentage of mass does our Sun take up in our solar system?;99%;99%
+What is the largest animal on Earth?;Blue whale;Blue whale
+What does the "N" stand for in NATO?;North;North Atlantic Treaty Organization
+What was the first planet to be discovered using the telescope?;Uranus;Uranus
+What blood type do you need to be a universal donor?;-O;-O blood can be given to anyone
