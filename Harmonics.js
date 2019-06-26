@@ -67,7 +67,7 @@ function harmonics(){
   }
 
   //Uncomment this below to generate a wave (translateX,translateY,amplitude,period)
-  //generateSineWave(300,200,30,2);
+  generateSineWave(300,200,30,2);
   //generateCosWave(300,500,30,2);
 
   text("Your Question here",320,120);

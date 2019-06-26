@@ -48,6 +48,7 @@ function matrix(){
     matrixShowExplanation = true;
     if(parseInt(matrixTextBox.data)==matrixAnswer){
       matrixFeedback="Correct!";
+      addPoints(15);
     } else { matrixFeedback="Try again"; }
   }
 
