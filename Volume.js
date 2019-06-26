@@ -36,22 +36,22 @@ function volume(){
     shapeChoice= int(random(0,3));
     if (shapeChoice== 0){
       /*Cube*/
-      height= int(random(1,50));
-      length= int(random(1,50));
-      width= int(random(1,50));
+      height= int(random(5,20));
+      length= int(random(5,20));
+      width= int(random(5,20));
       volumeAnswer=+(height*length*width).toFixed(2);
       volumeGenerateQuestion=false;
     }
     if (shapeChoice== 1){
       /*Sphere*/
-      radius= int(random(1,50));
+      radius= int(random(5,20));
       volumeAnswer=+(4*3.14*radius*radius).toFixed(2);
       volumeGenerateQuestion=false;
     }
     if (shapeChoice== 2){
       /*Cylinder*/
-      radius= int(random(1,50));
-      height= int(random(1,50));
+      radius= int(random(5,20));
+      height= int(random(5,20));
       volumeAnswer=+(3.14*radius*radius*height).toFixed(2);
       volumeGenerateQuestion=false;
     }
@@ -98,10 +98,20 @@ if (shapeChoice==0){
 }
 if (shapeChoice==1){
   text("What is the volume of a sphere with a radius of "+radius+"?",320,125);
+  fill(255)
+  ellipse(500,550,radius*16,radius*16)
+  ellipse(500,550,radius*16,radius*4.8)
+
 }
 if (shapeChoice==2){
   text("What is the volume of a cylinder with a height of\n"+height+" and a radius of "+radius+ "?",320,125);
+  fill(255)
+  ellipse(500,450,radius*16,radius*4.8)
+  line(550-radius*16,height*45,550-radius*45,height*60)
+  line(550+radius*55,height*45,550+radius*55,height*60)
+  ellipse(500,600,radius*16,radius*4.8)
 }
+fill(0)
 text("Feedback: " + volumeFeedback,320,365);
 text("Work/Explanation:",800,200);
 text(volumeExplanation,800,250);
