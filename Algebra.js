@@ -52,6 +52,7 @@ function algebra(){
     */
     if(parseInt(algebraTextBox.data)==algebraAnswer){
       algebraFeedback="Correct!";
+      addPoints(5);
     }else{
       algebraFeedback="Try again"
     }

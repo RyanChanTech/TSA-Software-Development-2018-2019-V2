@@ -246,7 +246,7 @@ function calculus(){
   /*check if the user's answer is right or not when the calculusCheckButton is clicked*/
   if(calculusCheckButton.clicked==true){
     calculusShowExplanation = true;
-    if((calculusTextBox.data)==integralsAnswer){calculusFeedback="Correct!";}
+    if((calculusTextBox.data)==integralsAnswer){calculusFeedback="Correct!";addPoints(35)}
     else {calculusFeedback="Try again"}
   }
 

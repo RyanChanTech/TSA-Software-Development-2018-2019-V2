@@ -35,6 +35,10 @@ function setup() {
   logo = loadImage("images/logo3.png");
   loadCircuitImages();
   customQuestions=loadStrings("custom.txt");
+
+  if(localStorage.getItem("totalQGpoints")==null){
+    localStorage.setItem("totalQGpoints","0");
+  }
 }
 
 /*The draw function loops constantly. It runs every frame, and

@@ -76,6 +76,7 @@ function volume(){
     */
     if(parseFloat(volumeTextBox.data)==volumeAnswer){
       volumeFeedback="Correct!";
+      addPoints(10);
     }else{
       volumeFeedback="Try again"
     }
