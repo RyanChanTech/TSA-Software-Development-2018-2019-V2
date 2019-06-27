@@ -37,9 +37,9 @@ function volume(){
     shapeChoice= int(random(0,3));
     if (shapeChoice== 0){
       /*Cube*/
-      height= int(random(5,20));
-      length= int(random(5,20));
-      width= int(random(5,20));
+      height= int(random(8,21));
+      length= int(random(8,21));
+      width= int(random(8,21));
       volumeAnswer=+(height*length*width).toFixed(2);
       volumeGenerateQuestion=false;
       volumeExplanation="Step 1- Mutiply: "+height+"*"+length+"*"+width+ "\nStep 2- Solve: "+volumeAnswer;
@@ -89,9 +89,19 @@ function volume(){
   }
 
   //Display the output, feedback, and work
-  //box(width, height, length);
   if (shapeChoice==0){
     text("What is the volume of a rectangular prism with sides "+height+", "+length+", and "+width+"?\nRound to 2 decimal places",320,125);
+    fill(255);
+    rect(450,200,width*10,height*10);
+    rect(400,250,width*10,height*10);
+    line(450,200,400,250);
+    line(450+width*10,200,400+width*10,250);
+    line(450+width*10,200+height*10,400+width*10,250+height*10);
+    fill(0);
+    textSize(20);
+    text(height,405,250+height*5);
+    text(width,400+width*5,248+height*10);
+    text(length,425+width*10,225+height*10);
   }
   if (shapeChoice==1){
     text("What is the volume of a sphere with radius of "+radius+"? Round to 2 decimal places",305,125);
@@ -110,7 +120,11 @@ function volume(){
     line(500-radius*8,230,500-radius*8,230+height*16);
     line(500+radius*8,230,500+radius*8,230+height*16);
     ellipse(500,230+height*16,radius*16,radius*3.5);
+    line(500,230,500+radius*8,230);
     fill(0);
+    textSize(20);
+    text(radius,485+radius*4,230);
+    text(height,505+radius*8,230+height*8);
   }
   textSize(30);
   text("Feedback: " + volumeFeedback,320,675);
