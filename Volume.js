@@ -10,6 +10,7 @@ var volumeRandomNumberOne = 0;
 var volumeRandomNumberTwo = 0;
 var volumeFeedback="";
 var volumeExplanation = "";
+var volumeShowExplanation=false;
 
 var height=0;
 var length=0;
@@ -41,12 +42,14 @@ function volume(){
       width= int(random(5,20));
       volumeAnswer=+(height*length*width).toFixed(2);
       volumeGenerateQuestion=false;
+      volumeExplanation="Step 1- Mutiply: "+height+"*"+length+"*"+width+ "\nStep 2- Solve: "+volumeAnswer;
     }
     if (shapeChoice== 1){
       /*Sphere*/
       radius= int(random(8,20));
       volumeAnswer=+(4*3.14*radius*radius).toFixed(2);
       volumeGenerateQuestion=false;
+      volumeExplanation="Step 1- Mutiply: 4*π*"+radius+"^2 \nStep 2- Solve: "+volumeAnswer;
     }
     if (shapeChoice== 2){
       /*Cylinder*/
@@ -54,6 +57,7 @@ function volume(){
       height= int(random(5,15));
       volumeAnswer=+(3.14*radius*radius*height).toFixed(2);
       volumeGenerateQuestion=false;
+      volumeExplanation="Step 1- Mutiply: π*"+height+"*"+radius+"^2 \nStep 2- Solve: "+volumeAnswer;
     }
   }
 
@@ -65,6 +69,7 @@ function volume(){
     volumeExplanation = "";
     volumeFeedback = "";
     volumeGenerateQuestion = true;
+    volumeShowExplanation=false;
   }
 
   /*check if the user's answer is right or not when the
@@ -80,43 +85,36 @@ function volume(){
     }else{
       volumeFeedback="Try again"
     }
-    if (shapeChoice==0){
-      volumeExplanation="Step 1- Mutiply: "+height+"*"+length+"*"+width+ "\nStep 2- Solve: "+volumeAnswer;
-    }
-    if (shapeChoice==1){
-      volumeExplanation="Step 1- Mutiply: 4*π*"+radius+"^2 \nStep 2- Solve: "+volumeAnswer;
-    }
-    if (shapeChoice==2){
-      volumeExplanation="Step 1- Mutiply: π*"+height+"*"+radius+"^2 \nStep 2- Solve: "+volumeAnswer;
-    }
+    volumeShowExplanation=true;
   }
 
   //Display the output, feedback, and work
   //box(width, height, length);
-if (shapeChoice==0){
-  text("What is the volume of a rectangular prism with sides "+height+", "+length+", and "+width+"?\nRound to 2 decimal places",320,125);
-}
-if (shapeChoice==1){
-  text("What is the volume of a sphere with radius of "+radius+"? Round to 2 decimal places",305,125);
-  fill(255);
-  ellipse(500,300,radius*16,radius*16);
-  ellipse(500,300,radius*16,radius*4.8);
-  line(500,300,500+radius*8,300);
-  fill(0);
-  textSize(20);
-  text(radius,485+radius*4,295);
-}
-if (shapeChoice==2){
-  text("What is the volume of a cylinder with a height of "+height+" and a radius of "+radius+ "?\nRound to 2 decimal places",320,125);
-  fill(255);
-  ellipse(500,230,radius*16,radius*3.5);
-  line(500-radius*8,230,500-radius*8,230+height*16);
-  line(500+radius*8,230,500+radius*8,230+height*16);
-  ellipse(500,230+height*16,radius*16,radius*3.5);
-  fill(0);
-}
-textSize(30);
-text("Feedback: " + volumeFeedback,320,675);
-text("Work/Explanation:",800,200);
-text(volumeExplanation,800,250);
+  if (shapeChoice==0){
+    text("What is the volume of a rectangular prism with sides "+height+", "+length+", and "+width+"?\nRound to 2 decimal places",320,125);
+  }
+  if (shapeChoice==1){
+    text("What is the volume of a sphere with radius of "+radius+"? Round to 2 decimal places",305,125);
+    fill(255);
+    ellipse(500,300,radius*16,radius*16);
+    ellipse(500,300,radius*16,radius*4.8);
+    line(500,300,500+radius*8,300);
+    fill(0);
+    textSize(20);
+    text(radius,485+radius*4,295);
+  }
+  if (shapeChoice==2){
+    text("What is the volume of a cylinder with a height of "+height+" and a radius of "+radius+ "?\nRound to 2 decimal places",320,125);
+    fill(255);
+    ellipse(500,230,radius*16,radius*3.5);
+    line(500-radius*8,230,500-radius*8,230+height*16);
+    line(500+radius*8,230,500+radius*8,230+height*16);
+    ellipse(500,230+height*16,radius*16,radius*3.5);
+    fill(0);
+  }
+  textSize(30);
+  text("Feedback: " + volumeFeedback,320,675);
+  text("Work/Explanation:",800,200);
+
+  if(volumeShowExplanation==true){text(volumeExplanation,800,250);}
 }

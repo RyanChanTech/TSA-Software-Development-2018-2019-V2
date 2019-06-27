@@ -11,6 +11,7 @@ var harmonicsAnswer = 0;
 var harmonicsFeedback="";
 var harmonicsExplanation = "";
 var harmonicsQuestion = "";
+var harmonicsShowExplaination=false;
 
 //When the harmonics button is clicked, the harmonics() function is called 25 times per second in the main.js file (in line 76).
 function harmonics(){
@@ -78,6 +79,7 @@ function harmonics(){
     harmonicsExplanation = "";
     harmonicsFeedback = "";
     harmonicsGenerateQuestion = true;
+    harmonicsShowExplaination=false;
   }
 
   /*check if the user's answer is right or not when the
@@ -91,7 +93,7 @@ function harmonics(){
       harmonicsFeedback="Try again"
     }
 
-    harmonicsExplanation="Your explaination here (Look at the Algebra.js code if you're confused)";
+    harmonicsShowExplaination=true;
   }
 
   //Uncomment this below to generate a wave (translateX,translateY,amplitude,period)
@@ -103,26 +105,30 @@ function harmonics(){
   text("Feedback: " + harmonicsFeedback,320,330);
 
   text("Work/Explanation:",800,200);
-  text(harmonicsExplanation,800,250);
-}
 
-var displace=0;
-function generateSineWave(translateX, translateY, amplitude, period){
-  displace+=.1;
-
-  for(var x=0;x<250;x++){
-    var xPoint = x+translateX;
-    var yPoint = amplitude*sin(radians(x*period)+displace)+translateY;
-    point(xPoint,yPoint);
+  if(harmonicsShowExplaination==true){
+    text(harmonicsExplanation,800,250);
   }
 }
 
-function generateCosWave(translateX, translateY, amplitude, period){
-  displace+=.1;
+/*
+var harmonicsLength = 0; harmonicsAngle = 0; yBall = 0; xBall = 0;
+harmonicsLength=(Math.random()*10+10);
+harmonicsAngle=(Math.random()*10+30);
+if (harmonicsAngle>=80){harmonicsAngle=80};
+console.log(harmonicsAngle);
+yBall = (Math.sin(harmonicsAngle*Math.PI/180))*(harmonicsLength*10)+100;
+xBall = 150-(Math.cos(harmonicsAngle*Math.PI/180))*(harmonicsLength*10);
+console.log(100+harmonicsLength*10,harmonicsAngle*Math.PI/180,yBall,xBall);
+function draw() {
+  background(220);
+  strokeWeight(2);
+  line(50,100,250,100);
+  strokeWeight(1);
+  line(150,100,150,100+harmonicsLength*10);
+  line(150,100,xBall,yBall);
+  fill(255);
+  circle(150,100+harmonicsLength*10,20);
+  circle(xBall,yBall,20);
 
-  for(var x=0;x<250;x++){
-    var xPoint = x+translateX;
-    var yPoint = amplitude*cos(radians(x*period)+displace)+translateY;
-    point(xPoint,yPoint);
-  }
-}
+}*/
