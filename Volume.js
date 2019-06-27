@@ -2,9 +2,9 @@
 
 //Textbox parameters: (x,y,width,height,text size)
 //Button parameters: (x,y,width,height,text,text size)
-var volumeTextBox = new TextBox(320,185,350,40,30);
-var volumeCheckButton = new Button(380,235,180,40,"Check",30,xOffset=50);
-var volumeNewQuestionButton = new Button(370,285,220,40,"New Question",30,xOffset=15);
+var volumeTextBox = new TextBox(320,495,350,40,30);
+var volumeCheckButton = new Button(380,550,180,40,"Check",30,xOffset=50);
+var volumeNewQuestionButton = new Button(370,595,220,40,"New Question",30,xOffset=15);
 var volumeGenerateQuestion = true;
 var volumeRandomNumberOne = 0;
 var volumeRandomNumberTwo = 0;
@@ -44,14 +44,14 @@ function volume(){
     }
     if (shapeChoice== 1){
       /*Sphere*/
-      radius= int(random(5,20));
+      radius= int(random(8,20));
       volumeAnswer=+(4*3.14*radius*radius).toFixed(2);
       volumeGenerateQuestion=false;
     }
     if (shapeChoice== 2){
       /*Cylinder*/
       radius= int(random(5,20));
-      height= int(random(5,20));
+      height= int(random(5,15));
       volumeAnswer=+(3.14*radius*radius*height).toFixed(2);
       volumeGenerateQuestion=false;
     }
@@ -94,25 +94,29 @@ function volume(){
   //Display the output, feedback, and work
   //box(width, height, length);
 if (shapeChoice==0){
-  text("What is the volume of a rectangular prism with\nsides "+height+", "+length+", and "+width+"?",320,125);
+  text("What is the volume of a rectangular prism with sides "+height+", "+length+", and "+width+"?\nRound to 2 decimal places",320,125);
 }
 if (shapeChoice==1){
-  text("What is the volume of a sphere with a radius of "+radius+"?",320,125);
-  fill(255)
-  ellipse(500,550,radius*16,radius*16)
-  ellipse(500,550,radius*16,radius*4.8)
-
+  text("What is the volume of a sphere with radius of "+radius+"? Round to 2 decimal places",305,125);
+  fill(255);
+  ellipse(500,300,radius*16,radius*16);
+  ellipse(500,300,radius*16,radius*4.8);
+  line(500,300,500+radius*8,300);
+  fill(0);
+  textSize(20);
+  text(radius,485+radius*4,295);
 }
 if (shapeChoice==2){
-  text("What is the volume of a cylinder with a height of\n"+height+" and a radius of "+radius+ "?",320,125);
-  fill(255)
-  ellipse(500,450,radius*16,radius*4.8)
-  line(550-radius*16,height*45,550-radius*45,height*60)
-  line(550+radius*55,height*45,550+radius*55,height*60)
-  ellipse(500,600,radius*16,radius*4.8)
+  text("What is the volume of a cylinder with a height of "+height+" and a radius of "+radius+ "?\nRound to 2 decimal places",320,125);
+  fill(255);
+  ellipse(500,230,radius*16,radius*3.5);
+  line(500-radius*8,230,500-radius*8,230+height*16);
+  line(500+radius*8,230,500+radius*8,230+height*16);
+  ellipse(500,230+height*16,radius*16,radius*3.5);
+  fill(0);
 }
-fill(0)
-text("Feedback: " + volumeFeedback,320,365);
+textSize(30);
+text("Feedback: " + volumeFeedback,320,675);
 text("Work/Explanation:",800,200);
 text(volumeExplanation,800,250);
 }
