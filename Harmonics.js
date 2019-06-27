@@ -4,12 +4,13 @@ var harmonicsCheckButton = new Button(380,200,180,40,"Check",30,xOffset=50);
 var harmonicsNewQuestionButton = new Button(370,250,220,40,"New Question",30,xOffset=15);
 var harmonicsGenerateQuestion = true;
 var harmonicsTheta=0;
+var questiontype=0
 var harmonicsMass=0;
 var harmonicsLength=0;
 var harmonicsAnswer = 0;
-var harmonicsTau = 0;
 var harmonicsFeedback="";
 var harmonicsExplanation = "";
+var harmonicsQuestion = "";
 
 //When the harmonics button is clicked, the harmonics() function is called 25 times per second in the main.js file (in line 76).
 function harmonics(){
@@ -30,14 +31,41 @@ function harmonics(){
   //Make sure to calculate the answer in here and store it in the harmonicsAnswer variable
   if(harmonicsGenerateQuestion == true){
     harmonicsTheta=int(random(235,325));
-    harmonicsLength=(random(0,10));
-    harmonicsMass=(random(0,45));
-    harmonicsTau= 2*3.14*sqrt(harmonicsLength/9.8)
-
-    //console.log prints stuff out to the console (F12 > Console in the browser).Very useful for debgging
+    harmonicsLength=int(random(0,10));
+    harmonicsMass=int(random(0,45));
+    questiontype= int(random(0,5));
+    //console.(log prints stuff out to the console (F12 > Console in the browser).Very useful for debgging
     console.log("length: "+harmonicsLength);
-    console.log("tau: "+harmonicsTau);
-
+    if (questiontype == 0){
+      //Tau
+      harmonicsQuestion = "Find the period given the mass and length. " + "Length: " + harmonicsLength + ". Mass: " + harmonicsMass
+      harmonicsAnswer = (2*3.14*sqrt(harmonicsLength/9.8)).toFixed(2);
+      harmonicsExplanation = "2*PI*√(mass/length)";
+    }
+    else if (questiontype == 1) {
+      //Angular force due to gravity
+      harmonicsQuestion = " Find the angular force on the bob due to gravity." + "Angle: " + harmonicsTheta + ". Mass: " + harmonicsMass
+      harmonicsAnswer = (harmonicsMass*9.8*sin(harmonicsTheta)).toFixed(2);
+      harmonicsExplanation = "M*G*Sin(θ)"
+    }
+    else if (questiontype == 2) {
+      // Downward force due to gravity
+      harmonicsQuestion = "Find the downward force due to gravity. " + "Mass: " + harmonicsMass + "Angle: " + harmonicsTheta;
+      harmonicsAnswer = (harmonicsMass*9.8*cos(harmonicsTheta)).toFixed(2);
+      harmonicsExplanation = "M*G*Cos(θ)";
+    }
+    else if (questiontype == 3) {
+      // Angular Velocity
+      harmonicsQuestion = "Find the Maximum angular velocity of the pendulum. " + "Mass: " + harmonicsMass + "Length: " + harmonicsLength
+      harmonicsAnswer = (sqrt(harmonicsMass/harmonicsLength)).toFixed(2) + "Degrees/Second";
+      harmonicsExplanation ="The Angular velocity of a pendulum is given by: " + "√(mass/length)"
+    }
+    else if (questiontype == 4) {
+      //maximum potential energy
+      harmonicsQuestion = "Find the maximum potential energy of the pendulum. " + "Mass: " + harmonicsMass + "Length: " + harmonicsLength
+      harmonicsAnswer = ((9.8*harmonicsMass*harmonicsLength*sin(harmonicsTheta)).toFixed(2)) + "Joules"
+      harmonicsExplanation = "MGΔH"
+    }
     harmonicsGenerateQuestion = false;
   }
 
@@ -67,10 +95,10 @@ function harmonics(){
   }
 
   //Uncomment this below to generate a wave (translateX,translateY,amplitude,period)
-  generateSineWave(300,200,30,2);
+  //generateSineWave(300,200,30,2);
   //generateCosWave(300,500,30,2);
 
-  text("Your Question here",320,120);
+  text(harmonicsQuestion,320,120);
 
   text("Feedback: " + harmonicsFeedback,320,330);
 
