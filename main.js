@@ -28,7 +28,7 @@ var testM2=new Movable(150,340,280,50,"test 2",20);
 
 //The setup function only runs once
 function setup() {
-  createCanvas(1920, 1080);
+  createCanvas(1535, 750);
   frameRate(25);
   textFont("Trebuchet MS");
   loadCircuitImages();

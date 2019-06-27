@@ -3,12 +3,12 @@
 var calculusTextBox = new TextBox(320,260,350,40,30);
 var calculusCheckButton = new Button(380,310,180,40,"Check",30,xOffset=50);
 var calculusNewQuestionButton = new Button(370,360,220,40,"New Question",30,xOffset=15);
-var singleDer = new CategorySwitch(335,550,390,50,[320,500,740,755],"Single Variable Derivatives",30,xOffset=17,onColor=[239, 143, 143]);
-var singleInt = new CategorySwitch(335,620,390,50,[320,500,740,755],"Single Variable Integrals",30,xOffset=33,onColor=[239, 143, 143]);
-var multiInt = new CategorySwitch(335,690,390,50,[320,500,740,755],"Multivariable Integrals",30,xOffset=45,onColor=[239, 143, 143]);
+var singleDer = new CategorySwitch(335,535,390,50,[320,500,740,755],"Single Variable Derivatives",30,xOffset=17,onColor=[239, 143, 143]);
+var singleInt = new CategorySwitch(335,605,390,50,[320,500,740,755],"Single Variable Integrals",30,xOffset=33,onColor=[239, 143, 143]);
+var multiInt = new CategorySwitch(335,675,390,50,[320,500,740,755],"Multivariable Integrals",30,xOffset=45,onColor=[239, 143, 143]);
 var calculusGenerateQuestion = true; calculusShowExplanation = false;
 var integralsQuestion = ""; integralsXQuestion = ""; integralsYQuestion = ""; integralsZQuestion = "";
-var integralsAnswer = ""; integralsXAnswer = ""; integralsYAnswer = ""; integralsZAnswer = "";
+var integralsAnswer = null; integralsXAnswer = ""; integralsYAnswer = ""; integralsZAnswer = "";
 var integralsExplanation = ""; integralsTempExplanation = ""; calculusFeedback="";
 var integalsXNumericAnswer = 0; integalsYNumericAnswer = 0; integalsZNumericAnswer = 0;
 var integralsXAnswerCoefficient = 0; integralsYAnswerCoefficient = 0; integralsZAnswerCoefficient = 0;
@@ -19,17 +19,17 @@ var integralsXCoefficient = 0; integralsYCoefficient = 0; integralsZCoefficient 
 var lowerBound1 = 0; upperBound1 = 0; lowerBound2 = 0; upperBound2 = 0; lowerBound3 = 0; upperBound3 = 0;
 var derivativesPowers = [2,3,4,5,6,7,8,9,10];
 var calculusType = 0; //differentiation or integration
-var derivativesQuestion = ""; derivativesAnswer = "";
-var derivativesFeedback=""; derivativesExplanation="";
+var derivativesQuestion = ""; derivativesAnswer = null;
+var derivativesExplanation="";
 
 function calculus(){
   fill(255,238,153,100); noStroke(); rect(765,155,585,600,20,0,0,20);
-  fill(255,206,206); rect(320,495,420,260,20,20,20,20); stroke(0);
+  fill(255,206,206); rect(320,475,420,260,20,20,20,20); stroke(0);
   calculusTextBox.update();
   calculusCheckButton.update();
   calculusNewQuestionButton.update();
   textSize(20);
-  text("Choose your difficulty: (SVD by default)",355,530); textSize(30);
+  text("Choose your difficulty: (SVD by default)",355,515); textSize(30);
 
   if (calculusSwitch.switchedOn==true){
     singleDer.update();
@@ -246,8 +246,8 @@ function calculus(){
   /*check if the user's answer is right or not when the calculusCheckButton is clicked*/
   if(calculusCheckButton.clicked==true){
     calculusShowExplanation = true;
-    if((calculusTextBox.data)==integralsAnswer){calculusFeedback="Correct!";addPoints(35)}
-    else {calculusFeedback="Try again"}
+    if((calculusTextBox.data)==integralsAnswer||(calculusTextBox.data)==derivativesAnswer){calculusFeedback="Correct!";addPoints(35);}
+    else {calculusFeedback="Try again";}
   }
 
   function derivativesPowerRule(){
@@ -290,7 +290,7 @@ function calculus(){
     if (calculusShowExplanation){
       textSize(20); text(integralsExplanation,800,230); textSize(30);
       text(calculusFeedback,470,440); }
-    text("Evaluate the following integral:",320,120);
+    text("Evaluate the following integral: (Round to 2 decimal places)",320,120);
     //print integral signs and bounds
     if (integralsType>=0){
       textSize(60); text("∫",385,210);
@@ -310,7 +310,7 @@ function calculus(){
     strokeWeight(2);line(340,190,370,190);strokeWeight(1); //reset to default value
     text("("+derivativesQuestion+") = ?",375,195);
     if (calculusShowExplanation){
-      text(derivativesFeedback,470,410);
+      text(calculusFeedback,470,440);
       text(derivativesExplanation,800,245);
     }
   }
