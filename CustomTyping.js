@@ -11,6 +11,7 @@ var customFeedback="";
 var temp;
 var customTest = [];
 var repeat = true;
+var explanationTemp = [];
 
 function customTyping(){
   fill(255,238,153,100);
@@ -33,6 +34,12 @@ function customTyping(){
       }
     }
     customTest.push(temp); repeat = true;//console.log(customTest);
+    //put !! where you wanna add another line
+    explanationTemp = customQuestion[2].split("!!");
+    customQuestion[2]="";
+    for (var j = 0;j<explanationTemp.length;j++){
+      customQuestion[2] += explanationTemp[j] + "\n";
+    }
   }
 
   if(customNewQuestionButton.clicked){
@@ -43,7 +50,7 @@ function customTyping(){
   }
 
   if(customCheckButton.clicked){
-    if(customTextBox.data.toLowerCase()==customQuestion[1].toLowerCase()){
+    if(customTextBox.data.toLowerCase().trim()==customQuestion[1].toLowerCase().trim()){
       customFeedback="Correct!";
     }else{
       customFeedback="Try again"
@@ -58,6 +65,6 @@ function customTyping(){
   text(customQuestion[0],320,120);
   text("Feedback: " + customFeedback,320,330);
 
-  text("Work/Explanation:",800,200);
+  text("Work/Explanation:",760,200);
   text(customExplanation,760,250);
 }
