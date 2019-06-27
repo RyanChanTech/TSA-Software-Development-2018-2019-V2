@@ -33,3 +33,23 @@ function addPoints(points){
   var totalPoints=parseInt(localStorage.getItem("totalQGpoints"))+points;
   localStorage.setItem("totalQGpoints",totalPoints.toString());
 }
+
+function wave(height, magnitude, density, hue,speed,offset){
+  push();
+  translate(350,100);
+  fill(hue);
+  for(let x=0; x<=density; x++){
+    ellipse(x*600/density,magnitude*sin(time/speed+x/offset)+height,10,10)
+  }
+  pop();
+}
+
+var time=0;
+
+function displayLogo(){
+  time = time + 1;
+  noStroke();
+  wave(150,50,60,"blue",20,10)
+  wave(150,75,60,"yellow",20,10)
+  wave(150,100,60,"green",20,10)
+}

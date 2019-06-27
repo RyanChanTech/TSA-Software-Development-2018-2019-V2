@@ -26,13 +26,11 @@ var matchingSwitch = new CategorySwitch(10,410,280,50,[0,0,300,1080],"Matching",
 var testM1=new Movable(100,340,280,50,"test 1",20);
 var testM2=new Movable(150,340,280,50,"test 2",20);
 
-var logo;
 //The setup function only runs once
 function setup() {
   createCanvas(1920, 1080);
   frameRate(25);
   textFont("Trebuchet MS");
-  logo = loadImage("images/logo3.png");
   loadCircuitImages();
   customQuestions=loadStrings("custom.txt");
 
@@ -94,7 +92,7 @@ function draw() {
   }else if(matchingSwitch.switchedOn==true){
     customMatching();
   }else{
-    image(logo,300,80);
+    displayLogo();
   }
 
   //update the category switches so they show up and functions.
