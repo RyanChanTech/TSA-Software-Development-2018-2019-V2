@@ -1,17 +1,12 @@
 //Declare your variables here. If you declare them inside the harmonics() function, the variable will be reset 25 times per second.
-var harmonicsTextBox = new TextBox(320,150,350,40,30);
-var harmonicsCheckButton = new Button(380,200,180,40,"Check",30,xOffset=50);
-var harmonicsNewQuestionButton = new Button(370,250,220,40,"New Question",30,xOffset=15);
+var harmonicsTextBox = new TextBox(320,360,350,40,30);
+var harmonicsCheckButton = new Button(380,410,180,40,"Check",30,xOffset=50);
+var harmonicsNewQuestionButton = new Button(370,460,220,40,"New Question",30,xOffset=15);
 var harmonicsGenerateQuestion = true;
-var harmonicsTheta=0;
-var questiontype=0
-var harmonicsMass=0;
-var harmonicsLength=0;
-var harmonicsAnswer = 0;
-var harmonicsFeedback="";
-var harmonicsExplanation = "";
-var harmonicsQuestion = "";
-var harmonicsShowExplaination=false;
+var harmonicsTheta = 0; harmonicsMass = 0; harmonicsLength = 0; yBall = 0; xBall = 0;
+var questionType = 0; harmonicsAnswer = 0; graphAngle = 0;
+var harmonicsFeedback=""; harmonicsExplanation = ""; harmonicsQuestion = "";
+var harmonicsShowExplanation=false;
 
 //When the harmonics button is clicked, the harmonics() function is called 25 times per second in the main.js file (in line 76).
 function harmonics(){
@@ -31,43 +26,55 @@ function harmonics(){
   to true at the end so it does not generate a new one before the current one is answered*/
   //Make sure to calculate the answer in here and store it in the harmonicsAnswer variable
   if(harmonicsGenerateQuestion == true){
-    harmonicsTheta=int(random(235,325));
-    harmonicsLength=int(random(0,10));
-    harmonicsMass=int(random(0,45));
-    questiontype= int(random(0,5));
-    //console.(log prints stuff out to the console (F12 > Console in the browser).Very useful for debgging
-    console.log("length: "+harmonicsLength);
-    if (questiontype == 0){
+    harmonicsTheta=int(random(235,325)); /*degrees*/
+    graphAngle=270-harmonicsTheta;
+    harmonicsLength=int(random(10,20)); //m
+    harmonicsMass=int(random(0,45)); //kg
+    questionType= int(random(0,5));
+    //console.(log prints stuff out to the console (F12 > Console in the browser).Very useful for debugging
+    //console.log("length: "+harmonicsLength);
+    if (questionType == 0){
       //Tau
-      harmonicsQuestion = "Find the period given the mass and length. " + "Length: " + harmonicsLength + ". Mass: " + harmonicsMass
-      harmonicsAnswer = (2*3.14*sqrt(harmonicsLength/9.8)).toFixed(2);
-      harmonicsExplanation = "2*PI*√(mass/length)";
+      harmonicsQuestion = "A mass is oscillating at a small angle from a light string of length " +
+      harmonicsLength + " m.\nWhat is the period of the pendulum?"
+      harmonicsAnswer = +(2*3.14*sqrt(harmonicsLength/9.8)).toFixed(2);
+      harmonicsExplanation = "The period of the pendulum is given by:\n        2*PI*√(L/g)\n     = 2*3.14*√(" +
+      harmonicsLength + "/9.8)\n     = " + harmonicsAnswer + " seconds";
     }
-    else if (questiontype == 1) {
+    else if (questionType == 1) {
       //Angular force due to gravity
-      harmonicsQuestion = " Find the angular force on the bob due to gravity." + "Angle: " + harmonicsTheta + ". Mass: " + harmonicsMass
-      harmonicsAnswer = (harmonicsMass*9.8*sin(harmonicsTheta)).toFixed(2);
-      harmonicsExplanation = "M*G*Sin(θ)"
+      harmonicsQuestion = "A " + harmonicsMass + " kg mass is oscillating at an angle of " +
+      harmonicsTheta + " degrees from a light string.\nFind the angular force due to gravity of the pendulum."
+      harmonicsAnswer = +(harmonicsMass*9.8*sin(harmonicsTheta)).toFixed(2);
+      harmonicsExplanation = "The angular force due to gravity is given by:\n        m*g*sin(θ)\n     = " +
+      harmonicsMass + "*9.8*sin(" + harmonicsTheta + ")\n     = " + harmonicsAnswer + " N";
     }
-    else if (questiontype == 2) {
+    else if (questionType == 2) {
       // Downward force due to gravity
-      harmonicsQuestion = "Find the downward force due to gravity. " + "Mass: " + harmonicsMass + "Angle: " + harmonicsTheta;
-      harmonicsAnswer = (harmonicsMass*9.8*cos(harmonicsTheta)).toFixed(2);
-      harmonicsExplanation = "M*G*Cos(θ)";
+      harmonicsQuestion = "A " + harmonicsMass + " kg mass is oscillating at an angle of " +
+      harmonicsTheta + " degrees from a light string.\nFind the downward force due to gravity of the pendulum."
+      harmonicsAnswer = +(harmonicsMass*9.8*cos(harmonicsTheta)).toFixed(2);
+      harmonicsExplanation = "The downward force due to gravity is given by:\n        m*g*cos(θ)\n     = " +
+      harmonicsMass + "*9.8*cos(" + harmonicsTheta + ")\n     = " + harmonicsAnswer + " N";
     }
-    else if (questiontype == 3) {
+    else if (questionType == 3) {
       // Angular Velocity
-      harmonicsQuestion = "Find the Maximum angular velocity of the pendulum. " + "Mass: " + harmonicsMass + "Length: " + harmonicsLength
-      harmonicsAnswer = (sqrt(harmonicsMass/harmonicsLength)).toFixed(2) + "Degrees/Second";
-      harmonicsExplanation ="The Angular velocity of a pendulum is given by: " + "√(mass/length)"
+      harmonicsQuestion = "A " + harmonicsMass + " kg mass is oscillating at a small angle from a light string of length " +
+      harmonicsLength + " m.\nWhat is the angular velocity of the pendulum?"
+      harmonicsAnswer = +(sqrt(harmonicsMass/harmonicsLength)).toFixed(2);
+      harmonicsExplanation ="The angular velocity of the pendulum is given by:\n        √(mass/length)\n     = √(" +
+      harmonicsMass + "/" + harmonicsLength + ")\n     = " + harmonicsAnswer + " degrees/second"
     }
-    else if (questiontype == 4) {
+    else if (questionType == 4) {
       //maximum potential energy
-      harmonicsQuestion = "Find the maximum potential energy of the pendulum. " + "Mass: " + harmonicsMass + "Length: " + harmonicsLength
-      harmonicsAnswer = ((9.8*harmonicsMass*harmonicsLength*sin(harmonicsTheta)).toFixed(2)) + "Joules"
-      harmonicsExplanation = "MGΔH"
+      harmonicsQuestion = "A " + harmonicsMass + " kg mass is oscillating at a small angle from a light string of length " +
+      harmonicsLength + " m.\nWhat is the maximum potential energy of the pendulum?"
+      harmonicsAnswer = +(9.8*harmonicsMass*harmonicsLength*sin(harmonicsTheta)).toFixed(2);
+      harmonicsExplanation = "The maximum potential energy of\nthe pendulum is given by:\n        m*g*Δh\n     = m*g*L*sin(θ)\n     = " +
+      harmonicsMass + "*9.8*" + harmonicsLength + "*sin(" + harmonicsTheta + ")\n     = " + harmonicsAnswer + " J"
     }
     harmonicsGenerateQuestion = false;
+    //console.log(harmonicsAnswer);
   }
 
   /*If the new question button is clicked, reset the text
@@ -79,41 +86,37 @@ function harmonics(){
     harmonicsExplanation = "";
     harmonicsFeedback = "";
     harmonicsGenerateQuestion = true;
-    harmonicsShowExplaination=false;
+    harmonicsShowExplanation=false;
   }
 
   /*check if the user's answer is right or not when the
   Check Button is clicked*/
   if(harmonicsCheckButton.clicked==true){
-    /*The parseInt() function turns algebraTextBox.data, which is a string (or text)
-    data type into an int datatype so they can be compared*/
-    if(parseInt(harmonicsTextBox.data)==harmonicsAnswer){
+    if((harmonicsTextBox.data)==harmonicsAnswer){
       harmonicsFeedback="Correct!";
     }else{
       harmonicsFeedback="Try again"
     }
 
-    harmonicsShowExplaination=true;
+    harmonicsShowExplanation=true;
   }
 
   //Uncomment this below to generate a wave (translateX,translateY,amplitude,period)
   //generateSineWave(300,200,30,2);
   //generateCosWave(300,500,30,2);
 
-  text(harmonicsQuestion,320,120);
+  textSize(25);text(harmonicsQuestion,320,107);textSize(30);
 
-  text("Feedback: " + harmonicsFeedback,320,330);
+  text("Feedback: " + harmonicsFeedback,320,540);
 
-  text("Work/Explanation:",800,200);
+  text("Work/Explanation:",765,200);
 
-  if(harmonicsShowExplaination==true){
-    text(harmonicsExplanation,800,250);
+  if(harmonicsShowExplanation==true){
+    textSize(25);text(harmonicsExplanation,765,250);textSize(30);
   }
 }
 
 /*
-var harmonicsLength = 0; harmonicsAngle = 0; yBall = 0; xBall = 0;
-harmonicsLength=(Math.random()*10+10);
 harmonicsAngle=(Math.random()*10+30);
 if (harmonicsAngle>=80){harmonicsAngle=80};
 console.log(harmonicsAngle);

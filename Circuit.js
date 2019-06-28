@@ -132,10 +132,11 @@ function circuit(){
     text(circuitCapacitorVars[2]+"F",650,280);
   }
   textSize(30);
-  text("Work/Explanation:",800,200);
+  text("Work/Explanation:",765,200);
   textSize(20);
-  text(circuitExplanation,750,235)
-  text(circuitQuestion,320,110);
+  text(circuitExplanation,765,250);
+  textSize(28);
+  text(circuitQuestion,320,115);
   textSize(30);
   text("Feedback:" + circuitFeedback,320,660);
 }
