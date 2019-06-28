@@ -13,9 +13,9 @@ function matrix(){
   matrixNewQuestionButton.update();
 
   if(matrixGenerateQuestion == true){
-    a1 = Math.floor(random(-100,100)); a2 = Math.floor(random(0,100));
+    a1 = Math.floor(random(-99,100)); a2 = Math.floor(random(0,100));
     a3 = Math.floor(random(0,100)); a4 = Math.floor(random(0,100));
-    a5 = Math.floor(random(-100,100)); a6 = Math.floor(random(-100,100));
+    a5 = Math.floor(random(-99,100)); a6 = Math.floor(random(-99,100));
     a7 = Math.floor(random(0,100)); a8 = Math.floor(random(0,100));
     a9 = Math.floor(random(0,100));
     matrixRandomType = Math.floor(random(0,2));
