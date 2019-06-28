@@ -107,6 +107,7 @@ function circuit(){
 
   if(circuitButtons[circuitAnswerButtonIndex].clicked){
     circuitFeedback="Correct!";
+    addPoints(20);
     circuitExplanation=circuitTempExplanation;
   }else if(circuitButtons[0].clicked||circuitButtons[1].clicked||circuitButtons[2].clicked){
     circuitFeedback="Try again";

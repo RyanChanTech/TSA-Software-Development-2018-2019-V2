@@ -62,7 +62,7 @@ function stoich(){
     stoichExplanation="First, Balance carbon on each side\n\nSecond, Balance Hydrogen on each side\n\nThird, Balance oxygen on each side\n          (easily done with W + Z/2)\n\nFinally, Multiply by 2 if you\n            have a fraction to get "+stoichAnswer;
     if(parseInt(stoichTextBox.data)==stoichAnswer){
       stoichFeedback="Correct!";
-
+      addPoints(15);
     }else{
       stoichFeedback="Try again"
     }

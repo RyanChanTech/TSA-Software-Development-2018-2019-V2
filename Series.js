@@ -62,6 +62,7 @@ function series(){
     seriesShowExplanation = true;
     if(parseInt(seriesTextBox.data)==seriesAnswer){
       seriesFeedback="Correct!";
+      addPoints(20);
     }else{
       seriesFeedback="Try again"
     }

@@ -43,6 +43,7 @@ function newtonsLaws(){
 
   if(nLButtons[nLAnswerButtonIndex].clicked){
     nLFeedback="Correct!";
+    addPoints(15);
     nLExplanation=nLTempExplanation;
   }else if(nLButtons[0].clicked||nLButtons[1].clicked||nLButtons[2].clicked){
     nLFeedback="Try again";

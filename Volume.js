@@ -42,14 +42,14 @@ function volume(){
       width= int(random(8,21));
       volumeAnswer=+(height*length*width).toFixed(2);
       volumeGenerateQuestion=false;
-      volumeExplanation="Step 1- Mutiply: "+height+"*"+length+"*"+width+ "\nStep 2- Solve: "+volumeAnswer;
+      volumeExplanation="Step 1- Apply the formula L*W*H\nStep 2- Plug in: "+height+"*"+length+"*"+width+ "\nStep 3- Solve: "+volumeAnswer;
     }
     if (shapeChoice== 1){
       /*Sphere*/
       radius= int(random(8,20));
-      volumeAnswer=+(4*3.14*radius*radius).toFixed(2);
+      volumeAnswer=+((4/3)*3.14*radius*radius*radius).toFixed(2);
       volumeGenerateQuestion=false;
-      volumeExplanation="Step 1- Mutiply: 4*π*"+radius+"^2 \nStep 2- Solve: "+volumeAnswer;
+      volumeExplanation="Step 1- Apply the formula (4/3)*π*r^3\nStep 2- Plug in: (4/3)*π*"+radius+"^3 \nStep 3- Solve: "+volumeAnswer;
     }
     if (shapeChoice== 2){
       /*Cylinder*/
@@ -57,7 +57,7 @@ function volume(){
       height= int(random(5,15));
       volumeAnswer=+(3.14*radius*radius*height).toFixed(2);
       volumeGenerateQuestion=false;
-      volumeExplanation="Step 1- Mutiply: π*"+height+"*"+radius+"^2 \nStep 2- Solve: "+volumeAnswer;
+      volumeExplanation="Step 1-π*h*r^2\nStep 2- Plug in: π*"+height+"*"+radius+"^2 \nStep 3- Solve: "+volumeAnswer;
     }
   }
 
