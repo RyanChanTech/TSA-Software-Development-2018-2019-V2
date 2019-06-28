@@ -27,7 +27,8 @@ function harmonics(){
   //Make sure to calculate the answer in here and store it in the harmonicsAnswer variable
   if(harmonicsGenerateQuestion == true){
     harmonicsTheta=int(random(235,325)); /*degrees*/
-    graphAngle=270-harmonicsTheta;
+    harmonicsMathAngle=Math.abs(270-harmonicsTheta);
+    harmonicsGraphAngle=90-harmonicsMathAngle;
     harmonicsLength=int(random(10,20)); //m
     harmonicsMass=int(random(0,45)); //kg
     questionType= int(random(0,5));
@@ -69,7 +70,7 @@ function harmonics(){
       //maximum potential energy
       harmonicsQuestion = "A " + harmonicsMass + " kg mass is oscillating at a small angle from a light string of length " +
       harmonicsLength + " m.\nWhat is the maximum potential energy of the pendulum?"
-      harmonicsAnswer = +(9.8*harmonicsMass*harmonicsLength*sin(harmonicsTheta)).toFixed(2);
+      harmonicsAnswer = +(9.8*harmonicsMass*harmonicsLength*sin(harmonicsMathAngle)).toFixed(2);
       harmonicsExplanation = "The maximum potential energy of\nthe pendulum is given by:\n        m*g*Δh\n     = m*g*L*sin(θ)\n     = " +
       harmonicsMass + "*9.8*" + harmonicsLength + "*sin(" + harmonicsTheta + ")\n     = " + harmonicsAnswer + " J"
     }
@@ -116,22 +117,16 @@ function harmonics(){
   }
 }
 
-/*
-harmonicsAngle=(Math.random()*10+30);
-if (harmonicsAngle>=80){harmonicsAngle=80};
-console.log(harmonicsAngle);
-yBall = (Math.sin(harmonicsAngle*Math.PI/180))*(harmonicsLength*10)+100;
-xBall = 150-(Math.cos(harmonicsAngle*Math.PI/180))*(harmonicsLength*10);
-console.log(100+harmonicsLength*10,harmonicsAngle*Math.PI/180,yBall,xBall);
-function draw() {
-  background(220);
+yBall = (Math.sin(RADIANS(harmonicsGraphAngle))*(harmonicsLength*10)+400);
+xBall = 450-(Math.cos(RADIANS(harmonicsAngle))*(harmonicsLength*10));
+console.log(100+harmonicsLength*10,harmonicsGraphAngle,yBall,xBall);
   strokeWeight(2);
-  line(50,100,250,100);
+  line(350,400,550,400);
   strokeWeight(1);
-  line(150,100,150,100+harmonicsLength*10);
-  line(150,100,xBall,yBall);
+  line(450,400,450,400+harmonicsLength*10);
+  line(450,400,xBall,yBall);
   fill(255);
-  circle(150,100+harmonicsLength*10,20);
+  circle(450,400+harmonicsLength*10,20);
   circle(xBall,yBall,20);
 
 }*/
