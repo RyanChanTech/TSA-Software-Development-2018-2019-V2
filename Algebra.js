@@ -50,7 +50,7 @@ function algebra(){
     /*The parseInt() function turns algebraTextBox.data, which is a string (or text)
     data type into an int datatype so they can be compared
     */
-    if(parseInt(algebraTextBox.data)==algebraAnswer){
+    if((algebraTextBox.data)==algebraAnswer){
       algebraFeedback="Correct!";
       addPoints(5);
     }else{

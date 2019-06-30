@@ -5,7 +5,7 @@ function displayDecorations(){
   text("Points:\n"+localStorage.getItem("totalQGpoints"),1380,50);
   textSize(50);
   fill(0);
-  text("TSA Question Generator",320,70);
+  text("TSA Question Generator",550,70);
   fill(30,30,30,100);
   rect(0,0,300,280);
   fill(100,100,100,100);
@@ -36,10 +36,10 @@ function addPoints(points){
 
 function wave(height, magnitude, density, hue,speed,offset){
   push();
-  translate(350,100);
+  translate(325,100);
   fill(hue[0],hue[1],hue[2]);
   for(let x=0; x<=density; x++){
-    ellipse(x*600/density,magnitude*sin(time/speed+x/offset)+height,10,10)
+    ellipse(x*1000/density,magnitude*sin(time/speed+x/offset)+height,10,10)
   }
   pop();
 }
@@ -49,7 +49,7 @@ var time=0;
 function displayLogo(){
   time = time + 1;
   noStroke();
-  wave(150,50,60,[100,150,200],20,10)
-  wave(150,75,60,[100,200,100],20,10)
-  wave(150,100,60,[255,130,10],20,10)
+  wave(150,50,100,[100,150,200],20,10)
+  wave(150,75,100,[100,200,100],20,10)
+  wave(150,100,100,[255,130,10],20,10)
 }
